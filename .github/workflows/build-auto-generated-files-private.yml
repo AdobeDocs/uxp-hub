@@ -1,5 +1,5 @@
 ---
-name: Build Auto-Generated Files
+name: Build Auto-Generated Files For Private Repo
 on:
   workflow_dispatch:
 
@@ -10,4 +10,3 @@ jobs:
     secrets:
       ADP_DEVSITE_APP_ID: ${{ secrets.ADP_DEVSITE_APP_ID }}
       ADP_DEVSITE_APP_PRIVATE_KEY: ${{ secrets.ADP_DEVSITE_APP_PRIVATE_KEY }}
-    
