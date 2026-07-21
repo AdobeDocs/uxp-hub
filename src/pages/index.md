@@ -1,96 +1,74 @@
 ---
-title: Overview - Analytics
-description: This is the overview page of Analytics
-contributors:
-  - https://github.com/icaraps 
+title: UXP Hub
+description: "The central destination for Adobe UXP developers: APIs, migration guides, compatibility information, community knowledge, and developer resources in one place."
+keywords:
+  - UXP
+  - UXP Hub
+  - Adobe UXP
+  - Photoshop
+  - Premiere Pro
+  - Media Encoder
+  - InDesign
+  - CEP migration
+  - UXP Developer Tool
 ---
 
-<Superhero slots="heading, text"/>
+import "./styles/hero-heading.css";
 
-# Analytics API
+<Superhero variant="halfWidth" textColor="white" slots="heading, text, image" background="rgb(58, 51, 173)"/>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. 
+# UXP Hub
+
+UXP Hub is the central destination for Adobe UXP developers. It brings together APIs, migration guides, compatibility information, community knowledge, and developer resources in one place.
+
+![A UXP badge in front of four stacked panel cards, representing one platform shared across Photoshop, Premiere Pro, Media Encoder, and InDesign](images/hero.svg)
 
 <Resources slots="heading, links"/>
 
 #### Resources
 
-* [Quickstart Guide](https://developer.adobe.com)
-* [Analytics Github Repo](https://github.com/AdobeDocs/dev-site)
+- [Introduction](introduction/index.md)
+- [CEP to UXP Migration Center](cep-to-uxp-migration-center/index.md)
+- [FAQ](faq/index.md)
+- [Developer Forums](https://forums.creativeclouddeveloper.com/)
 
 ## Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+UXP (Unified eXtensibility Platform) is Adobe's modern plugin and scripting framework, built into Photoshop, Premiere Pro, Media Encoder, InDesign, and a growing list of Creative Cloud applications.
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+UXP Hub is the place for what's shared across Photoshop, Premiere Pro, InDesign, and other host applications: the platform APIs, guidance for moving a plugin off CEP, UXP version and host app version details, and documented solutions other developers have already found.
 
-## Discover
+## Quick Navigation
 
-<DiscoverBlock width="100%" slots="heading, link, text"/>
-
-### Get Started
-
-[Quickstart Guide](guides/index.md)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
-
-
-<DiscoverBlock slots="heading, link, text"/>
-
-### Guides
-
-[Calculated Metrics API](guides/dummy_metrics_api/index.md)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
-
+Jump straight to what you need.
 
 <DiscoverBlock slots="link, text"/>
 
-[Segments API](guides/dummy_oauth_client/index.md)
+[Introduction](introduction/index.md)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+Get to know UXP as a platform, and the tools you need to start building.
 
 <DiscoverBlock slots="link, text"/>
 
-[Reporting Guide API](guides/dummy_using_postman/index.md)
+[CEP to UXP Migration Center](cep-to-uxp-migration-center/index.md)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+Move a CEP extension to UXP, with a guide for each host application.
 
 <DiscoverBlock slots="link, text"/>
 
-[Migrating from 1.4 to 2.0](guides/migrating/index.md)
+[FAQ](faq/index.md)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+Answers to common questions about UXP plugin development.
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+<DiscoverBlock slots="link, text"/>
 
-<DiscoverBlock width="100%" slots="heading, link, text"/>
+[Community References](#community-references)
 
-### API References
+Where to ask questions and connect with other UXP developers.
 
-[Try the API](api/index.md)
+## Community References
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+Connect with other UXP developers, ask questions, and share what you've built.
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
-
-## Contributing
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
-
-
-## API Requests & Rate Limits
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+- [Adobe Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/)
+- [Adobe Community](https://community.adobe.com/community)

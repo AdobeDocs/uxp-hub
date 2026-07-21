@@ -1,23 +1,27 @@
 - pathPrefix:
-    - /dev-docs-template/
+    - /uxp/
 
 - pages:
-    - [Analytics](index.md)
-    - [Guides](guides/index.md)
-    - API Reference
-        - [Reference v2.0](api/index.md)
-        - [Reference v1.4](api/1-4.md)
-    - [Support](support/index.md)
+    - [UXP Hub](index.md)
+    - [Introduction](introduction/index.md)
+    - [CEP to UXP Migration Center](cep-to-uxp-migration-center/index.md)
+    - [FAQ](faq/index.md)
+    - References
+        - [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/)
+        - [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/)
+        - [InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/)
 
 - subPages:
-    - [Get Started](guides/index.md) 
-        - [Dummy an OAuth Client](guides/dummy_oauth_client/index.md) 
-        - [Dummy OAuth using POSTMAN](guides/dummy_using_postman/index.md) 
-    - [Metrics API](guides/dummy_metrics_api/index.md) 
-    - [Migrating](guides/migrating/index.md) 
-    - [Overview](support/index.md) 
-        - [Help](support/index.md) 
-        - [FAQ](support/FAQ/index.md) 
-        - [How to contribute](support/contribute/index.md) 
-    - [Community](support/community/index.md) 
-        - [Information](support/community/index.md) 
+    - [Overview](index.md)
+    - [Introduction](introduction/index.md)
+        - Essentials header
+        - [Developer Tools](introduction/essentials/dev-tools/index.md)
+        - [Tech Stack Foundations](introduction/essentials/tech-stack/index.md)
+        - [Nomenclature](introduction/essentials/nomenclature/index.md)
+    - [CEP to UXP Migration Center](cep-to-uxp-migration-center/index.md)
+        - [UXP for CEP Developers](cep-to-uxp-migration-center/uxp-for-cep-devs/index.md)
+        - [UXP for ExtendScript Developers](cep-to-uxp-migration-center/uxp-for-extendscript-devs/index.md)
+        - [UXP for Web Developers](cep-to-uxp-migration-center/uxp-for-web-devs/index.md)
+        - [UXP for Newbies](cep-to-uxp-migration-center/uxp-for-newbies/index.md)
+        - [UXP in Photoshop vs Other Host Applications](cep-to-uxp-migration-center/uxp-for-xd-devs/index.md)
+    - [FAQ](faq/index.md)
