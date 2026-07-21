@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 440" width="620" height="440" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">UXP Hub</title>
+  <desc id="dsc">A UXP badge in front of four stacked, unlabeled panel cards, representing one platform shared across Photoshop, Premiere Pro, Media Encoder, and InDesign</desc>
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4A3FC0"/>
+      <stop offset="1" stop-color="#2E2678"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#0A0730" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="310" cy="220" rx="250" ry="200" fill="#8A7CFF" opacity="0.14"/>
+
+  <!-- Four panel cards, one per host application, kept unlabeled and abstract -->
+  <rect x="90" y="76" width="300" height="190" rx="22" fill="#FFC24B" fill-opacity="0.22" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.5"/>
+  <rect x="110" y="92" width="300" height="190" rx="22" fill="#36C5A8" fill-opacity="0.24" stroke="#FFFFFF" stroke-opacity="0.24" stroke-width="1.5"/>
+  <rect x="130" y="108" width="300" height="190" rx="22" fill="#4F8DF7" fill-opacity="0.26" stroke="#FFFFFF" stroke-opacity="0.26" stroke-width="1.5"/>
+  <g filter="url(#soft)">
+    <rect x="150" y="124" width="300" height="190" rx="22" fill="#B58AFF" fill-opacity="0.30" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.5"/>
+  </g>
+
+  <!-- Generic panel content on the front-most card -->
+  <line x1="180" y1="252" x2="330" y2="252" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round"/>
+  <line x1="180" y1="270" x2="390" y2="270" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+  <line x1="180" y1="288" x2="360" y2="288" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+  <rect x="390" y="246" width="34" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.3"/>
+  <circle cx="416" cy="254" r="6" fill="#FFFFFF"/>
+
+  <!-- UXP badge, unifying the four panels -->
+  <g filter="url(#soft)">
+    <rect x="210" y="150" width="200" height="78" rx="39" fill="url(#badge)" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5"/>
+  </g>
+  <text x="310" y="190" text-anchor="middle" font-family="ui-sans-serif, Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="1.5" fill="#FFFFFF">UXP</text>
+  <circle cx="278" cy="214" r="4" fill="#FFC24B"/>
+  <circle cx="295" cy="214" r="4" fill="#36C5A8"/>
+  <circle cx="312" cy="214" r="4" fill="#4F8DF7"/>
+  <circle cx="329" cy="214" r="4" fill="#B58AFF"/>
+</svg>
