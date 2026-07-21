@@ -2,14 +2,10 @@
     - /uxp/docs/
 
 - pages:
-    - [UXP Hub](index.md)
+    - [UXP](https://developer-stage.adobe.com/uxp/)
     - [Introduction](introduction/index.md)
     - [CEP to UXP Migration Center](cep-to-uxp-migration-center/index.md)
     - [FAQ](faq/index.md)
-    - References
-        - [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/)
-        - [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/)
-        - [InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/)
 
 - subPages:
     - [Overview](index.md)
