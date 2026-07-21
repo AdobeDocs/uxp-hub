@@ -1,5 +1,5 @@
 ---
-name: Production Deployment
+name: Production Deployment For Private Repo
 on:
   push:
     branches:
