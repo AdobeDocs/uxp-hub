@@ -1,5 +1,5 @@
 - pathPrefix:
-    - /dev-docs-template/
+    - /uxp-docs/
 
 - pages:
     - [Analytics](index.md)
