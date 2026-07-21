@@ -1,5 +1,5 @@
 ---
-name: Staging
+name: Staging For Private Repo
 on:
   workflow_dispatch:
 
