@@ -6,6 +6,14 @@
     - [Introduction](introduction/index.md)
     - [CEP to UXP Migration Center](cep-to-uxp-migration-center/index.md)
     - [FAQ](faq/index.md)
+    - References
+        - [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/)
+        - [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/)
+        - [InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/)
+    - Community
+        - [Adobe Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/)
+        - [Adobe Community](https://community.adobe.com/community)
+    - [Developers Live](https://developer.adobe.com/developers-live/)
 
 - subPages:
     - [Overview](index.md)
