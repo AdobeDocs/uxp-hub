@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 440" width="620" height="440" role="img" aria-labelledby="ttl dsc">
   <title id="ttl">UXP Hub</title>
-  <desc id="dsc">A UXP badge in front of four stacked, unlabeled panel cards, representing one platform shared across Photoshop, Premiere Pro, Media Encoder, and InDesign</desc>
+  <desc id="dsc">A UXP badge in front of four stacked, unlabeled panel cards, representing one platform shared across Photoshop, Premiere, Media Encoder, and InDesign</desc>
   <defs>
     <linearGradient id="badge" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#4A3FC0"/>

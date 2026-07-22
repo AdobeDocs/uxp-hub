@@ -4,7 +4,7 @@ This repository is the content source for **UXP Hub**, the central entry
 point for Adobe UXP development. It is not tied to a single host
 application; it links out to the UXP API reference, the CEP to UXP
 migration center, per-application version support, and community
-resources for Photoshop, Premiere Pro, Media Encoder, InDesign, and the
+resources for Photoshop, Premiere, Media Encoder, InDesign, and the
 rest of the UXP-enabled Adobe application family.
 
 The site is built on Adobe's EDS / devsite platform. Pages are authored as

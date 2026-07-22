@@ -22,7 +22,7 @@ Over the years, Adobe Creative Cloud applications have supported ExtendScript **
 
 Most desktop applications have been supporting a different kind of _compiled_ plugins, often spelled **Plug-ins**; for example, as Effects in Premiere or Filters in Photoshop.
 
-While this continues to be the case, UXP host applications will use **plugins**[^1] as a catch-all term for _panels_, _extensions_, and, eventually, _scripts_ as well. Primarily, this is to maintain consistency across Photoshop, Premiere Pro, InDesign, and the other Adobe Creative Cloud applications that have migrated—or are about to migrate—to the new UXP standard.
+While this continues to be the case, UXP host applications will use **plugins**[^1] as a catch-all term for _panels_, _extensions_, and, eventually, _scripts_ as well. Primarily, this is to maintain consistency across Photoshop, Premiere, InDesign, and the other Adobe Creative Cloud applications that have migrated—or are about to migrate—to the new UXP standard.
 
 \<br/\>\<br/\>\<br/\>
 

@@ -69,9 +69,9 @@ The main differences to expect when moving a UXP plugin from one host applicatio
 
 <DiscoverBlock slots="link, text"/>
 
-[Premiere Pro: Hybrid Plugins](https://developer.adobe.com/premiere-pro/uxp/plugins/hybrid-plugins/?aio_external=true)
+[Premiere: Hybrid Plugins](https://developer.adobe.com/premiere-pro/uxp/plugins/hybrid-plugins/?aio_external=true)
 
-Extend a UXP plugin with high-performance C++ native libraries in Premiere Pro.
+Extend a UXP plugin with high-performance C++ native libraries in Premiere.
 
 <DiscoverBlock slots="link, text"/>
 

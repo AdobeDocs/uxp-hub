@@ -75,4 +75,4 @@ In addition to a set of recommended rules for analyzing code, ESLint also suppor
 
 ## System Requirements
 
-Finally, make sure your system meets the minimum requirements to run your host application: [Photoshop](https://helpx.adobe.com/photoshop/system-requirements.html), [Premiere Pro](https://helpx.adobe.com/premiere-pro/system-requirements.html), or [InDesign](https://helpx.adobe.com/indesign/system-requirements.html).
+Finally, make sure your system meets the minimum requirements to run your host application: [Photoshop](https://helpx.adobe.com/photoshop/system-requirements.html), [Premiere](https://helpx.adobe.com/premiere-pro/system-requirements.html), or [InDesign](https://helpx.adobe.com/indesign/system-requirements.html).

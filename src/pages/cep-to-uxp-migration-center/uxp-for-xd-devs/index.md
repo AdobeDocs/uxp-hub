@@ -14,7 +14,7 @@ description: The main differences to expect when moving a UXP plugin from one ho
 
 # UXP in Photoshop vs Other Host Applications
 
-UXP is available in Photoshop, Premiere Pro, Media Encoder, InDesign, and Adobe XD. If you've already built a UXP plugin for one of these and are bringing it to Photoshop, here are the main differences to expect.
+UXP is available in Photoshop, Premiere, Media Encoder, InDesign, and Adobe XD. If you've already built a UXP plugin for one of these and are bringing it to Photoshop, here are the main differences to expect.
 
 ## Manifest JSON
 
