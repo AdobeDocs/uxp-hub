@@ -20,7 +20,7 @@ A reliable Code Editor helps you stay organized and productive. Any modern edito
 
 ## UXP Developer Tool (UDT)
 
-The UXP Developer Tool (UDT) simplifies the process of creating, loading, managing, and debugging plugins for Adobe's UXP-powered applications. UXP plugins are supported across UXP-enabled host applications like **Photoshop**, **Premiere Pro**, and **InDesign** since **UDT v2.2**.
+The UXP Developer Tool (UDT) simplifies the process of creating, loading, managing, and debugging plugins for Adobe's UXP-powered applications. UXP plugins are supported across UXP-enabled host applications like **Photoshop**, **Premiere**, and **InDesign**.
 
 ![UDT](./img/dev-tools-udt.png)
 

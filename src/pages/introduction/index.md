@@ -4,7 +4,7 @@ description: Introduction to UXP
 keywords:
   - UXP
   - Photoshop
-  - Premiere Pro
+  - Premiere
   - InDesign
   - Extensibility
   - JavaScript
@@ -41,7 +41,7 @@ It's important to note that while UXP lets you use Web technologies, it is not c
 
 ## Support and Features
 
-UXP is the current extensibility standard for Adobe Creative Cloud applications, supported by a constantly growing set of applications, including **Photoshop**, **Premiere Pro**, **InDesign**, and **Media Encoder**.
+UXP is the current extensibility standard for Adobe Creative Cloud applications, supported by a constantly growing set of applications, including **Photoshop**, **Premiere**, **InDesign**, and **Media Encoder**.
 
 Plugins allow you to create a **persistent User Interface that blends seamlessly** with the host application (a `panel`), or an **actionable command** that runs a predefined function (a `command`) and can be triggered by the user via menu item—depending on how you would like the users to interact with them. For advanced use cases that require high-performance native code, UXP also supports Hybrid Plugins—standard UXP plugins extended with C++ libraries.
 

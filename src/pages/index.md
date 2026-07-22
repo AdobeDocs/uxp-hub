@@ -6,7 +6,7 @@ keywords:
   - UXP Hub
   - Adobe UXP
   - Photoshop
-  - Premiere Pro
+  - Premiere
   - Media Encoder
   - InDesign
   - CEP migration
@@ -21,7 +21,7 @@ import "./styles/hero-heading.css";
 
 UXP Hub is the central destination for Adobe UXP developers. It brings together APIs, migration guides, compatibility information, community knowledge, and developer resources in one place.
 
-![A UXP badge in front of four stacked panel cards, representing one platform shared across Photoshop, Premiere Pro, Media Encoder, and InDesign](images/hero.svg)
+![A UXP badge in front of four stacked panel cards, representing one platform shared across Photoshop, Premiere, Media Encoder, and InDesign](images/hero.svg)
 
 <Resources slots="heading, links"/>
 
@@ -34,9 +34,9 @@ UXP Hub is the central destination for Adobe UXP developers. It brings together 
 
 ## Overview
 
-UXP (Unified eXtensibility Platform) is Adobe's modern plugin and scripting framework, built into Photoshop, Premiere Pro, Media Encoder, InDesign, and a growing list of Creative Cloud applications.
+UXP (Unified eXtensibility Platform) is Adobe's modern plugin and scripting framework, built into Photoshop, Premiere, Media Encoder, InDesign, and a growing list of Creative Cloud applications.
 
-UXP Hub is the place for what's shared across Photoshop, Premiere Pro, InDesign, and other host applications: the platform APIs, guidance for moving a plugin off CEP, UXP version and host app version details, and documented solutions other developers have already found.
+UXP Hub is the place for what's shared across Photoshop, Premiere, InDesign, and other host applications: the platform APIs, guidance for moving a plugin off CEP, UXP version and host app version details, and documented solutions other developers have already found.
 
 ## Quick Navigation
 
