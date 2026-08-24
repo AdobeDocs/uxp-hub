@@ -1,5 +1,5 @@
 ---
-title: "Unified Extensibility Platform"
+title: UXP
 description: "Build UXP plugins across UXP-enabled Creative Cloud apps on one shared platform."
 keywords:
   - UXP
@@ -80,10 +80,9 @@ Your interface is still HTML and CSS, but UXP isn't a browser. Its layout engine
 
 Once your plugin runs, the next questions are usually about testing, packaging, and getting it in front of people. Start here:
 
+- **Developer journey:** the full build-and-ship path, from setup to shipping, is covered in [Guides](guides/index.md).
+- **UXP API reference:** check the [UXP APIs](uxp-api/index.md) section for what's available on the shared platform.
 - **[Share and distribute your plugin](guides/how-to/distribution/overview/index.md):** package it, publish through Adobe Marketplace, or distribute independently and within an enterprise.
-- **FAQs:** find answers for [Premiere](premiere-pro/resources/faq/index.md).
-- **Starters and samples:** begin with templates and examples for [Premiere](premiere-pro/resources/starters-samples/index.md).
-- **What's new:** review updates for [Premiere](premiere-pro/changelog/index.md) and the [shared UXP platform](uxp-api/changelog3-p.md).
 
 ## Join the community
 

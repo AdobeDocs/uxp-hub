@@ -1,1 +1,0 @@
-# Premiere Starters and Samples
