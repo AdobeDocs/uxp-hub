@@ -67,3 +67,11 @@ Build tools for editorial work: projects, sequences, tracks, markers, and export
 Automate delivery work: presets, codecs, render queues, and batch exports.
 
 [Explore Media Encoder](https://developer-stage.adobe.com/media-encoder/uxp/)
+
+## How UXP works
+
+A UXP plugin runs inside the host application on a single JavaScript engine. That engine reaches both the shared UXP APIs and the host's own API directly, with none of the ExtendScript bridging or per-plugin Chromium instances that CEP relied on. Your calls are async, so they don't freeze the host while they run.
+
+![Conceptual UXP architecture showing the plugin loader, rendering and layout engines, JavaScript engine, common APIs, and host controls and APIs.](assets/uxp-architecture.svg)
+
+Your interface is still HTML and CSS, but UXP isn't a browser. Its layout engine maps what you write to the host's native controls, so panels match the app and render without a heavy embedded browser. Support is deliberate: an element, CSS property, or web API works only when UXP implements it. Check the [shared UXP API](uxp-api/index.md) for what's available, then use your host's API reference to work with documents, projects, and timelines.

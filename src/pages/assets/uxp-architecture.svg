@@ -1,0 +1,82 @@
+<svg width="1446" height="716" viewBox="0 0 1446 716" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M0 0L9 4.5L0 9Z" fill="#D927C8"/>
+    </marker>
+  </defs>
+  <rect width="1446" height="716" fill="white"/>
+  <g font-family="Adobe Clean, Arial, sans-serif">
+    <text x="70" y="50" fill="#F01812" font-size="36">Architecture</text>
+
+    <rect x="66" y="85" width="336" height="594" rx="15" stroke="#F2B96E" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <text x="234" y="118" text-anchor="middle" fill="#205F18" font-size="25" font-weight="700">Host</text>
+
+    <rect x="102" y="154" width="264" height="230" rx="22" stroke="#80B9FA"/>
+    <text x="234" y="191" text-anchor="middle" fill="#064692" font-size="23" font-weight="700">Native Host Controls</text>
+    <rect x="116" y="211" width="236" height="44" rx="22" stroke="#80B9FA"/>
+    <text x="234" y="240" text-anchor="middle" fill="#1456A4" font-size="24">Photoshop</text>
+    <rect x="116" y="269" width="236" height="44" rx="22" stroke="#80B9FA"/>
+    <text x="234" y="298" text-anchor="middle" fill="#1456A4" font-size="24">Premiere</text>
+    <rect x="116" y="327" width="236" height="44" rx="22" stroke="#80B9FA"/>
+    <text x="234" y="356" text-anchor="middle" fill="#1456A4" font-size="24">InDesign</text>
+
+    <rect x="102" y="400" width="264" height="230" rx="22" stroke="#FF8CF2"/>
+    <text x="234" y="436" text-anchor="middle" fill="#A60099" font-size="23" font-weight="700">Host DOM &amp; APIs</text>
+    <rect x="116" y="457" width="236" height="44" rx="22" stroke="#FF8CF2"/>
+    <text x="234" y="486" text-anchor="middle" fill="#B00BA4" font-size="23">Photoshop</text>
+    <rect x="116" y="515" width="236" height="44" rx="22" stroke="#FF8CF2"/>
+    <text x="234" y="544" text-anchor="middle" fill="#B00BA4" font-size="23">Premiere</text>
+    <rect x="116" y="573" width="236" height="44" rx="22" stroke="#FF8CF2"/>
+    <text x="234" y="602" text-anchor="middle" fill="#B00BA4" font-size="23">InDesign</text>
+
+    <rect x="443" y="85" width="936" height="594" rx="15" stroke="#F2B96E" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <text x="911" y="118" text-anchor="middle" fill="#205F18" font-size="25" font-weight="700">UXP</text>
+    <rect x="458" y="154" width="906" height="492" rx="18" stroke="#8FC78C"/>
+    <text x="911" y="191" text-anchor="middle" fill="#205F18" font-size="25" font-weight="700">Plugin Loader / Context Management</text>
+
+    <rect x="480" y="222" width="263" height="181" rx="22" stroke="#80B9FA"/>
+    <text x="612" y="259" text-anchor="middle" fill="#064692" font-size="23" font-weight="700">Rendering</text>
+    <rect x="495" y="281" width="232" height="45" rx="23" stroke="#80B9FA"/>
+    <text x="611" y="310" text-anchor="middle" fill="#1456A4" font-size="23">Spectrum UXP</text>
+    <rect x="495" y="339" width="232" height="45" rx="23" stroke="#80B9FA"/>
+    <text x="611" y="368" text-anchor="middle" fill="#1456A4" font-size="23">Widget Bindings</text>
+
+    <rect x="480" y="454" width="263" height="180" rx="22" stroke="#80B9FA"/>
+    <text x="612" y="489" text-anchor="middle" fill="#064692" font-size="23" font-weight="700">Layout Engine</text>
+    <rect x="495" y="536" width="113" height="87" rx="22" stroke="#80B9FA"/>
+    <text x="552" y="589" text-anchor="middle" fill="#1456A4" font-size="23">HTML</text>
+    <rect x="616" y="536" width="111" height="87" rx="22" stroke="#80B9FA"/>
+    <text x="672" y="589" text-anchor="middle" fill="#1456A4" font-size="23">CSS</text>
+
+    <rect x="778" y="222" width="561" height="412" rx="25" stroke="#858578"/>
+    <text x="1059" y="259" text-anchor="middle" fill="#205F18" font-size="23" font-weight="700">JavaScript Engine</text>
+    <rect x="808" y="302" width="232" height="87" rx="22" stroke="#FF8CF2"/>
+    <text x="924" y="337" text-anchor="middle" fill="#B00BA4" font-size="22">JS APIs &amp; Standard</text>
+    <text x="924" y="370" text-anchor="middle" fill="#B00BA4" font-size="22">Library</text>
+
+    <rect x="797" y="438" width="258" height="181" rx="22" stroke="#8FC78C"/>
+    <text x="926" y="475" text-anchor="middle" fill="#205F18" font-size="23" font-weight="700">Plugin</text>
+    <rect x="809" y="523" width="232" height="79" rx="22" stroke="#FF8CF2"/>
+    <text x="925" y="556" text-anchor="middle" fill="#B00BA4" font-size="22">React &amp; other</text>
+    <text x="925" y="588" text-anchor="middle" fill="#B00BA4" font-size="22">modules</text>
+
+    <rect x="1071" y="279" width="247" height="340" rx="22" stroke="#FF8CF2"/>
+    <text x="1195" y="313" text-anchor="middle" fill="#B00BA4" font-size="23" font-weight="700">Common APIs</text>
+    <rect x="1087" y="334" width="215" height="45" rx="23" stroke="#FF8CF2"/>
+    <text x="1195" y="363" text-anchor="middle" fill="#B00BA4" font-size="22">Network I/O</text>
+    <rect x="1087" y="393" width="215" height="45" rx="23" stroke="#FF8CF2"/>
+    <text x="1195" y="422" text-anchor="middle" fill="#B00BA4" font-size="22">File I/O</text>
+    <rect x="1087" y="452" width="215" height="45" rx="23" stroke="#FF8CF2"/>
+    <text x="1195" y="481" text-anchor="middle" fill="#B00BA4" font-size="22">HTML5 DOM</text>
+    <rect x="1087" y="511" width="215" height="45" rx="23" stroke="#FF8CF2"/>
+    <text x="1195" y="540" text-anchor="middle" fill="#B00BA4" font-size="22">Imaging</text>
+    <rect x="1087" y="570" width="215" height="37" rx="19" stroke="#FF8CF2"/>
+    <text x="1195" y="596" text-anchor="middle" fill="#B00BA4" font-size="22">ML</text>
+
+    <path d="M366 269H430V361H480" stroke="#D927C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M366 448H430V420H1071" stroke="#D927C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M611 403V454" stroke="#D927C8" stroke-width="2" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M924 389V438" stroke="#D927C8" stroke-width="2" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M743 544H797" stroke="#D927C8" stroke-width="2" stroke-linecap="round" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+</svg>
