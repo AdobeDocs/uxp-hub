@@ -75,3 +75,19 @@ A UXP plugin runs inside the host application on a single JavaScript engine. Tha
 ![Conceptual UXP architecture showing the plugin loader, rendering and layout engines, JavaScript engine, common APIs, and host controls and APIs.](assets/uxp-architecture.svg)
 
 Your interface is still HTML and CSS, but UXP isn't a browser. Its layout engine maps what you write to the host's native controls, so panels match the app and render without a heavy embedded browser. Support is deliberate: an element, CSS property, or web API works only when UXP implements it. Check the [shared UXP API](uxp-api/index.md) for what's available, then use your host's API reference to work with documents, projects, and timelines.
+
+## More resources
+
+Once your plugin runs, the next questions are usually about testing, packaging, and getting it in front of people. Start here:
+
+- **[Share and distribute your plugin](guides/how-to/distribution/overview/index.md):** package it, publish through Adobe Marketplace, or distribute independently and within an enterprise.
+- **FAQs:** find answers for [Premiere](premiere-pro/resources/faq/index.md).
+- **Starters and samples:** begin with templates and examples for [Premiere](premiere-pro/resources/starters-samples/index.md).
+- **What's new:** review updates for [Premiere](premiere-pro/changelog/index.md) and the [shared UXP platform](uxp-api/changelog3-p.md).
+
+## Join the community
+
+Join Creative Cloud developers building plugins and integrations of their own. Ask a question, compare notes, or just see what other people are building:
+
+- Ask questions and share knowledge in the [Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/).
+- Subscribe to the [Creative Cloud Developer Newsletter](https://www.adobe.com/subscription/ccdevnewsletter.html).
