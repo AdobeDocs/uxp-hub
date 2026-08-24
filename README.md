@@ -1,15 +1,24 @@
 # UXP Hub: Developer Documentation
 
-This repository is the content source for **UXP Hub**, the central entry
-point for Adobe UXP development. It is not tied to a single host
-application; it links out to the UXP API reference, the CEP to UXP
-migration center, per-application version support, and community
-resources for Photoshop, Premiere, Media Encoder, InDesign, and the
-rest of the UXP-enabled Adobe application family.
+**UXP Hub** is the central entry point for UXP development, bringing
+together the UXP API reference, the CEP to UXP migration center,
+per-application version support, and community resources across every
+UXP-enabled host application.
 
 The site is built on Adobe's EDS / devsite platform. Pages are authored as
 Markdown under [`src/pages/`](src/pages/) and rendered under the
 `/uxp/` path on the [Adobe Developer site](https://developer.adobe.com/).
+
+## Repository layout
+
+| Path | Contents |
+| --- | --- |
+| `src/pages/` | All documentation pages, one folder per page with an `index.md`. |
+| `src/pages/config.md` | Site navigation (sidebar, top nav) and the URL path prefix. |
+| `src/pages/uxp-api/` | The UXP platform API reference (JavaScript, CSS, HTML, Spectrum), plus the changelog and version details pages. |
+| `src/pages/migration-center/` | CEP to UXP migration guides. |
+| `src/pages/images/` | Screenshots and other page assets. |
+| `package.json` | Authoring and lint scripts (see below). |
 
 ## Develop locally
 
@@ -65,6 +74,24 @@ break once deployed. The two that bite most often:
   garbage characters on deploy. Use commas, parentheses, or colons, and a single
   hyphen (`-`) only for compound modifiers and ranges.
 - **Comment syntax is `{/* ... */}`**, not `<!-- ... -->`.
+
+## Scripts
+
+Run these from the repo root with `npm run <script>`:
+
+| Script | What it does |
+| --- | --- |
+| `dev` | Start the local content server. |
+| `lint` | Run the docs linter (Markdown rules, links), verbose. |
+| `lint:errorOnly` | Run the docs linter, errors only. |
+| `link:checkAllLinks` | Check internal and external links. |
+| `buildNavigation` | Regenerate navigation from `config.md`. |
+| `buildContributors` | Regenerate the contributors list. |
+| `buildRedirections` | Regenerate redirects. |
+
+See [`package.json`](package.json) for the full list, including
+`normalizeLinks`, `renameFiles`, and the staging/production redirect
+checkers.
 
 ## Maintainers
 
