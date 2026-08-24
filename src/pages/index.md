@@ -29,3 +29,41 @@ What you reach for depends on the host: layers and documents in Photoshop, pages
 ## Start building
 
 Every UXP plugin follows the same path, regardless of host: scaffold it, load it into your host application, build the UI, and ship it. [Guides](guides/index.md) walks through all of it: getting set up, core concepts and tutorials, and how to package and distribute what you build.
+
+## Choose a host
+
+Pick the application you already spend your time in for its API reference and product-specific docs. UXP itself works the same way underneath each of them.
+
+<Cards slots="image, heading, text, links" repeat="4" width="100%" />
+
+![Photoshop](assets/photoshop.svg)
+
+### Photoshop
+
+Automate imaging work: documents, layers, selections, and actions.
+
+[Explore Photoshop](https://developer.adobe.com/photoshop/uxp/)
+
+![InDesign](assets/indesign.svg)
+
+### InDesign
+
+Build tools for layout and publishing: pages, stories, styles, and frames.
+
+[Explore InDesign](https://developer.adobe.com/indesign/uxp/)
+
+![Premiere](assets/premiere-pro.svg)
+
+### Premiere
+
+Build tools for editorial work: projects, sequences, tracks, markers, and exports.
+
+[Explore Premiere](https://developer.adobe.com/premiere-pro/uxp/)
+
+![Media Encoder](assets/media-encoder.svg)
+
+### Media Encoder
+
+Automate delivery work: presets, codecs, render queues, and batch exports.
+
+[Explore Media Encoder](https://developer-stage.adobe.com/media-encoder/uxp/)
