@@ -11,7 +11,7 @@ keywords:
 
 # Frequently Asked Questions
 
-This section contains frequently asked questions about UXP. For Hybrid Plugin specific questions, see the [Hybrid Plugin guides](../cep-to-uxp-migration-center/index.md#related-resources) in the CEP to UXP Migration Center.
+This section contains frequently asked questions about UXP. For Hybrid Plugin specific questions, see the [Hybrid Plugin guides](../migration-center/index.md#related-resources) in the Migration Center.
 
 ## Questions
 

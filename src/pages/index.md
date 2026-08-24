@@ -1,72 +1,82 @@
 ---
 title: UXP Hub
-description: "The central destination for Adobe UXP developers: APIs, migration guides, compatibility information, community knowledge, and developer resources in one place."
+description: "The central destination for Adobe UXP developers: platform APIs, guides, and migration guidance for Photoshop, Premiere Pro, and InDesign."
 keywords:
   - UXP
   - UXP Hub
   - Adobe UXP
   - Photoshop
   - Premiere
-  - Media Encoder
   - InDesign
   - CEP migration
   - UXP Developer Tool
 ---
 
-import "./styles/hero-heading.css";
+<Superhero variant="halfWidth" textColor="white" slots="heading, text, image" background="url(images/hero-bg.svg) center/cover no-repeat, linear-gradient(100deg, #2A5BFF 0%, #5A6BFF 33%, #8B5CFF 66%, #D26BFF 100%)"/>
 
-<Superhero variant="halfWidth" textColor="white" slots="heading, text, image" background="rgb(58, 51, 173)"/>
+# Unified Extensibility Platform
 
-# UXP Hub
+Everything you need to build UXP plugins — in one place.
 
-UXP Hub is the central destination for Adobe UXP developers. It brings together APIs, migration guides, compatibility information, community knowledge, and developer resources in one place.
-
-![A UXP badge in front of four stacked panel cards, representing one platform shared across Photoshop, Premiere, Media Encoder, and InDesign](images/hero.svg)
+![A browser-style window with panels for code, settings, and content, connected to a plugin module, representing the UXP plugin architecture](images/hero-illustration.svg)
 
 <Resources slots="heading, links"/>
 
 #### Resources
 
-- [Introduction](introduction/index.md)
-- [CEP to UXP Migration Center](cep-to-uxp-migration-center/index.md)
+- [Guides](introduction/index.md)
+- [UXP APIs](uxp-api/index.md)
 - [FAQ](faq/index.md)
 - [Developer Forums](https://forums.creativeclouddeveloper.com/)
 
-## Overview
+## What is UXP?
 
-UXP (Unified eXtensibility Platform) is Adobe's modern plugin and scripting framework, built into Photoshop, Premiere, Media Encoder, InDesign, and a growing list of Creative Cloud applications.
+UXP (Unified Extensibility Platform) is Adobe's modern framework for building plugins and scripts in HTML, CSS, and JavaScript. It's built into Photoshop, Premiere Pro and InDesign.
 
-UXP Hub is the place for what's shared across Photoshop, Premiere, InDesign, and other host applications: the platform APIs, guidance for moving a plugin off CEP, UXP version and host app version details, and documented solutions other developers have already found.
+## What You Can Build
 
-## Quick Navigation
+UXP plugins usually take one of two shapes:
 
-Jump straight to what you need.
+- **Panels** stay open next to your project with focused, persistent controls.
+- **Commands** run from a menu item and complete one task from start to finish.
 
-<DiscoverBlock slots="link, text"/>
+What you reach for depends on the workflow: layers and documents in Photoshop, pages and stories in InDesign, or sequences and exports in Premiere Pro. The plugin model is the same everywhere.
 
-[Introduction](introduction/index.md)
+## Start Building
 
-Get to know UXP as a platform, and the tools you need to start building.
+Every UXP plugin follows the same path, regardless of host application: scaffold a project, load it into your host app, build the UI, and ship it. [Guides](introduction/index.md) walks through all of it — getting set up, core concepts, tutorials, and how to package and distribute what you build.
 
-<DiscoverBlock slots="link, text"/>
+## Choose a Host
 
-[CEP to UXP Migration Center](cep-to-uxp-migration-center/index.md)
-
-Move a CEP extension to UXP, with a guide for each host application.
-
-<DiscoverBlock slots="link, text"/>
-
-[FAQ](faq/index.md)
-
-Answers to common questions about UXP plugin development.
+Pick the application you already spend your time in. Its own API reference and product-specific ideas live there — UXP itself works the same way underneath each one.
 
 <DiscoverBlock slots="link, text"/>
 
-[Community References](#community-references)
+[![Photoshop](images/host-icons/photoshop.svg) Explore the Photoshop API →](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external=true)
 
-Where to ask questions and connect with other UXP developers.
+Automate imaging work: documents, layers, selections, and actions.
 
-## Community References
+<DiscoverBlock slots="link, text"/>
+
+[![Premiere Pro](images/host-icons/premiere-pro.svg) Explore the Premiere Pro API →](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external=true)
+
+Build tools for editorial work: projects, sequences, tracks, markers, and exports.
+
+<DiscoverBlock slots="link, text"/>
+
+[![InDesign](images/host-icons/indesign.svg) Explore the InDesign API →](https://developer.adobe.com/indesign/uxp/dom/api/?aio_external=true)
+
+Build tools for layout and publishing: pages, stories, styles, and frames.
+
+## How UXP Works
+
+A UXP plugin runs inside the host application on a single JavaScript engine. That engine exposes both the shared [UXP APIs](uxp-api/index.md) and the host's own DOM API directly, with none of the ExtendScript bridging or per-plugin browser instances that CEP relied on.
+
+![Architecture diagram: the host application's native controls and DOM APIs connect to UXP's plugin loader, which wires together rendering, the layout engine, the JavaScript engine, common APIs, and the plugin itself](images/uxp-architecture.svg)
+
+Your interface is built with HTML and CSS, but UXP isn't a full browser: only the elements, styles, and APIs UXP implements are supported. Check the [UXP APIs](uxp-api/index.md) for what's available at the platform level, then use your host's own API reference to work with documents, projects, and timelines.
+
+## Join the Community
 
 Connect with other UXP developers, ask questions, and share what you've built.
 
