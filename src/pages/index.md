@@ -20,15 +20,6 @@ Everything you need to build UXP plugins — in one place.
 
 ![A browser-style window with panels for code, settings, and content, connected to a plugin module, representing the UXP plugin architecture](images/hero-illustration.svg)
 
-<Resources slots="heading, links"/>
-
-#### Resources
-
-- [Guides](introduction/index.md)
-- [UXP APIs](uxp-api/index.md)
-- [FAQ](faq/index.md)
-- [Developer Forums](https://forums.creativeclouddeveloper.com/)
-
 ## What is UXP?
 
 UXP (Unified Extensibility Platform) is Adobe's modern framework for building plugins and scripts in HTML, CSS, and JavaScript. It's built into Photoshop, Premiere Pro and InDesign.
@@ -48,25 +39,41 @@ Every UXP plugin follows the same path, regardless of host application: scaffold
 
 ## Choose a Host
 
-Pick the application you already spend your time in. Its own API reference and product-specific ideas live there — UXP itself works the same way underneath each one.
+Pick the application you already spend your time in for its API reference and product-specific docs. UXP itself works the same way underneath each of them.
 
-<DiscoverBlock slots="link, text"/>
+<Cards slots="image, heading, text, links" repeat="4" width="100%" />
 
-[![Photoshop](images/host-icons/photoshop.svg) Explore the Photoshop API →](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external=true)
+![Photoshop](images/host-icons/photoshop.svg)
+
+### Photoshop
 
 Automate imaging work: documents, layers, selections, and actions.
 
-<DiscoverBlock slots="link, text"/>
+[Explore Photoshop](https://developer.adobe.com/photoshop/uxp/)
 
-[![Premiere Pro](images/host-icons/premiere-pro.svg) Explore the Premiere Pro API →](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external=true)
+![InDesign](images/host-icons/indesign.svg)
+
+### InDesign
+
+Build tools for layout and publishing: pages, stories, styles, and frames.
+
+[Explore InDesign](https://developer.adobe.com/indesign/uxp/)
+
+![Premiere](images/host-icons/premiere-pro.svg)
+
+### Premiere
 
 Build tools for editorial work: projects, sequences, tracks, markers, and exports.
 
-<DiscoverBlock slots="link, text"/>
+[Explore Premiere](https://developer.adobe.com/premiere-pro/uxp/)
 
-[![InDesign](images/host-icons/indesign.svg) Explore the InDesign API →](https://developer.adobe.com/indesign/uxp/dom/api/?aio_external=true)
+![Media Encoder](images/host-icons/media-encoder.svg)
 
-Build tools for layout and publishing: pages, stories, styles, and frames.
+### Media Encoder
+
+Automate delivery work: presets, codecs, render queues, and batch exports.
+
+[Explore Media Encoder](https://developer-stage.adobe.com/media-encoder/uxp/)
 
 ## How UXP Works
 

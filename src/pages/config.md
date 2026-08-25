@@ -9,6 +9,7 @@
         - [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external=true)
         - [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external=true)
         - [InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/?aio_external=true)
+        - [Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/media-encoder-api/)
     - [Migration Center](migration-center/index.md)
 
 - subPages:
