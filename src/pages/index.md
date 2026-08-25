@@ -1,6 +1,6 @@
 ---
 title: UXP Hub
-description: "The central destination for Adobe UXP developers: platform APIs, guides, and migration guidance for Photoshop, Premiere Pro, and InDesign."
+description: "The central destination for Adobe UXP developers: platform APIs, guides, and migration guidance for Photoshop, Premiere, InDesign, and Media Encoder."
 keywords:
   - UXP
   - UXP Hub
@@ -27,7 +27,7 @@ Everything you need to build UXP plugins, in one place.
 
 ## What is UXP?
 
-UXP (Unified Extensibility Platform) is Adobe's modern framework for building plugins and scripts in HTML, CSS, and JavaScript. It's built into Photoshop, Premiere Pro and InDesign.
+UXP (Unified Extensibility Platform) is Adobe's modern framework for building plugins and scripts in HTML, CSS, and JavaScript. It's built into Photoshop, Premiere, InDesign, and Media Encoder.
 
 ## What You Can Build
 
@@ -36,7 +36,7 @@ UXP plugins usually take one of two shapes:
 - **Panels** stay open next to your project with focused, persistent controls.
 - **Commands** run from a menu item and complete one task from start to finish.
 
-What you reach for depends on the workflow: layers and documents in Photoshop, pages and stories in InDesign, or sequences and exports in Premiere Pro. The plugin model is the same everywhere.
+What you reach for depends on the workflow: layers and documents in Photoshop, pages and stories in InDesign, sequences and exports in Premiere, or render queues in Media Encoder. The plugin model is the same everywhere.
 
 ## Start Building
 
