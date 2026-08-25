@@ -15,11 +15,13 @@ contributors:
   - https://github.com/kasivn
 ---
 
-<Superhero variant="halfWidth" textColor="white" slots="heading, text, image" background="url(images/hero-bg.svg) center/cover no-repeat, linear-gradient(100deg, #2A5BFF 0%, #5A6BFF 33%, #8B5CFF 66%, #D26BFF 100%)"/>
+<Superhero variant="halfWidth" textColor="white" slots="heading, text, fullWidthBackground, image"/>
 
 # Unified Extensibility Platform
 
 Everything you need to build UXP plugins — in one place.
+
+![Diagonal blue-to-magenta gradient background with a wavy line and dot-grid pattern](images/hero-bg.svg)
 
 ![A browser-style window with panels for code, settings, and content, connected to a plugin module, representing the UXP plugin architecture](images/hero-illustration.svg)
 
