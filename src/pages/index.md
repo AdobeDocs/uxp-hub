@@ -40,7 +40,7 @@ What you reach for depends on the workflow: layers and documents in Photoshop, p
 
 ## Start Building
 
-Every UXP plugin follows the same path, regardless of host application: scaffold a project, load it into your host app, build the UI, and ship it. [Guides](introduction/index.md) walks through all of it: getting set up, core concepts, tutorials, and how to package and distribute what you build.
+Every UXP plugin follows the same path, regardless of host application: scaffold a project, load it into your host app, build the UI, and ship it. [Guides](introduction/index.md) walks through all of it: getting set up, core concepts, tutorials, and how to package and distribute what you build. Already have a CEP extension? Start at the [Migration Center](migration-center/index.md) instead.
 
 ## Choose a Host
 
@@ -82,7 +82,7 @@ Automate delivery work: presets, codecs, render queues, and batch exports.
 
 ## How UXP Works
 
-A UXP plugin runs inside the host application on a single JavaScript engine. That engine exposes both the shared [UXP APIs](uxp-api/index.md) and the host's own DOM API directly, with none of the ExtendScript bridging or per-plugin browser instances that CEP relied on.
+A UXP plugin runs inside the host application on a single JavaScript engine. That engine exposes both the shared [UXP APIs](uxp-api/index.md) and the host's own DOM API directly, with none of the ExtendScript bridging or per-plugin browser instances that CEP relied on. Your calls are async, so they don't freeze the host while they run.
 
 ![Architecture diagram: the host application's native controls and DOM APIs connect to UXP's plugin loader, which wires together rendering, the layout engine, the JavaScript engine, common APIs, and the plugin itself](images/uxp-architecture.svg)
 
@@ -95,6 +95,7 @@ Once your plugin runs, the next questions are usually about testing, packaging, 
 - **Developer journey:** the full build-and-ship path, from setup to shipping, is covered in [Guides](introduction/index.md).
 - **UXP API reference:** check the [UXP APIs](uxp-api/index.md) section for what's available on the shared platform.
 - **[Share and distribute your plugin](plugins/distribution/overview/index.md):** package it, publish through Adobe Marketplace, or distribute independently and within an enterprise.
+- **[FAQ](faq/index.md):** quick answers to common setup, packaging, and compliance questions.
 
 ## Join the Community
 
