@@ -19,7 +19,7 @@ contributors:
 
 # Unified Extensibility Platform
 
-Everything you need to build UXP plugins — in one place.
+Everything you need to build UXP plugins, in one place.
 
 ![Diagonal blue-to-magenta gradient background with a wavy line and dot-grid pattern](images/hero-bg.svg)
 
@@ -40,7 +40,7 @@ What you reach for depends on the workflow: layers and documents in Photoshop, p
 
 ## Start Building
 
-Every UXP plugin follows the same path, regardless of host application: scaffold a project, load it into your host app, build the UI, and ship it. [Guides](introduction/index.md) walks through all of it — getting set up, core concepts, tutorials, and how to package and distribute what you build.
+Every UXP plugin follows the same path, regardless of host application: scaffold a project, load it into your host app, build the UI, and ship it. [Guides](introduction/index.md) walks through all of it: getting set up, core concepts, tutorials, and how to package and distribute what you build.
 
 ## Choose a Host
 
@@ -86,11 +86,19 @@ A UXP plugin runs inside the host application on a single JavaScript engine. Tha
 
 ![Architecture diagram: the host application's native controls and DOM APIs connect to UXP's plugin loader, which wires together rendering, the layout engine, the JavaScript engine, common APIs, and the plugin itself](images/uxp-architecture.svg)
 
-Your interface is built with HTML and CSS, but UXP isn't a full browser: only the elements, styles, and APIs UXP implements are supported. Check the [UXP APIs](uxp-api/index.md) for what's available at the platform level, then use your host's own API reference to work with documents, projects, and timelines.
+Your interface is still HTML and CSS, but UXP isn't a browser. Its layout engine maps what you write to the host's native controls, so panels match the app and render without a heavy embedded browser. Support is deliberate: an element, CSS property, or web API works only when UXP implements it. Check the [shared UXP API](uxp-api/index.md) for what's available, then use your host's API reference to work with documents, projects, and timelines.
+
+## More Resources
+
+Once your plugin runs, the next questions are usually about testing, packaging, and getting it in front of people. Start here:
+
+- **Developer journey:** the full build-and-ship path, from setup to shipping, is covered in [Guides](introduction/index.md).
+- **UXP API reference:** check the [UXP APIs](uxp-api/index.md) section for what's available on the shared platform.
+- **[Share and distribute your plugin](plugins/distribution/overview/index.md):** package it, publish through Adobe Marketplace, or distribute independently and within an enterprise.
 
 ## Join the Community
 
 Connect with other UXP developers, ask questions, and share what you've built.
 
-- [Adobe Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/)
-- [Adobe Community](https://community.adobe.com/community)
+- Ask questions and share knowledge in the [Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/).
+- Subscribe to the [Creative Cloud Developer Newsletter](https://www.adobe.com/subscription/ccdevnewsletter.html).
