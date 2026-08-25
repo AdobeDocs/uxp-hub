@@ -21,7 +21,7 @@ contributors:
 
 Everything you need to build UXP plugins, in one place.
 
-![Diagonal blue-to-magenta gradient background with a wavy line and dot-grid pattern](images/hero-bg.svg)
+![Diagonal blue-to-magenta gradient background with a dot-grid pattern](images/hero-bg.svg)
 
 ![A browser-style window with panels for code, settings, and content, connected to a plugin module, representing the UXP plugin architecture](images/hero-illustration.svg)
 
