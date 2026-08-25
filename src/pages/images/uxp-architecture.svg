@@ -1,0 +1,103 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans, Arial, sans-serif">
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M0.5,1 L8,4.5 L0.5,8 L3,4.5 Z" fill="#D5007F"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="600" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="36" y="42" font-size="27" font-weight="700" fill="#E23B2E">Architecture</text>
+
+  <!-- ================= HOST OUTER ================= -->
+  <rect x="28" y="64" width="286" height="498" rx="14" fill="none" stroke="#E9A23B" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <text x="171" y="94" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">Host</text>
+
+  <!-- Native Host Controls -->
+  <rect x="52" y="116" width="234" height="180" rx="10" fill="none" stroke="#2B7DE1" stroke-width="1.5"/>
+  <text x="169" y="141" font-size="13.5" font-weight="700" fill="#2B7DE1" text-anchor="middle">Native Host Controls</text>
+  <g font-size="13" fill="#2B7DE1" text-anchor="middle">
+    <rect x="70" y="152" width="198" height="32" rx="16" fill="#fff" stroke="#2B7DE1" stroke-width="1.3"/><text x="169" y="172">Photoshop</text>
+    <rect x="70" y="192" width="198" height="32" rx="16" fill="#fff" stroke="#2B7DE1" stroke-width="1.3"/><text x="169" y="212">Premiere</text>
+    <rect x="70" y="232" width="198" height="32" rx="16" fill="#fff" stroke="#2B7DE1" stroke-width="1.3"/><text x="169" y="252">InDesign</text>
+  </g>
+
+  <!-- Host DOM & APIs -->
+  <rect x="52" y="316" width="234" height="224" rx="10" fill="none" stroke="#D5007F" stroke-width="1.5"/>
+  <text x="169" y="341" font-size="13.5" font-weight="700" fill="#D5007F" text-anchor="middle">Host DOM &amp; APIs</text>
+  <g font-size="13" fill="#D5007F" text-anchor="middle">
+    <rect x="70" y="356" width="198" height="32" rx="16" fill="#fff" stroke="#D5007F" stroke-width="1.3"/><text x="169" y="376">Photoshop</text>
+    <rect x="70" y="400" width="198" height="32" rx="16" fill="#fff" stroke="#D5007F" stroke-width="1.3"/><text x="169" y="420">Premiere</text>
+    <rect x="70" y="444" width="198" height="32" rx="16" fill="#fff" stroke="#D5007F" stroke-width="1.3"/><text x="169" y="464">InDesign</text>
+  </g>
+
+  <!-- ================= UXP OUTER ================= -->
+  <rect x="330" y="64" width="842" height="498" rx="14" fill="none" stroke="#E9A23B" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <text x="751" y="94" font-size="17" font-weight="700" fill="#2E9A4E" text-anchor="middle">UXP</text>
+
+  <!-- Plugin Loader / Context Management -->
+  <rect x="352" y="112" width="800" height="430" rx="12" fill="none" stroke="#2E9A4E" stroke-width="1.5"/>
+  <text x="752" y="139" font-size="15" font-weight="700" fill="#2E9A4E" text-anchor="middle">Plugin Loader / Context Management</text>
+
+  <!-- Rendering -->
+  <rect x="372" y="160" width="208" height="150" rx="10" fill="none" stroke="#2B7DE1" stroke-width="1.5"/>
+  <text x="476" y="185" font-size="13.5" font-weight="700" fill="#2B7DE1" text-anchor="middle">Rendering</text>
+  <g font-size="13" fill="#2B7DE1" text-anchor="middle">
+    <rect x="390" y="198" width="172" height="32" rx="16" fill="#fff" stroke="#2B7DE1" stroke-width="1.3"/><text x="476" y="218">Spectrum UXP</text>
+    <rect x="390" y="242" width="172" height="32" rx="16" fill="#fff" stroke="#2B7DE1" stroke-width="1.3"/><text x="476" y="262">Widget Bindings</text>
+  </g>
+
+  <!-- Layout Engine -->
+  <rect x="372" y="340" width="208" height="180" rx="10" fill="none" stroke="#2B7DE1" stroke-width="1.5"/>
+  <text x="476" y="366" font-size="13.5" font-weight="700" fill="#2B7DE1" text-anchor="middle">Layout Engine</text>
+  <g font-size="14" fill="#2B7DE1" text-anchor="middle">
+    <rect x="392" y="392" width="80" height="104" rx="10" fill="#fff" stroke="#2B7DE1" stroke-width="1.3"/><text x="432" y="448">HTML</text>
+    <rect x="484" y="392" width="80" height="104" rx="10" fill="#fff" stroke="#2B7DE1" stroke-width="1.3"/><text x="524" y="448">CSS</text>
+  </g>
+
+  <!-- JavaScript Engine -->
+  <rect x="606" y="160" width="528" height="360" rx="10" fill="none" stroke="#333740" stroke-width="1.5"/>
+  <text x="870" y="185" font-size="14" font-weight="700" fill="#333740" text-anchor="middle">JavaScript Engine</text>
+
+  <!-- JS APIs & Standard Library -->
+  <rect x="628" y="206" width="200" height="70" rx="10" fill="#fff" stroke="#D5007F" stroke-width="1.4"/>
+  <g font-size="13.5" fill="#D5007F" text-anchor="middle">
+    <text x="728" y="235">JS APIs &amp; Standard</text>
+    <text x="728" y="255">Library</text>
+  </g>
+
+  <!-- Plugin -->
+  <rect x="628" y="330" width="176" height="176" rx="10" fill="none" stroke="#2E9A4E" stroke-width="1.5"/>
+  <text x="716" y="356" font-size="13.5" font-weight="700" fill="#2E9A4E" text-anchor="middle">Plugin</text>
+  <rect x="644" y="378" width="144" height="100" rx="10" fill="#fff" stroke="#D5007F" stroke-width="1.3"/>
+  <g font-size="13" fill="#D5007F" text-anchor="middle">
+    <text x="716" y="422">React &amp; other</text>
+    <text x="716" y="442">modules</text>
+  </g>
+
+  <!-- Common APIs -->
+  <rect x="852" y="200" width="262" height="306" rx="10" fill="none" stroke="#333740" stroke-width="1.5"/>
+  <text x="983" y="225" font-size="13.5" font-weight="700" fill="#333740" text-anchor="middle">Common APIs</text>
+  <g font-size="13" fill="#D5007F" text-anchor="middle">
+    <rect x="876" y="240" width="214" height="32" rx="16" fill="#fff" stroke="#D5007F" stroke-width="1.3"/><text x="983" y="260">Network I/O</text>
+    <rect x="876" y="282" width="214" height="32" rx="16" fill="#fff" stroke="#D5007F" stroke-width="1.3"/><text x="983" y="302">File I/O</text>
+    <rect x="876" y="324" width="214" height="32" rx="16" fill="#fff" stroke="#D5007F" stroke-width="1.3"/><text x="983" y="344">HTML5 DOM</text>
+    <rect x="876" y="366" width="214" height="32" rx="16" fill="#fff" stroke="#D5007F" stroke-width="1.3"/><text x="983" y="386">Imaging</text>
+    <rect x="876" y="408" width="214" height="32" rx="16" fill="#fff" stroke="#D5007F" stroke-width="1.3"/><text x="983" y="428">ML</text>
+  </g>
+
+  <!-- ================= ARROWS ================= -->
+  <g stroke="#D5007F" stroke-width="2.2" fill="none" marker-start="url(#ah)" marker-end="url(#ah)">
+    <!-- A: Native Host Controls <-> Rendering -->
+    <path d="M286,206 L372,206"/>
+    <!-- B: Host DOM & APIs <-> Common APIs (long) -->
+    <path d="M286,322 L852,322"/>
+    <!-- C: Rendering <-> Layout Engine -->
+    <path d="M476,310 L476,340"/>
+    <!-- D: JS APIs <-> Plugin -->
+    <path d="M716,276 L716,330"/>
+    <!-- E: Layout Engine <-> Plugin -->
+    <path d="M580,430 L628,430"/>
+  </g>
+</svg>

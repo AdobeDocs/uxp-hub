@@ -1,96 +1,94 @@
 ---
-title: Overview - Analytics
-description: This is the overview page of Analytics
+title: UXP Hub
+description: "The central destination for Adobe UXP developers: platform APIs, guides, and migration guidance for Photoshop, Premiere Pro, and InDesign."
+keywords:
+  - UXP
+  - UXP Hub
+  - Adobe UXP
+  - Photoshop
+  - Premiere
+  - InDesign
+  - Media Encoder
+  - CEP migration
+  - UXP Developer Tool
 contributors:
-  - https://github.com/icaraps 
+  - https://github.com/kasivn
 ---
 
-<Superhero slots="heading, text"/>
+<Superhero variant="halfWidth" textColor="white" slots="heading, text, image" background="url(images/hero-bg.svg) center/cover no-repeat, linear-gradient(100deg, #2A5BFF 0%, #5A6BFF 33%, #8B5CFF 66%, #D26BFF 100%)"/>
 
-# Analytics API
+# Unified Extensibility Platform
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. 
+Everything you need to build UXP plugins — in one place.
 
-<Resources slots="heading, links"/>
+![A browser-style window with panels for code, settings, and content, connected to a plugin module, representing the UXP plugin architecture](images/hero-illustration.svg)
 
-#### Resources
+## What is UXP?
 
-* [Quickstart Guide](https://developer.adobe.com)
-* [Analytics Github Repo](https://github.com/AdobeDocs/dev-site)
+UXP (Unified Extensibility Platform) is Adobe's modern framework for building plugins and scripts in HTML, CSS, and JavaScript. It's built into Photoshop, Premiere Pro and InDesign.
 
-## Overview
+## What You Can Build
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+UXP plugins usually take one of two shapes:
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+- **Panels** stay open next to your project with focused, persistent controls.
+- **Commands** run from a menu item and complete one task from start to finish.
 
-## Discover
+What you reach for depends on the workflow: layers and documents in Photoshop, pages and stories in InDesign, or sequences and exports in Premiere Pro. The plugin model is the same everywhere.
 
-<DiscoverBlock width="100%" slots="heading, link, text"/>
+## Start Building
 
-### Get Started
+Every UXP plugin follows the same path, regardless of host application: scaffold a project, load it into your host app, build the UI, and ship it. [Guides](introduction/index.md) walks through all of it — getting set up, core concepts, tutorials, and how to package and distribute what you build.
 
-[Quickstart Guide](guides/index.md)
+## Choose a Host
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+Pick the application you already spend your time in for its API reference and product-specific docs. UXP itself works the same way underneath each of them.
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+<Cards slots="image, heading, text, links" repeat="4" width="100%" />
 
+![Photoshop](images/host-icons/photoshop.svg)
 
-<DiscoverBlock slots="heading, link, text"/>
+### Photoshop
 
-### Guides
+Automate imaging work: documents, layers, selections, and actions.
 
-[Calculated Metrics API](guides/dummy_metrics_api/index.md)
+[Explore Photoshop](https://developer.adobe.com/photoshop/uxp/)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+![InDesign](images/host-icons/indesign.svg)
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+### InDesign
 
+Build tools for layout and publishing: pages, stories, styles, and frames.
 
-<DiscoverBlock slots="link, text"/>
+[Explore InDesign](https://developer.adobe.com/indesign/uxp/)
 
-[Segments API](guides/dummy_oauth_client/index.md)
+![Premiere](images/host-icons/premiere-pro.svg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+### Premiere
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+Build tools for editorial work: projects, sequences, tracks, markers, and exports.
 
-<DiscoverBlock slots="link, text"/>
+[Explore Premiere](https://developer.adobe.com/premiere-pro/uxp/)
 
-[Reporting Guide API](guides/dummy_using_postman/index.md)
+![Media Encoder](images/host-icons/media-encoder.svg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+### Media Encoder
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+Automate delivery work: presets, codecs, render queues, and batch exports.
 
-<DiscoverBlock slots="link, text"/>
+[Explore Media Encoder](https://developer-stage.adobe.com/media-encoder/uxp/)
 
-[Migrating from 1.4 to 2.0](guides/migrating/index.md)
+## How UXP Works
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
+A UXP plugin runs inside the host application on a single JavaScript engine. That engine exposes both the shared [UXP APIs](uxp-api/index.md) and the host's own DOM API directly, with none of the ExtendScript bridging or per-plugin browser instances that CEP relied on.
 
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+![Architecture diagram: the host application's native controls and DOM APIs connect to UXP's plugin loader, which wires together rendering, the layout engine, the JavaScript engine, common APIs, and the plugin itself](images/uxp-architecture.svg)
 
-<DiscoverBlock width="100%" slots="heading, link, text"/>
+Your interface is built with HTML and CSS, but UXP isn't a full browser: only the elements, styles, and APIs UXP implements are supported. Check the [UXP APIs](uxp-api/index.md) for what's available at the platform level, then use your host's own API reference to work with documents, projects, and timelines.
 
-### API References
+## Join the Community
 
-[Try the API](api/index.md)
+Connect with other UXP developers, ask questions, and share what you've built.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
-
-## Contributing
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
-
-
-## API Requests & Rate Limits
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. Nam blandit vitae ante et auctor. Donec placerat egestas posuere. Aliquam erat volutpat. In condimentum massa eu pharetra porta. Nunc tempus massa sit amet nisl posuere sagittis. Mauris sit amet rhoncus neque. Phasellus ut vulputate est, vel auctor metus.
-
-Donec tincidunt turpis in congue vulputate. Suspendisse potenti. Phasellus feugiat eros sem, tristique sollicitudin lacus consectetur id. Cras tortor orci, venenatis ac vulputate sit amet, auctor sed ex. Ut vel convallis felis. Etiam luctus, diam sed venenatis tincidunt, ipsum turpis volutpat eros, nec interdum arcu mi molestie dolor. Donec id mauris sed odio mollis viverra sed lobortis quam. Aliquam mi metus, ultricies sagittis hendrerit eget, volutpat vel dui. Proin id urna hendrerit, scelerisque arcu sit amet, egestas neque. Sed fringilla odio tincidunt sapien malesuada facilisis.
+- [Adobe Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/)
+- [Adobe Community](https://community.adobe.com/community)
