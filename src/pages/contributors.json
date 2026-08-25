@@ -1,7 +1,7 @@
 {
-  "total": 11,
+  "total": 6,
   "offset": 0,
-  "limit": 11,
+  "limit": 6,
   "data": [
     {
       "page": "/",
@@ -9,15 +9,7 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/24/2026"
-    },
-    {
-      "page": "/api/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "8/25/2026"
     },
     {
       "page": "/config",
@@ -25,7 +17,7 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "8/25/2026"
     },
     {
       "page": "/guides/",
@@ -46,38 +38,6 @@
       "page": "/guides/how-to/distribution/overview/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "8/24/2026"
-    },
-    {
-      "page": "/support/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "8/24/2026"
-    },
-    {
-      "page": "/support/community/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "8/24/2026"
-    },
-    {
-      "page": "/support/contribute/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "8/24/2026"
-    },
-    {
-      "page": "/support/FAQ/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "8/24/2026"
     },
