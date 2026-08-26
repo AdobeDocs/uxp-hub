@@ -12,5 +12,10 @@
         - [Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/)
 
 - subPages:
-    - [Guides](guides/index.md)
-    - [UXP APIs](uxp-api/index.md)
+    - [Overview](guides/index.md)
+    - Start Here header
+    - [Tech Stack](guides/explanation/tech-stack/index.md)
+    - [Common Plugin Terms](guides/explanation/fundamentals/nomenclature/index.md)
+    - [Set Up Developer Tools](guides/how-to/developer-tools/index.md)
+    - [Build Your First Plugin](guides/tutorials/build-your-first-plugin/index.md)
+    - [Debugging your Plugin](guides/how-to/debugging/index.md)
