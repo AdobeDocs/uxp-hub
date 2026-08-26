@@ -5,7 +5,7 @@
     - [UXP](index.md)
     - [Guides](introduction/index.md)
     - [UXP APIs](uxp-api/index.md)
-    - Product APIs
+    - Product API Refs
         - [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external=true)
         - [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external=true)
         - [InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/?aio_external=true)

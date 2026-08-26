@@ -31,12 +31,12 @@ UXP (Unified Extensibility Platform) is Adobe's modern framework for building pl
 
 ## What You Can Build
 
-UXP plugins usually take one of two shapes:
+Every UXP plugin is built from one or both of two component types:
 
-- **Panels** stay open next to your project with focused, persistent controls.
-- **Commands** run from a menu item and complete one task from start to finish.
+- **Commands are actions:** They run from a menu item, execute one task, and finish. There's no persistent UI beyond an optional dialog for input or confirmation.
+- **Panels are workspaces:** They stay docked alongside the host's own panels, persistent and interactive throughout your session.
 
-What you reach for depends on the workflow: layers and documents in Photoshop, pages and stories in InDesign, sequences and exports in Premiere, or render queues in Media Encoder. The plugin model is the same everywhere.
+What you reach for depends on the host: layers and documents in Photoshop, pages and stories in InDesign, sequences and exports in Premiere, or render queues in Media Encoder. The plugin model is the same everywhere, and so is the panel/command choice. See [Panels and Commands](plugins/concepts/panels-and-commands/index.md) for the full picture, including modal dialogs and combining both in one plugin.
 
 ## Start Building
 
