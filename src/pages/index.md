@@ -11,11 +11,13 @@ contributors:
   - https://github.com/karan0207
 ---
 
-<Superhero slots="heading, text" variant="centered" textColor="white" background="rgb(11, 87, 173)"/>
+<Superhero variant="halfWidth" textColor="white" background="rgb(64, 34, 138)" slots="heading, text, image"/>
 
 # Unified Extensibility Platform
 
-UXP is the shared platform for building plugins across UXP-enabled Creative Cloud apps. Whether you're writing your first panel or shipping your tenth, this is where you start.
+UXP lets you build plugins in HTML, CSS, and JavaScript and run them inside Photoshop, InDesign, Premiere Pro, and Media Encoder. Learn the plugin model once, ship to every UXP-enabled app, and leave ExtendScript and CEP behind.
+
+![The UXP Developer Tool with Photoshop, Premiere Pro, and InDesign connected and a Create Plugin button](assets/uxp-hero.svg)
 
 ## What you can build
 
