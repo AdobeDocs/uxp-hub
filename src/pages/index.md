@@ -11,13 +11,13 @@ contributors:
   - https://github.com/karan0207
 ---
 
-<Superhero variant="halfWidth" textColor="white" background="rgb(64, 34, 138)" slots="heading, text, image"/>
+<Superhero variant="halfWidth" textColor="white" background="linear-gradient(135deg, #30186E 0%, #6432C8 100%)" slots="heading, text, image"/>
 
 # Unified Extensibility Platform
 
-UXP lets you build plugins in HTML, CSS, and JavaScript and run them inside Photoshop, InDesign, Premiere Pro, and Media Encoder. Learn the plugin model once, ship to every UXP-enabled app, and leave ExtendScript and CEP behind.
+Build plugins that run inside Photoshop, InDesign, Premiere, and Media Encoder. Learn the platform model once, use it in supported host apps, and leave ExtendScript and CEP behind.
 
-![The UXP Developer Tool with Photoshop, Premiere Pro, and InDesign connected and a Create Plugin button](assets/uxp-hero.svg)
+![The UXP Developer Tool with Photoshop, Premiere, and InDesign connected and a Create Plugin button](assets/uxp-hero.svg)
 
 ## What you can build
 
