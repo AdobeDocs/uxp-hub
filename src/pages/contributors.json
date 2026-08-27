@@ -1,7 +1,7 @@
 {
-  "total": 370,
+  "total": 367,
   "offset": 0,
-  "limit": 370,
+  "limit": 367,
   "data": [
     {
       "page": "/",
@@ -18,7 +18,7 @@
         "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/26/2026"
+      "lastUpdated": "8/27/2026"
     },
     {
       "page": "/faq/",
@@ -29,27 +29,6 @@
     },
     {
       "page": "/introduction/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/22/2026"
-    },
-    {
-      "page": "/introduction/essentials/dev-tools/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/22/2026"
-    },
-    {
-      "page": "/introduction/essentials/nomenclature/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/22/2026"
-    },
-    {
-      "page": "/introduction/essentials/tech-stack/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
