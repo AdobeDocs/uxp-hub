@@ -11,7 +11,7 @@ keywords:
   - Hybrid Plugin
 ---
 
-<Superhero slots="heading, text" variant="centered" textColor="white" background="rgb(64, 34, 138)"/>
+<Superhero slots="heading, text" variant="centered" textColor="white" background="linear-gradient(135deg, #30186E 0%, #6432C8 100%)"/>
 
 # CEP to UXP Migration Center
 
