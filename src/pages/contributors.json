@@ -1,7 +1,7 @@
 {
-  "total": 6,
+  "total": 11,
   "offset": 0,
-  "limit": 6,
+  "limit": 11,
   "data": [
     {
       "page": "/",
@@ -9,7 +9,7 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/25/2026"
+      "lastUpdated": "8/27/2026"
     },
     {
       "page": "/config",
@@ -17,7 +17,7 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/25/2026"
+      "lastUpdated": "8/26/2026"
     },
     {
       "page": "/guides/",
@@ -25,7 +25,7 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "8/27/2026"
     },
     {
       "page": "/guides/explanation/concepts/panels-and-commands/",
@@ -35,11 +35,46 @@
       "lastUpdated": "8/24/2026"
     },
     {
+      "page": "/guides/explanation/fundamentals/nomenclature/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/27/2026"
+    },
+    {
+      "page": "/guides/explanation/tech-stack/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/27/2026"
+    },
+    {
+      "page": "/guides/how-to/debugging/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/27/2026"
+    },
+    {
+      "page": "/guides/how-to/developer-tools/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/27/2026"
+    },
+    {
       "page": "/guides/how-to/distribution/overview/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
       "lastUpdated": "8/24/2026"
+    },
+    {
+      "page": "/guides/tutorials/build-your-first-plugin/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/27/2026"
     },
     {
       "page": "/uxp-api/",
