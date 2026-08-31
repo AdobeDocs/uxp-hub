@@ -30,7 +30,7 @@ UDT can scaffold a ready-to-run plugin from a starter template instead of you st
 
 ![The UXP Developer Tool Developer Workspace, showing connected apps and the Create Plugin button](img/main-plugin-starter.png)
 
-A dialog opens where you set the plugin's details:
+Clicking **Create Plugin** opens a dialog where you fill in the plugin's details. Find the column for the host you're building for and use the sample values below; they're safe to enter as-is for this first plugin. The values are nearly identical across hosts: only the **Host Application** and **Template** rows differ.
 
 | Field | Premiere | Media Encoder | Photoshop | InDesign |
 | --- | --- | --- | --- | --- |
@@ -42,9 +42,18 @@ A dialog opens where you set the plugin's details:
 
 ![The Create Plugin dialog in the UXP Developer Tool, with the plugin name, ID, version, host application, and template fields](img/quickstarter-menu.png)
 
-Whichever host you select, the Template dropdown also offers general-purpose starters: `quick-starter` (plain HTML and JavaScript), `react-starter` (a React-based panel), and `webview-starter` (loads a web view). Pick the one that matches the kind of plugin you want to build.
+The table uses a host-specific starter, but the **Template** dropdown also lists general-purpose ones that work with any host. Pick whichever matches what you want to build:
 
-Click **Select Folder** and choose a location for your plugin. UDT creates a new folder named after the Plugin ID, containing a `manifest.json` (plugin configuration), `index.html` (user interface), an `index.js` or `main.js` (logic), and a `README.md`.
+- `quick-starter`: plain HTML, CSS, and JavaScript.
+- `react-starter`: a React-based panel.
+- `webview-starter`: a panel that loads a web view.
+
+Click **Select Folder** and choose where to save the plugin. UDT creates a folder named after the Plugin ID, holding everything the plugin needs to run:
+
+- `manifest.json`: the plugin's configuration.
+- `index.html`: the panel's user interface.
+- `index.js` or `main.js`: the plugin's logic.
+- `README.md`: notes on the starter.
 
 ## 2. Load it into your host application
 
