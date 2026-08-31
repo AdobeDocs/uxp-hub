@@ -21,6 +21,13 @@
     - [Set Up Developer Tools](guides/how-to/developer-tools/index.md)
     - [Build Your First Plugin](guides/tutorials/build-your-first-plugin/index.md)
     - [Debug Your Plugin](guides/how-to/debugging/index.md)
+    - Build Plugins header
+    - [Plugin Concepts](guides/explanation/index.md)
+        - [Panels & Commands](guides/explanation/concepts/panels-and-commands/index.md)
+        - [Entrypoints](guides/explanation/concepts/entrypoints/index.md)
+        - [Manifest](guides/explanation/concepts/manifest/index.md)
+        - [Understanding UXP APIs](guides/explanation/fundamentals/apis/index.md)
+        - [Building User Interfaces](guides/explanation/fundamentals/user-interfaces/index.md)
     - [API Reference](uxp-api/index.md)
         - [JavaScript Reference](uxp-api/reference-js/index.md)
             - [Global Members](uxp-api/reference-js/global-members/index.md)
