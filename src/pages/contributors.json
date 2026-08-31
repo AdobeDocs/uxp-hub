@@ -1,7 +1,7 @@
 {
-  "total": 334,
+  "total": 375,
   "offset": 0,
-  "limit": 334,
+  "limit": 375,
   "data": [
     {
       "page": "/",
@@ -15,11 +15,11 @@
     {
       "page": "/config",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4",
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "8/31/2026"
     },
     {
       "page": "/faq/",
@@ -37,11 +37,39 @@
       "lastUpdated": "8/27/2026"
     },
     {
+      "page": "/guides/explanation/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/explanation/concepts/entrypoints/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/explanation/concepts/manifest/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
       "page": "/guides/explanation/concepts/panels-and-commands/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/explanation/fundamentals/apis/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
     },
     {
       "page": "/guides/explanation/fundamentals/nomenclature/",
@@ -51,39 +79,298 @@
       "lastUpdated": "8/27/2026"
     },
     {
+      "page": "/guides/explanation/fundamentals/user-interfaces/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
       "page": "/guides/explanation/tech-stack/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/add-commands/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/add-lifecycle-hooks/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/add-modal-dialogs/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/add-panels/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
     },
     {
       "page": "/guides/how-to/debugging/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "8/31/2026"
     },
     {
       "page": "/guides/how-to/developer-tools/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/developer-workflow/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/distribution/adobe-marketplace/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/distribution/enterprise-distribution/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/distribution/independent-distribution/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/distribution/install/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/distribution/listing/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/distribution/outside-marketplace/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
     },
     {
       "page": "/guides/how-to/distribution/overview/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/distribution/package/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/distribution/review-guidelines/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/eslint/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/hybrid-plugins/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/hybrid-plugins/build",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/hybrid-plugins/faq",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/inter-plugin-comm/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/_shared/prerequisites",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/clipboard/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/css-styling/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/debug/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/external-process/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/filesystem-operations/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/host-info/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/html-elements/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/html-events/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/js-modules/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/recipes/network/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/typescript/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/udt-deep-dive/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/udt-deep-dive/playground",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/udt-deep-dive/plugin-management",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
+    },
+    {
+      "page": "/guides/how-to/udt-deep-dive/plugin-workflows",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "8/31/2026"
     },
     {
       "page": "/guides/tutorials/build-your-first-plugin/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "8/31/2026"
     },
     {
       "page": "/migration-center/",
