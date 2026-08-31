@@ -20,7 +20,7 @@
     - [Common Plugin Terms](guides/explanation/fundamentals/nomenclature/index.md)
     - [Set Up Developer Tools](guides/how-to/developer-tools/index.md)
     - [Build Your First Plugin](guides/tutorials/build-your-first-plugin/index.md)
-    - [Debugging your Plugin](guides/how-to/debugging/index.md)
+    - [Debug Your Plugin](guides/how-to/debugging/index.md)
     - [API Reference](uxp-api/index.md)
         - [JavaScript Reference](uxp-api/reference-js/index.md)
             - [Global Members](uxp-api/reference-js/global-members/index.md)
