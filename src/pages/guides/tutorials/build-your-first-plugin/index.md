@@ -14,9 +14,7 @@ contributors:
 
 # Build Your First Plugin
 
-By the end of this page, you'll have a plugin scaffolded, loaded, and running inside your host application, reloading live as you edit it. That's the whole development loop, and you'll use it for every plugin you build after this.
-
-The loop is the same no matter which host you're building for: UDT scaffolds the plugin, loads it, and watches for changes while you edit. Only the specifics, field values, template names, screenshots, differ by host, and those are called out as they come up. Scaffolding covers Premiere, Media Encoder, Photoshop, and InDesign; the load and explore steps use Premiere and Media Encoder as examples, and the same workflow applies to every other UXP-enabled host.
+Scaffold, load, and run a plugin inside your host application, reloading live as you edit: the same loop you'll use for every plugin after this. Examples use Photoshop, but the workflow is identical across every UXP-enabled host.
 
 ## Prerequisites
 
@@ -56,7 +54,7 @@ In UDT, click **Load & Watch** in your plugin's row. This loads the plugin into 
 
 ![The scaffolded plugin panel loaded inside the host application](img/ps-panel.png)
 
-The panel appears in the host after UDT loads it. The process is the same for Photoshop, Premiere Pro, InDesign, and Media Encoder: keep the app open, click **Load & Watch**, and the panel shows up in that app.
+The panel appears in the host after UDT loads it. The process is the same for Photoshop, Premiere, InDesign, and Media Encoder: keep the app open, click **Load & Watch**, and the panel shows up in that app.
 
 <InlineAlert slots="text" />
 
@@ -91,5 +89,5 @@ That same pattern covers real work, whichever host you target. Your plugin talks
 You've got the loop: scaffold, load, edit, reload. Everything else you build follows the same pattern.
 
 - Explore [Concepts](../../explanation/concepts/index.md) to understand manifests, entry points, panels, and commands in depth.
-- Browse the [Premiere API](../../../premiere-api/index.md) or [Media Encoder API](../../../media-encoder-api/index.md) reference, or your host's own API reference if you're building for Photoshop or InDesign.
+- Browse the [Premiere API](https://developer.adobe.com/premiere-pro/uxp/) or [Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/) reference, or your host's own API reference if you're building for Photoshop or InDesign.
 - Coming from CEP or ExtendScript? See [Migrate from CEP and ExtendScript](../../how-to/migration-guides/index.md) for what carries over.
