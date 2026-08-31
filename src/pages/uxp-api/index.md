@@ -16,41 +16,41 @@ keywords:
 
 The UXP API is the platform layer shared across UXP-enabled host applications: JavaScript, CSS, HTML, and Spectrum UI, plus modules for file system access, networking, storage, and entry points.
 
-Learn the platform layer once, and it carries over everywhere. Each host application then adds its own DOM API on top — for documents, layers, sequences, and other host-specific objects — which is what you'll reach for once you're past the platform basics covered here.
+Learn the platform layer once, and it carries over everywhere. Each host application then adds its own DOM API on top - for documents, layers, sequences, and other host-specific objects - which is what you'll reach for once you're past the platform basics covered here.
 
 <Cards slots="image, heading, text, links" repeat="4" width="100%" />
 
 ![JavaScript](../assets/javascript.svg)
 
-### JavaScript Reference
+### JavaScript
 
-Global members and modules available in every UXP plugin: crypto, storage, networking, and the file system.
+Core APIs for crypto, storage, networking, and file system access in plugins.
 
-[Browse the JavaScript reference](reference-js/index.md)
+[JavaScript reference](reference-js/index.md)
 
 ![CSS](../assets/css.svg)
 
-### CSS Reference
+### CSS
 
-Supported selectors, pseudo-classes, pseudo-elements, media queries, and style properties.
+Selectors, pseudo-classes, media queries, and properties for panel layout.
 
-[Browse the CSS reference](reference-css/index.md)
+[CSS reference](reference-css/index.md)
 
 ![HTML](../assets/html.svg)
 
-### HTML Reference
+### HTML
 
-Supported HTML elements, attributes, and document hierarchy.
+Elements, attributes, and document structure for building consistent panel interfaces.
 
-[Browse the HTML reference](reference-html/index.md)
+[HTML reference](reference-html/index.md)
 
 ![Spectrum](../assets/spectrum.svg)
 
-### Spectrum UXP Reference
+### Spectrum UXP
 
-Spectrum UXP Widgets and Spectrum Web Components for building UI that matches the host application.
+Spectrum components for building interfaces that match the host application.
 
-[Browse the Spectrum reference](reference-spectrum/index.md)
+[Spectrum reference](reference-spectrum/index.md)
 
 ## Host Application DOM APIs
 
@@ -60,35 +60,35 @@ Each host application layers its own DOM API for documents, layers, sequences, a
 
 ![Photoshop](../assets/photoshop.svg)
 
-### Photoshop API
+### Photoshop
 
-DOM API for images, layers, documents, and Camera Raw workflows in Photoshop.
+Imaging APIs for documents, layers, selections, and Camera Raw.
 
-[Explore the Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external=true)
-
-![Premiere](../assets/premiere-pro.svg)
-
-### Premiere API
-
-DOM API for projects, sequences, tracks, and media in Premiere.
-
-[Explore the Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external=true)
+[Photoshop API](https://developer.adobe.com/photoshop/uxp/)
 
 ![InDesign](../assets/indesign.svg)
 
-### InDesign API
+### InDesign
 
-DOM API for documents, pages, and layout objects in InDesign.
+Layout APIs for documents, pages, stories, styles, and frames.
 
-[Explore the InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/?aio_external=true)
+[InDesign API](https://developer.adobe.com/indesign/uxp/)
+
+![Premiere](../assets/premiere-pro.svg)
+
+### Premiere
+
+Video APIs for projects, sequences, tracks, source media, markers, and exports.
+
+[Premiere API](https://developer.adobe.com/premiere-pro/uxp/)
 
 ![Media Encoder](../assets/media-encoder.svg)
 
-### Media Encoder API
+### Media Encoder
 
-DOM API for presets, codecs, and render queues in Media Encoder.
+Encoding APIs for presets, codecs, render queues, output settings, and exports.
 
-[Explore the Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external=true)
+[Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/)
 
 ## Known Issues
 
@@ -104,7 +104,7 @@ Track which UXP version ships in each host application, and what's new, changed,
 
 ### Version Details
 
-Which UXP version ships in which host application, and the ECMAScript and React versions UXP currently supports.
+Which UXP version ships in each host application, plus the ECMAScript and React versions it supports.
 
 [View version details](versions.md)
 
@@ -112,6 +112,6 @@ Which UXP version ships in which host application, and the ECMAScript and React 
 
 ### Change Log
 
-What's new, changed, deprecated, and fixed in each UXP release.
+What's new, changed, deprecated, and fixed in each UXP release across supported hosts.
 
 [View the change log](changelog.md)
