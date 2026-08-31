@@ -1,5 +1,5 @@
 ---
-title: Debugging your Plugin
+title: Debug Your Plugin
 description: Debug UXP plugins with the UXP Developer Tool and Chrome DevTools, and work through the most common reasons a plugin fails to load or run.
 keywords:
   - Debugging
@@ -12,62 +12,62 @@ contributors:
   - https://github.com/karan0207
 ---
 
-# Debugging your Plugin
+# Debug your plugin
 
-Even carefully written plugins misbehave. When yours does, UXP gives you two ways to inspect what's happening, plus a short list of usual suspects to check first.
+Use the UXP Developer Tool (UDT) debugger to inspect a running plugin, read errors, test layout changes, and step through JavaScript. Chrome DevTools is also available when you load a plugin from the command line.
 
-## Debugging tools
+## Debug with UDT
 
-There are two ways to attach a debugger to a running plugin.
+After loading the plugin, open its **Actions** (`•••`) menu and select **Debug**. UDT opens a DevTools window connected to the plugin:
 
-### UXP Developer Tool
+- Use **Console** to read logs and runtime errors.
+- Use **Elements** to inspect HTML and applied CSS.
+- Use **Sources** to set breakpoints and step through JavaScript.
 
-For most plugins, the UXP Developer Tool (UDT) is the simplest option. Once your plugin is loaded, open the **Actions** (`•••`) menu for that plugin and choose **Debug**. UDT opens a DevTools window wired to your plugin, with a **Console** for logs and errors, an **Elements** panel for inspecting your HTML and applied CSS, and a **Sources** panel for setting breakpoints and stepping through code.
-
-Two Actions-menu features make the day-to-day loop faster:
+Use the other Actions-menu controls to shorten the edit-and-test loop:
 
 - **Watch** automatically reloads the plugin whenever you save a change to its JavaScript, HTML, or CSS.
 - **Reload** reloads the plugin on demand when you'd rather do it yourself.
 
-### Chrome DevTools
+## Debug with Chrome DevTools
 
 If you loaded your plugin from the command line, you can attach Chrome DevTools instead:
 
 1. Open a new Chrome window and go to `chrome://inspect`.
 2. Click **Configure...** next to *Discover network targets* and add `localhost:xxxx`, where `xxxx` is the port declared in your `debug.json` file.
-3. Your plugin appears on the page by its ID once it's loaded. Click **inspect** to open the debugger.
+3. After the plugin loads, find it by its ID and select **inspect**.
 4. In the **Sources** tab, enable **Pause on caught exceptions** so errors stop execution where they happen.
 
-Chrome DevTools exposes more features than UDT, though many don't apply inside the UXP runtime. Pick whichever fits your workflow.
+Chrome DevTools exposes additional browser tooling, although not every feature applies to the UXP runtime.
 
 <InlineAlert variant="info" slots="text"/>
 
-`console.log()` and friends write straight to whichever debugger you have attached, so sprinkling logs through your code is still a fast way to confirm what's running and with what values.
+Calls to `console.log()`, `console.warn()`, and `console.error()` appear in the attached debugger. Use them to confirm which code ran and inspect relevant values.
 
-## Why doesn't my plugin work?
+## Troubleshoot common problems
 
-When a plugin won't load or run, it's usually one of these.
+Start with the symptom that matches what you see.
 
-### Manifest problems
+### The plugin does not load
 
-JSON is easier to read than it is to get right. A single misplaced bracket or missing comma in `manifest.json` can stop your plugin from loading. If nothing shows up in your host application, check UDT for load errors and run the file through a JSON linter (VS Code has one built in).
+A misplaced bracket or missing comma in `manifest.json` can prevent loading. Check UDT for load errors, then use VS Code's JSON diagnostics to locate syntax problems.
 
-### Installation problems
+### The plugin is not available in the host
 
-Load your development plugin through the UXP Developer Tool. Copying files into an application directory by hand is unreliable and easy to get wrong; let UDT put the plugin where the host expects it.
+Load development plugins through UDT. Do not copy plugin files into an application directory manually; UDT registers the plugin with the selected host application.
 
-### JavaScript problems
+### The plugin loads but does not work
 
-A JavaScript error almost always surfaces in the debugger console, often as a stack trace with the offending line number near the top. Read from the top of the trace down to your own code.
+Check the debugger console for JavaScript errors. Start at the top of the stack trace, then follow it to the first frame in your plugin code.
 
-### CSS problems
+### The layout or styling is incorrect
 
-The engine behind UXP covers common HTML and CSS, but not everything on the web platform, and some properties behave differently or are limited. When layout looks wrong, open the **Elements** panel, select the element, and review the applied rules under **Styles**. Selectively commenting out rules until the layout changes is a reliable way to isolate the culprit.
+UXP supports a defined subset of web HTML and CSS, and some properties behave differently from a browser. In **Elements**, select the affected element and inspect its applied rules under **Styles**. Disable rules one at a time to isolate the declaration causing the problem.
 
-### Not watching
+### Saved changes do not appear
 
-The **Watch** feature only reloads on file changes if you've turned it on from the Actions menu. If saved changes aren't showing up, confirm Watch is enabled, or reload the plugin manually.
+Confirm that **Watch** is enabled in the Actions menu, or reload the plugin manually. Changes to `manifest.json` require you to unload and load the plugin again.
 
-### Gremlins
+### The problem remains after reloading
 
-Occasionally, restarting both the host application and the UXP Developer Tool clears a problem that has no obvious cause. When nothing else explains it, try that before digging deeper.
+Restart both the host application and UDT to clear stale plugin state. If the problem returns, reproduce it with the debugger open and inspect the first reported error.

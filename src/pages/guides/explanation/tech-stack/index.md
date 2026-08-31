@@ -62,7 +62,11 @@ The [UXP Developer Tool](../../how-to/developer-tools/index.md#uxp-developer-too
 
 Frameworks like [React](https://react.dev/), [Vue](https://vuejs.org/), [Angular](https://angular.io/), and [Svelte](https://svelte.dev/) all run in UXP panels. None of them are required: use one if you're already comfortable with it, or your panel's UI is complex enough to benefit from components and state management. For anything simpler, the plain `quick-starter` template covers it (`react-quick-starter` if you want React specifically).
 
-Using a framework means adding build tooling on your machine. It compiles your framework code into plain JS/HTML/CSS before it loads into the plugin. UXP itself doesn't run Node.js or expose Node's APIs at runtime; Node here is strictly a local, build-time dependency.
+Using a framework means adding build tooling on your machine. It compiles your framework code into plain JS/HTML/CSS before it loads into the plugin.
+
+<InlineAlert slots="text" />
+
+**UXP itself doesn't run Node.js or expose Node's APIs at runtime.** Node here is strictly a local, build-time dependency.
 
 - [Node.js](https://nodejs.org/en/): a **JavaScript runtime environment** you install locally to run `npm`/`yarn` and your framework's build tooling. Download the installer from the [Node.js download page](https://nodejs.org/en/download/) and run it; this also installs `npm`.
 - [`npm`](https://www.npmjs.com): a **package manager** bundled with Node that manages your project's dependencies.

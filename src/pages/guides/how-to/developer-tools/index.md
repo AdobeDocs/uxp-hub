@@ -10,17 +10,17 @@ contributors:
   - https://github.com/karan0207
 ---
 
-# Set Up Developer Tools
+# Set up developer tools
 
-Building a UXP plugin takes two tools: a code editor to write it, and the UXP Developer Tool (UDT) to load it into your host application, reload it as you make changes, and debug it. Let's get both installed.
+Building a UXP plugin requires a code editor for writing the project and the UXP Developer Tool (UDT) for creating, loading, reloading, and debugging it.
 
-## Code Editor
+## Choose a code editor
 
 A reliable code editor helps you stay organized and productive. Any modern editor works. [Visual Studio Code](https://code.visualstudio.com) is a safe default: it's free, with a strong extension ecosystem, built-in formatting and linting, and a good fit for UXP workflows.
 
 Once you've picked an editor, set up [autocomplete and type checking](../typescript/index.md) and [ESLint linting](../eslint/index.md) for UXP so mistakes surface as you type. Neither is required to start, but both pay off quickly.
 
-## UXP Developer Tool (UDT)
+## Install the UXP Developer Tool
 
 The UXP Developer Tool (UDT) simplifies creating, loading, managing, and debugging plugins for Adobe's UXP-powered applications.
 
@@ -38,14 +38,14 @@ Admin privileges are required to use UDT.
 
 The UXP Developer Tool requires administrator-level privileges to run correctly. If you cannot elevate permissions on your system, you may not be able to use this tool.
 
-### Installation
+### Install from Creative Cloud
 
 You can install UDT directly [from Creative Cloud](https://creativecloud.adobe.com/apps/download/uxp-developer-tools), or by following these steps:
 
 1. Open the Adobe Creative Cloud desktop app. If you don't have it installed, [download and install it here](https://creativecloud.adobe.com/apps/download/creative-cloud).
 2. Sign in with your Adobe ID if you haven't already.
 3. Go to the **All apps** section and search for "UXP Developer Tools".
-4. Click **Install** on the UXP Developer Tools card.
+4. Select **Install** on the UXP Developer Tools card.
 
    ![Creative Cloud desktop app showing the Install button for UXP Developer Tools](img/dev-tools-ccd-udt.png)
 
