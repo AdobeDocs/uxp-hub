@@ -229,7 +229,7 @@ The [Working with Bundlers](../udt-deep-dive/plugin-workflows.md#working-with-bu
 
 `@adobe/cc-ext-uxp-types` types the UXP platform, not a host's document model. Each host publishes its own type-definitions package, installed alongside the UXP types, and documents it on its own site.
 
-**Premiere:** the [`@adobe/premierepro`](https://www.npmjs.com/package/@adobe/premierepro) package types `Project`, `Sequence`, and the rest. See the [Premiere API reference](https://developer.adobe.com/premiere-pro/uxp/) for host-specific setup, or your host's own reference under **Product API Refs** in the top navigation.
+**Premiere:** the [`@adobe/premierepro`](https://www.npmjs.com/package/@adobe/premierepro) package types `Project`, `Sequence`, and the rest. See the [Premiere API reference](https://developer.adobe.com/premiere-pro/uxp/) for host-specific setup, or your host's own reference under **Host Apps** in the top navigation.
 
 ## Known limitations
 

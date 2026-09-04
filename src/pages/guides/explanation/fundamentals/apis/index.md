@@ -77,7 +77,7 @@ Every UXP-enabled application adds its own host API on top of the shared UXP Cor
 const app = require("premierepro");
 ```
 
-Check your host's own reference under **Product API Refs** in the top navigation to see the full list of what it exposes.
+Check your host's own reference under **Host Apps** in the top navigation to see the full list of what it exposes.
 
 <InlineAlert variant="warning" slots="heading, text"/>
 
@@ -107,7 +107,7 @@ console.log(`${host.name} ${host.version}`);
 console.log(`UXP ${version}`);
 ```
 
-For the specific version compatibility details of your host, see its own reference under **Product API Refs** in the top navigation.
+For the specific version compatibility details of your host, see its own reference under **Host Apps** in the top navigation.
 
 ## Next steps
 

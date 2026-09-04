@@ -5,11 +5,11 @@
     - [UXP](index.md)
     - [Guides](guides/index.md)
     - [UXP APIs](uxp-api/index.md)
-    - Product API Refs
-        - [Photoshop API](https://developer.adobe.com/photoshop/uxp/)
-        - [InDesign API](https://developer.adobe.com/indesign/uxp/)
-        - [Premiere API](https://developer.adobe.com/premiere-pro/uxp/)
-        - [Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/)
+    - Host Apps
+        - [Photoshop](https://developer.adobe.com/photoshop/uxp/?aio_external)
+        - [InDesign](https://developer.adobe.com/indesign/uxp/?aio_external)
+        - [Premiere](https://developer.adobe.com/premiere-pro/uxp/?aio_external)
+        - [Media Encoder](https://developer-stage.adobe.com/media-encoder/uxp/?aio_external)
     - [Migration Center](migration-center/index.md)
 
 - subPages:
