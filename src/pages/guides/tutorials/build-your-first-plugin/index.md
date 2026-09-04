@@ -91,7 +91,7 @@ Manifest changes don't hot-reload, so if you change `manifest.json`, you must ma
 
 The starter is small but complete: a panel with a control that calls into the host. Click the button in its panel to see it run, then open `index.js` (or `main.js`) to see how the code reads from the host and updates the panel.
 
-That same pattern covers real work, whichever host you target. Your plugin talks to two API surfaces: the shared [UXP APIs](../../../uxp-api/index.md) for the file system, network, storage, and more, and the host's own API for its documents, selections, and content. Check your host's reference under **Product API Refs** in the top navigation to see what it exposes.
+That same pattern covers real work, whichever host you target. Your plugin talks to two API surfaces: the shared [UXP APIs](../../../uxp-api/index.md) for the file system, network, storage, and more, and the host's own API for its documents, selections, and content. Check your host's reference under **Host Apps** in the top navigation to see what it exposes.
 
 ## Next steps
 
