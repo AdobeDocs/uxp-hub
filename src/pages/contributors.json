@@ -15,11 +15,11 @@
     {
       "page": "/config",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/31/2026"
+      "lastUpdated": "9/4/2026"
     },
     {
       "page": "/faq/",
@@ -67,9 +67,10 @@
     {
       "page": "/guides/explanation/fundamentals/apis/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/31/2026"
+      "lastUpdated": "9/4/2026"
     },
     {
       "page": "/guides/explanation/fundamentals/nomenclature/",
@@ -214,9 +215,10 @@
     {
       "page": "/guides/how-to/eslint/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/31/2026"
+      "lastUpdated": "9/4/2026"
     },
     {
       "page": "/guides/how-to/hybrid-plugins/",
@@ -333,9 +335,10 @@
     {
       "page": "/guides/how-to/typescript/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/31/2026"
+      "lastUpdated": "9/4/2026"
     },
     {
       "page": "/guides/how-to/udt-deep-dive/",
@@ -368,9 +371,10 @@
     {
       "page": "/guides/tutorials/build-your-first-plugin/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/31/2026"
+      "lastUpdated": "9/4/2026"
     },
     {
       "page": "/migration-center/",
