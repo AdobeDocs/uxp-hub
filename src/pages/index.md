@@ -32,6 +32,7 @@ Everything you need to build UXP plugins, in one place.
 - [UXP APIs](uxp-api/index.md)
 - [Hybrid Plugins](guides/how-to/hybrid-plugins/index.md)
 - [Share and Distribute](guides/how-to/distribution/overview/index.md)
+- [FAQ](faq/index.md)
 
 ## What is UXP?
 

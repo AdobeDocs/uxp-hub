@@ -32,7 +32,7 @@ There's no single fixed recipe, since every CEP plugin is different, but here's 
 
    See [Migrating Native CEP Functions](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-native-cep-functions), [Migrating CEP JavaScript Libraries](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-cep-javascript-libraries), and [Migrating ExtendScript/EvalScript to the Photoshop DOM API](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-extendscriptevalscript-to-the-photoshop-dom-api) in the Technical Migration Guide for the full API-by-API breakdown, including limitations and permission requirements for each.
 4. **Rebuild feature by feature.** Start with `manifest.json` and your `entrypoints.setup()` handlers, then work through the UI and each mapped feature using the manifest, entry point, and packaging guidance in the guides below.
-5. **If a feature still isn't covered**, for example something that depends on native code, an external process, or a performance-intensive operation, look into building a Hybrid Plugin instead of waiting for a UXP API to catch up. A Hybrid Plugin combines a UXP plugin with C++ native libraries, so you can keep that logic and call it from UXP. See [Related Resources](#related-resources) below for the Hybrid Plugin guides.
+5. **If a feature still isn't covered**, for example something that depends on native code, an external process, or a performance-intensive operation, look into building a Hybrid Plugin instead of waiting for a UXP API to catch up. A Hybrid Plugin combines a UXP plugin with C++ native libraries, so you can keep that logic and call it from UXP. See the [Hybrid Plugins guide](../guides/how-to/hybrid-plugins/index.md) for details.
 
 ## Where to Start
 
@@ -69,23 +69,3 @@ The main differences to expect when moving a UXP plugin from one host applicatio
 * **A new manifest.** `manifest.xml` becomes `manifest.json`. Panel entry points, permissions, and plugin IDs are declared differently; see each host's migration guide for the exact mapping.
 * **Sandboxed by default.** UXP plugins declare the file system, network, and process permissions they need in the manifest, instead of relying on unrestricted Node.js access. If your CEP extension shelled out to Node.js, plan for a manifest permission review; see the Knowledge Base for a documented pattern for restructuring around this constraint.
 * **Native UI controls.** UXP plugins can use Spectrum UI components that match the host application's own interface, instead of hand-styling HTML to approximate it.
-
-## Related Resources
-
-<Cards slots="image, heading, text, links" repeat="2" width="100%" />
-
-![Premiere](../assets/premiere-pro.svg)
-
-### Premiere: Hybrid Plugins
-
-Extend a UXP plugin with high-performance C++ native libraries in Premiere.
-
-[Read the Premiere hybrid plugin guide](https://developer.adobe.com/premiere-pro/uxp/plugins/hybrid-plugins/?aio_external=true)
-
-![Photoshop](../assets/photoshop.svg)
-
-### Photoshop: Hybrid Plugin
-
-Combine a UXP plugin with C++ native libraries in Photoshop.
-
-[Read the Photoshop hybrid plugin guide](https://developer.adobe.com/photoshop/uxp/2022/guides/hybrid-plugins/?aio_external=true)
