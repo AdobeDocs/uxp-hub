@@ -24,6 +24,15 @@ Everything you need to build UXP plugins, in one place.
 
 ![The UXP Developer Tool with Photoshop, Premiere, and InDesign connected and a Create Plugin button](assets/uxp-hero.svg)
 
+<Resources slots="heading, links"/>
+
+#### Quick Links
+
+- [What's New](uxp-api/changelog.md)
+- [UXP APIs](uxp-api/index.md)
+- [Hybrid Plugins](guides/how-to/hybrid-plugins/index.md)
+- [Share and Distribute](guides/how-to/distribution/overview/index.md)
+
 ## What is UXP?
 
 UXP (Unified Extensibility Platform) is Adobe's modern framework for building plugins and scripts in HTML, CSS, and JavaScript. It's built into Photoshop, Premiere, InDesign, and Media Encoder.
