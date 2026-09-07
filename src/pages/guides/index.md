@@ -66,7 +66,7 @@ See how UXP plugins fit together: manifests, entrypoints, panels, and commands.
 
 Ready to ship? [Package & Distribute](how-to/distribution/overview/index.md) covers packaging, Adobe Marketplace, and enterprise or independent distribution.
 
-Looking for class, method, and event documentation instead? That's under **API References** in the top navigation: [Premiere API](../premiere-api/index.md), [Media Encoder API](../media-encoder-api/index.md), and the [UXP API](../uxp-api/index.md).
+Looking for class, method, and event documentation instead? That's under **API References** in the top navigation: [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external), [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external), [Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external), and the [UXP API](../uxp-api/index.md).
 
 ## New to the terminology?
 
