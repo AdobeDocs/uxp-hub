@@ -40,7 +40,25 @@ Clicking **Create Plugin** opens a dialog where you fill in the plugin's details
 | **Host Application Version** | Leave as detected (keep the app open) | Leave as detected (keep the app open) | Leave as detected (keep the app open) | Leave as detected (keep the app open) |
 | **Template** | `pr-quick-starter` | `ame-quick-starter` | `quick-layers-starter` | `quick-starter` |
 
-![The Create Plugin dialog in the UXP Developer Tool, with the plugin name, ID, version, host application, and template fields](img/quickstarter-menu.png)
+Select a host to see how its values appear in the UXP Developer Tool.
+
+<Tab orientation="horizontal" slots="heading, content" repeat="4"/>
+
+### Premiere
+
+![The Create Plugin dialog configured for Premiere with the Premiere quick starter template selected](img/quickstarter-premiere.png)
+
+### Media Encoder
+
+![The Create Plugin dialog configured for Media Encoder with the ame-quick-starter template selected](img/quickstarter-media-encoder.png)
+
+### Photoshop
+
+![The Create Plugin dialog configured for Photoshop with the quick-layers-starter template selected](img/quickstarter-photoshop-tab.png)
+
+### InDesign
+
+![The Create Plugin dialog configured for InDesign with the quick starter template selected](img/quickstarter-indesign.png)
 
 The table uses a host-specific starter, but the **Template** dropdown also lists general-purpose ones that work with any host. Pick whichever matches what you want to build:
 
