@@ -64,7 +64,7 @@ Each host application layers its own DOM API for documents, layers, sequences, a
 
 Imaging APIs for documents, layers, selections, and Camera Raw.
 
-[Photoshop API](https://developer.adobe.com/photoshop/uxp/)
+[Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external)
 
 ![InDesign](../assets/indesign.svg)
 
@@ -72,7 +72,7 @@ Imaging APIs for documents, layers, selections, and Camera Raw.
 
 Layout APIs for documents, pages, stories, styles, and frames.
 
-[InDesign API](https://developer.adobe.com/indesign/uxp/)
+[InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/?aio_external)
 
 ![Premiere](../assets/premiere-pro.svg)
 
@@ -80,7 +80,7 @@ Layout APIs for documents, pages, stories, styles, and frames.
 
 Video APIs for projects, sequences, tracks, source media, markers, and exports.
 
-[Premiere API](https://developer.adobe.com/premiere-pro/uxp/)
+[Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external)
 
 ![Media Encoder](../assets/media-encoder.svg)
 
@@ -88,7 +88,7 @@ Video APIs for projects, sequences, tracks, source media, markers, and exports.
 
 Encoding APIs for presets, codecs, render queues, output settings, and exports.
 
-[Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/)
+[Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external)
 
 ## Known Issues
 

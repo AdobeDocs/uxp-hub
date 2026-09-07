@@ -111,7 +111,7 @@ Then run `npm run lint` in your terminal.
 
 Core ESLint doesn't know a host's document model, so it can't catch host-specific misuse. Some hosts publish their own ESLint plugin for exactly that, installed separately.
 
-**Premiere:** [`@adobe/eslint-plugin-premierepro`](https://www.npmjs.com/package/@adobe/eslint-plugin-premierepro) flags action and transaction mistakes that otherwise only surface at runtime. See the [Premiere API reference](https://developer.adobe.com/premiere-pro/uxp/) for host-specific setup, or your host's own reference under **Product API Refs** in the top navigation.
+**Premiere:** [`@adobe/eslint-plugin-premierepro`](https://www.npmjs.com/package/@adobe/eslint-plugin-premierepro) flags action and transaction mistakes that otherwise only surface at runtime. See the [Premiere API reference](https://developer.adobe.com/premiere-pro/uxp/) for host-specific setup, or your host's own reference under **Host Apps** in the top navigation.
 
 ## Fit it into your workflow
 
