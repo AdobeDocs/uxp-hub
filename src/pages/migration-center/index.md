@@ -1,5 +1,5 @@
 ---
-title: "CEP to UXP Migration Center"
+title: CEP to UXP Migration Center
 description: "Central navigation for moving a CEP extension to UXP, with a guide for every starting point."
 keywords:
   - CEP
@@ -9,6 +9,8 @@ keywords:
   - UXP
   - ExtendScript
   - Hybrid Plugin
+contributors:
+  - https://github.com/kasivn
 ---
 
 <Superhero slots="heading, text" variant="centered" textColor="white" background="linear-gradient(135deg, #30186E 0%, #6432C8 100%)"/>
@@ -26,11 +28,11 @@ There's no single fixed recipe, since every CEP plugin is different, but here's 
 3. **Map each remaining item in your checklist to its UXP equivalent.** A few of the most common ones:
    - `window.cep.fs` → UXP's `storage` module, which requires user consent (a file picker) for most file access instead of CEP's unrestricted access.
    - `window.cep.process` → UXP has no comprehensive process API; the closest options are `shell.openPath()` and `shell.openExternal()` for launching files and URIs, gated by the `launchProcess` permission in the manifest.
-   - ExtendScript/`evalScript` → the host application's UXP DOM API directly, or [`batchPlay`](https://developer.adobe.com/photoshop/uxp/2022/ps_reference/media/advanced/batchplay/) for anything the DOM API doesn't cover yet.
+   - ExtendScript/`evalScript` → the host application's UXP DOM API directly (in Photoshop, [`batchPlay`](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external) covers anything the DOM API doesn't yet).
    - `CSInterface` → direct calls to host UXP APIs, plus UXP's own lifecycle events (`uxpcreateplugin`, `uxpshowpanel`, and similar) for things CSInterface used events for.
    - Vulcan (cross-plugin messaging) → `invokeCommand` and `showPanel` (UXP 6.0.2+, manifest v5), currently limited to plugins within the same host application.
 
-   See [Migrating Native CEP Functions](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-native-cep-functions), [Migrating CEP JavaScript Libraries](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-cep-javascript-libraries), and [Migrating ExtendScript/EvalScript to the Photoshop DOM API](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-extendscriptevalscript-to-the-photoshop-dom-api) in the Technical Migration Guide for the full API-by-API breakdown, including limitations and permission requirements for each.
+   See [Migrating Native CEP Functions](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-native-cep-functions) (common across host apps), [Migrating CEP JavaScript Libraries (Photoshop)](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-cep-javascript-libraries), and [Migrating ExtendScript/EvalScript to the Photoshop DOM API](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-extendscriptevalscript-to-the-photoshop-dom-api) in the Technical Migration Guide for the full API-by-API breakdown, including limitations and permission requirements for each.
 4. **Rebuild feature by feature.** Start with `manifest.json` and your `entrypoints.setup()` handlers, then work through the UI and each mapped feature using the manifest, entry point, and packaging guidance in the guides below.
 5. **If a feature still isn't covered**, for example something that depends on native code, an external process, or a performance-intensive operation, look into building a Hybrid Plugin instead of waiting for a UXP API to catch up. A Hybrid Plugin combines a UXP plugin with C++ native libraries, so you can keep that logic and call it from UXP. See the [Hybrid Plugins guide](../guides/how-to/hybrid-plugins/index.md) for details.
 
@@ -42,7 +44,7 @@ There's no single fixed recipe, since every CEP plugin is different, but here's 
 
 ### CEP to UXP Technical Migration Guide
 
-What's different between CEP and UXP, and how to migrate each part of your extension, API by API.
+What's different between CEP and UXP, and how to migrate each part of your extension, API by API. Uses Photoshop as its example host application; the common APIs (file I/O, network, shell) apply to any host.
 
 [Read the technical migration guide](uxp-for-cep-devs/technical-migration-guide/index.md)
 

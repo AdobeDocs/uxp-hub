@@ -9,11 +9,15 @@ keywords:
   - ExtendScript
   - Vulcan
   - batchPlay
+contributors:
+  - https://github.com/kasivn
 ---
 
 # CEP to UXP Technical Migration Guide
 
 This guide is geared towards CEP (Common Extensibility Platform) developers who would like more technical guidance on migrating their extensions to UXP (Unified Extensibility Platform). The migration process is no doubt challenging but will dramatically improve your development experience for future iterations of your plugins.
+
+Most of this guide, including the JavaScript library and ExtendScript/DOM sections, uses Photoshop as its example host application, since that's where CEP-to-UXP migrations are most common. If you're migrating a CEP extension for a different host application, the [Migrating Native CEP Functions](#migrating-native-cep-functions) section below covers the APIs common across host apps (file I/O, network, opening external resources); check your host's own UXP API reference for its DOM API and any equivalent to batchPlay.
 
 - [Why migrate to UXP?](#why-migrate-to-uxp)
   - [How CEP and UXP Differ](#how-cep-and-uxp-differ)
@@ -41,8 +45,6 @@ This guide is geared towards CEP (Common Extensibility Platform) developers who 
 - [Migrating ExtendScript/EvalScript to the Photoshop DOM API](#migrating-extendscriptevalscript-to-the-photoshop-dom-api)
 
 There is no clear-cut path for migration, given that CEP and UXP are fundamentally different. CEP was based on CEF ([Chromium Embedded Framework](https://bitbucket.org/chromiumembedded/cef)), making it effectively act as a browser. UXP, on the other hand, is not a browser, and therefore complete feature parity is unlikely. This migration should serve as an opportunity to design a better, more performant version of your existing CEP extension, and perhaps a chance to add new features and support modern workflows. In fact, it is better to think of this process as a "reconstruction" with the benefits of UXP in mind, rather than a migration.
-
-For many of your end-users who love the existing CEP version of your plugin, there may be no need to switch for several years. It is the group of users running Photoshop natively on M1 Mac machines that require a UXP version of your plugin and delivering a UXP plugin could attract new users!
 
 ## Why migrate to UXP?
 
@@ -77,9 +79,7 @@ Meanwhile, UXP plugins are either commands or panels. Plugin metadata like the s
 | UXP Plugin Type | Specifications |
 |:------ | :------ |
 | Panel | Dockable, resizable, fly-out menus, easily theme-aware, by default loads only when needed (PS 23.1+), can be launched in a modal state |
-| Command | Direct action command that executes a custom task, triggered by user selection from the Plugins menu, optional no-UI, shows a progress bar dialog with a "Cancel" option (labeled with your command name) if the task runs for longer than 2 seconds, can be launched in a modal state |
-
-*A deeper comparison of UXP vs. CEP vs. ExtendScript is planned as a follow-up appendix to this guide.*
+| Command | Direct action command that executes a custom task, triggered by user selection from the Plugins menu, optional no-UI, shows a progress bar dialog with a "Cancel" option (labeled with your command name, Photoshop) if the task runs for longer than 2 seconds, can be launched in a modal state |
 
 ## UXP Plugin Development
 
@@ -108,7 +108,7 @@ Using the `entrypoints.setup()` API, handlers and menu items for the entry point
 
 ### User Interface
 
-UXP plugins can use platform-native HTML and CSS components such as buttons and input fields. A plugin can also use [Spectrum UXP](https://developer.adobe.com/xd/uxp/uxp/reference-spectrum/) components.
+UXP plugins can use platform-native HTML and CSS components such as buttons and input fields. A plugin can also use [Spectrum UXP](../../../uxp-api/reference-spectrum/spectrum-uxp-widgets/index.md) components.
 
 ## Migrating Native CEP Functions
 
@@ -118,11 +118,13 @@ There is a common set of APIs that plugins need access to, regardless of the hos
 
 In CEP extensions, developers use the `window.cep.fs` object to perform directory and file I/O operations. CEP developers have arbitrary access to disk and machine resources, and arbitrary ability to launch processes (including bash scripts). Users do not have to consent to extensions accessing their file system. Because developers have full access, all file access is technically persistent. Secure storage, on the other hand, does not exist for CEP.
 
-UXP's `storage` module can read and write files and folders in the user's file system, but with different API signatures. Because of the sandboxing requirements of recent OS releases, UXP does not allow arbitrary access to any file on the host system. Therefore, these files are accessed by making a request to the user (by showing a file-picker dialog) and obtaining a token. File accesses outside of the plugin's root folder, the plugin's data folder, and a plugin temporary folder require the user's permission. Persistent file storage and secure storage are available in UXP as well. Refer to these notes: [file access](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/file-access/), [persistent file storage](https://developer.adobe.com/photoshop/uxp/2022/uxp/reference-js/Modules/uxp/Persistent%20File%20Storage/), and UXP-specific [(secure) storage](https://developer.adobe.com/photoshop/uxp/2022/uxp/reference-js/Modules/uxp/Key-Value%20Storage/SecureStorage/). If you need constant access to a location to write and read files, for now, use the UXP-sanctioned location for your plugin data or [persistent file access tokens](https://developer.adobe.com/photoshop/uxp/2022/uxp/reference-js/Modules/uxp/Persistent%20File%20Storage/FileSystemProvider/#createpersistenttokenentry).
+UXP's `storage` module can read and write files and folders in the user's file system, but with different API signatures. Because of the sandboxing requirements of recent OS releases, UXP does not allow arbitrary access to any file on the host system. Therefore, these files are accessed by making a request to the user (by showing a file-picker dialog) and obtaining a token. File accesses outside of the plugin's root folder, the plugin's data folder, and a plugin temporary folder require the user's permission. Persistent file storage and secure storage are available in UXP as well. Refer to these notes: [file access](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/file-access/), [persistent file storage](../../../uxp-api/reference-js/modules/uxp/persistent-file-storage/storage.md), and UXP-specific [(secure) storage](../../../uxp-api/reference-js/modules/uxp/key-value-storage/secure-storage.md). If you need constant access to a location to write and read files, for now, use the UXP-sanctioned location for your plugin data or [persistent file access tokens](../../../uxp-api/reference-js/modules/uxp/persistent-file-storage/file-system-provider.md#createpersistenttoken).
 
 ### Encoding API
 
-CEP extensions can access the encoding API with the `window.cep.encoding` object. With this API, they can implement encoding while reading and writing file content. In UXP, you can directly provide the required encoding as a string literal argument when invoking methods to read/write file content. CEP developers can use UTF8 or Base64 encoding. UXP, on the other hand, supports the following text encodings: utf-8, utf-16be, and utf-16le.
+CEP extensions can access the encoding API with the `window.cep.encoding` object. With this API, they can implement encoding while reading and writing file content. CEP developers can use UTF8 or Base64 encoding.
+
+UXP's encoding options depend on which file API you use. The [`storage`](../../../uxp-api/reference-js/modules/uxp/persistent-file-storage/storage.md) module's `File.read()`/`write()` take a `format` Symbol, `formats.utf8` or `formats.binary`. The Node.js-style [`fs`](../../../uxp-api/reference-js/modules/fs/fs.md) module's `readFile()`/`writeFile()` instead take an `encoding` string literal: `"utf-8"`, `"utf-16be"`, or `"utf-16le"`.
 
 ### Opening Remote Resources
 
@@ -251,9 +253,6 @@ Limitations:
 
 * On macOS, it is not possible to use self-signed certificates with secure WebSockets.
 * WebSockets do not support extensions.
-* XHR can only send binary content using an ArrayBuffer -- Blob is not supported.
-* XHR does not support cookies.
-* `responseURL` is not supported on XHR.
 
 #### Use Case: Customizing Menus
 
@@ -285,6 +284,6 @@ JSX files define functions and objects to be executed in Photoshop's ExtendScrip
 
 All ExtendScript calls to Photoshop were synchronous and blocked the host application UI while executing. In UXP, method calls are asynchronous and do not block the UI thread. To assist a smoother transition between the ExtendScript DOM and the UXP API, UXP functions are asynchronous by design but can be used for synchronous execution and do not need to be awaited.
 
-In UXP, you cannot load and execute JSX files directly. Instead, you can access the Photoshop DOM directly using the Photoshop DOM API. If the current implementation does not fulfill your needs, you can use [`batchPlay`](https://developer.adobe.com/photoshop/uxp/2022/ps_reference/media/advanced/batchplay/) to execute Photoshop actions.
+In UXP, you cannot load and execute JSX files directly. Instead, you can access the Photoshop DOM directly using the Photoshop DOM API. If the current implementation does not fulfill your needs, you can use [`batchPlay`](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true) to execute Photoshop actions.
 
 `batchPlay` is the evolution of `executeAction` from ExtendScript. Where `executeAction` could only play one descriptor at a time, `batchPlay` accepts an array of action descriptors. In ExtendScript, we provided a class around constructing descriptors, references, and putting values in. With `batchPlay`, we have replaced these related classes with `actionJSON`. If you have used `executeAction` in ExtendScript, you may recall 4-character codes (OSTypes) and helper methods around them. In `actionJSON`, we instead use extended string identifiers such as `colorSampler`. You can still use an OSType by pre-pending it with a `$` sign and passing that as a string, like `$app`.
