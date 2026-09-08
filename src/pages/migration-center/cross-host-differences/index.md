@@ -1,4 +1,6 @@
 ---
+title: UXP in Photoshop vs Other Host Applications
+description: The main differences to expect when moving a UXP plugin from one host application to another.
 keywords:
   - Creative Cloud
   - API Documentation
@@ -8,13 +10,13 @@ keywords:
   - ExtendScript
   - SDK
   - Scripting
-title: UXP in Photoshop vs Other Host Applications
-description: The main differences to expect when moving a UXP plugin from one host application to another.
+contributors:
+  - https://github.com/kasivn
 ---
 
 # UXP in Photoshop vs Other Host Applications
 
-UXP is also available in Premiere and InDesign. If you've already built a UXP plugin for one of those and are bringing it to Photoshop, here are the main differences to expect.
+UXP is also available in Premiere, InDesign, and Media Encoder. If you've already built a UXP plugin for one of those and are bringing it to Photoshop, here are the main differences to expect.
 
 ## Manifest JSON
 

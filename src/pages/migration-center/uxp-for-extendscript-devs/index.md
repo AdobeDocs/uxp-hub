@@ -1,4 +1,6 @@
 ---
+title: UXP for ExtendScript Developers
+description: What changes when you move from ExtendScript and the ExtendScript Toolkit to UXP.
 keywords:
   - Creative Cloud
   - API Documentation
@@ -8,13 +10,15 @@ keywords:
   - ExtendScript
   - SDK
   - Scripting
-title: UXP for ExtendScript Developers
-description: What changes when you move from ExtendScript and the ExtendScript Toolkit to UXP.
+contributors:
+  - https://github.com/kasivn
 ---
 
 # UXP for ExtendScript Developers
 
 If you're coming to UXP from ExtendScript and the ESTK (ExtendScript ToolKit) or its successor, the [ExtendScript Debugger](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug), here's what's new.
+
+ExtendScript wasn't unique to Photoshop, so most of what follows (modern JavaScript, development environment, UI, HTML support) applies no matter which host application you're moving from. The DOM access section below uses Photoshop as its example since that's the most common source of ExtendScript migrations; see the **Host Apps** menu at the top of this site for your host application's own DOM API reference if you're migrating from a different one.
 
 ### Different DOM access
 
@@ -34,7 +38,7 @@ UXP source code (HTML, CSS, and JavaScript) can be developed in the editor of yo
 
 ### User interface
 
-Many ExtendScript scripts have little to no UI: the end user picks a script from a menu, and it runs without a visible interface. When an ExtendScript script does need a UI, it typically uses simple `alert()`, `confirm()`, and `prompt()` calls, or the more full-featured [ScriptUI](https://creativepro.com/files/kahrel/indesign/scriptui.html).
+Many ExtendScript scripts have little to no UI: the end user picks a script from a menu, and it runs without a visible interface. When an ExtendScript script does need a UI, it typically uses simple `alert()`, `confirm()`, and `prompt()` calls, or the more full-featured [ScriptUI](https://extendscript.docsforadobe.dev/user-interface-tools/scriptui-object-reference/).
 
 In UXP, you design as simple or as complex a UI as you want, using HTML and CSS for the visual part and JavaScript for the logic behind it.
 
