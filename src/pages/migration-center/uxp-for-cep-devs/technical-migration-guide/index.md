@@ -194,8 +194,8 @@ The v1 implementation (Photoshop 2021) does not allow plugins to run in isolatio
 
 What changes were made for v2?
 
-* Suspend/resume history states. See [executeAsModal](https://developer.adobe.com/photoshop/uxp/2022/ps_reference/media/executeasmodal/) for details.
-* Updated Photoshop DOM access. See the [changelog](https://developer.adobe.com/photoshop/uxp/2022/ps_reference/changelog/#updated-dom-api).
+* Suspend/resume history states. See [executeAsModal](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/executeasmodal) for details.
+* Updated Photoshop DOM access. See the [changelog](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/changelog/#updated-dom-api).
 
 Photoshop 2021 supports only v1, while Photoshop 2022 supports both v1 and v2 of the API. Developers can specify which version to target in the manifest. The manifest has a `host` value that takes a `data` object with an `apiLevel` field. This `apiLevel` field is optional and by default:
 
