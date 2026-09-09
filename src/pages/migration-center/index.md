@@ -17,7 +17,7 @@ contributors:
 
 # CEP to UXP Migration Center
 
-Planning to move a CEP extension to UXP? Start here. Every host application has its own migration guide, since the specific APIs, manifest format, and packaging steps differ, but the approach below applies no matter which application you're building for.
+Planning to move a CEP extension to UXP? Start here. This Migration Center is written in common, host-agnostic language wherever possible, so the approach below applies no matter which application you're building for; host-specific APIs, manifest details, and packaging steps are called out explicitly where they differ.
 
 ## How to approach it
 
@@ -68,6 +68,6 @@ The main differences to expect when moving a UXP plugin from one host applicatio
 
 * **No embedded Chromium.** CEP ran each extension in its own full Chromium instance. UXP plugins run in a single shared, sandboxed JavaScript engine, with no Chromium Embedded Framework bridge and no `CSInterface`.
 * **One JavaScript engine, not two.** CEP split logic between a Chromium panel and ExtendScript host code, connected through `evalScript` calls. UXP plugins call host DOM APIs directly from the same JavaScript context.
-* **A new manifest.** `manifest.xml` becomes `manifest.json`. Panel entry points, permissions, and plugin IDs are declared differently; see each host's migration guide for the exact mapping.
+* **A new manifest.** `manifest.xml` becomes `manifest.json`. Panel entry points, permissions, and plugin IDs are declared differently; see each host's own UXP API reference for the exact manifest field mapping.
 * **Sandboxed by default.** UXP plugins declare the file system, network, and process permissions they need in the manifest, instead of relying on unrestricted Node.js access. If your CEP extension shelled out to Node.js, plan for a manifest permission review; see the Knowledge Base for a documented pattern for restructuring around this constraint.
 * **Native UI controls.** UXP plugins can use Spectrum UI components that match the host application's own interface, instead of hand-styling HTML to approximate it.

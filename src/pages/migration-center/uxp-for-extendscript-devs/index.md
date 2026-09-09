@@ -55,4 +55,4 @@ ExtendScript uses an old version of JavaScript (ES3). UXP uses the V8 JavaScript
 
 ### What's different in UXP's HTML support
 
-UXP provides an HTML interpreter similar to Chromium, but more limited than a full browser, so some common web CSS and HTML idioms don't work. See your host's documentation for the current list of unsupported elements and attributes; for example, see [Photoshop's list](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp-guide/unsupported/?aio_external=true).
+UXP provides an HTML interpreter similar to Chromium, but more limited than a full browser, so some common web CSS and HTML idioms don't work. See the common [Unsupported Elements](../../uxp-api/reference-html/general/unsupported-elements.md) and [Unsupported Attributes](../../uxp-api/reference-html/general/unsupported-attributes.md) reference for the current list, which applies across every UXP host.
