@@ -17,7 +17,7 @@ contributors:
 
 This guide is geared towards CEP (Common Extensibility Platform) developers who would like more technical guidance on migrating their extensions to UXP (Unified Extensibility Platform). The migration process is no doubt challenging but will dramatically improve your development experience for future iterations of your plugins.
 
-Most of this guide, including the JavaScript library and ExtendScript/DOM sections, uses Photoshop as its example host application, since that's where CEP-to-UXP migrations are most common. If you're migrating a CEP extension for a different host application, the [Migrating Native CEP Functions](#migrating-native-cep-functions) section below covers the APIs common across host apps (file I/O, network, opening external resources); check your host's own UXP API reference for its DOM API and any equivalent to batchPlay.
+Most of this guide, including the JavaScript library and ExtendScript/DOM sections, uses Photoshop as its example host application, since that's where CEP-to-UXP migrations are most common. If you're migrating a CEP extension for a different host application, the [Migrating Native CEP Functions](#migrating-native-cep-functions) section below covers the APIs common across host apps (file I/O, network, opening external resources); check your host's own UXP API reference for its host-specific DOM API. `batchPlay` is Photoshop-specific and is not available in Premiere, InDesign, or Media Encoder.
 
 - [Why migrate to UXP?](#why-migrate-to-uxp)
   - [How CEP and UXP Differ](#how-cep-and-uxp-differ)
@@ -34,7 +34,7 @@ Most of this guide, including the JavaScript library and ExtendScript/DOM sectio
 - [Migrating CEP JavaScript Libraries](#migrating-cep-javascript-libraries)
   - [Vulcan Interface: Communicating across plugins within Photoshop](#vulcan-interface-communicating-across-plugins-within-photoshop)
   - [CS APIs: Communicating with your plugin and with Photoshop](#cs-apis-communicating-with-your-plugin-and-with-photoshop)
-    - [Use Case: API Version](#use-case-api-version)
+    - [Use Case: API Version (Photoshop)](#use-case-api-version-photoshop)
     - [Use Case: Sending/Receiving Events](#use-case-sendingreceiving-events)
     - [Use Case: Network Access](#use-case-network-access)
     - [Use Case: Customizing Menus](#use-case-customizing-menus)
@@ -78,8 +78,10 @@ Meanwhile, UXP plugins are either commands or panels. Plugin metadata like the s
 
 | UXP Plugin Type | Specifications |
 |:------ | :------ |
-| Panel | Dockable, resizable, fly-out menus, easily theme-aware, by default loads only when needed (PS 23.1+), can be launched in a modal state |
-| Command | Direct action command that executes a custom task, triggered by user selection from the Plugins menu, optional no-UI, shows a progress bar dialog with a "Cancel" option (labeled with your command name, Photoshop) if the task runs for longer than 2 seconds, can be launched in a modal state |
+| Panel | Dockable, resizable, fly-out menus, and theme-aware |
+| Command | Direct action command that executes a custom task, triggered from the host application's Plugins menu, with optional UI |
+
+Commands and panels are common UXP entry point types. Their loading behavior, modal support, and progress UI vary by host application. The Photoshop-specific behavior is described in the Photoshop documentation.
 
 ## UXP Plugin Development
 
@@ -184,7 +186,9 @@ In UXP 6.0.2 (manifest v5), you can specify the appropriate flags in the manifes
 
 `CSInterface` is used to access information about the host application in which an extension is running, launch an extension, register interest in event notifications, and dispatch events. `CSInterface` helps with theming in Photoshop as well as customizing menus (fly-out and context menu).
 
-#### Use Case: API Version
+#### Use Case: API Version (Photoshop)
+
+This section applies to Photoshop. API versioning and modal execution differ by host; consult your target host's manifest and API documentation.
 
 In CEP, you need to check the version tag of the CEP JavaScript APIs against the version of CEP integrated by Photoshop to make sure the API you want to use is available. `CSInterface.getCurrentAPIVersion()` is a method that retrieves the version of CEP integrated by Photoshop.
 
@@ -214,9 +218,9 @@ While plugins can still use v1, many new features are only available on Photosho
 
 CSXS/CEP events are used to send events among extensions in an application, and among extensions in different applications.
 
-**Photoshop DOM events**: You can send and receive events within an extension by attaching event listeners in the DOM of the plugin panel or modal, and then listening for changes in the Photoshop app by using the Photoshop UXP API.
+**Host DOM events**: Each host application exposes its own DOM events and notification APIs. Consult your target host's UXP API reference for the events it supports.
 
-**UXP events**: UXP has lifecycle events that allow you to receive and send events to the host application and better manage your plugin's lifecycle.
+**UXP lifecycle events**: UXP lifecycle events help manage a plugin's lifecycle. Host implementations can have limitations, so verify lifecycle behavior in your target host's documentation.
 
 The following are plugin lifecycle events your plugin can listen for:
 
@@ -258,19 +262,19 @@ Limitations:
 
 CSInterface has two APIs that can be used for customizing flyout menus. Refer to [these notes](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_11.x/Documentation/CEP%2011.1%20HTML%20Extension%20Cookbook.md#fly-out-menu) for an example of how to configure content for flyouts, and how to use them in tandem with event listeners.
 
-In UXP, flyout menus are defined by a JSON structure that is passed to the `entrypoints.setup` method. This method tells UXP how to handle the entrypoints defined in the manifest.json file. When a menu item is invoked by the user, UXP will pass the flyout menu ID back. Developers can use this ID to customize code to handle each menu item they define. Define the label for the menu item in the Plugins panel that users will select to run your plugin in the manifest.json (`EntryPointDefinition.label`). Here is an [example](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/flyout-menus/#flyout-menus) detailing this flow.
+UXP support and limitations for menus vary by host. Where supported, flyout menus are defined by a JSON structure passed to the `entrypoints.setup` method. When a user invokes a menu item, UXP passes its menu ID to the plugin handler. Define labels for the menu items users select in the `manifest.json` file (`EntryPointDefinition.label`). See the [Photoshop flyout-menu example](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/flyout-menus/#flyout-menus) for that host's implementation.
 
 #### Use Case: Theme Support
 
-CSInterface uses the theme manager interface and CSInterface to update the extension theme after the host application's theme changes. CSInterface does this by listening for the CSXS event `com.adobe.csxs.events.ThemeColorChanged`. CEP would access the latest host theme information using `var skinInfo = JSON.parse(window.__adobe_cep__.getHostEnvironment()).appSkinInfo;`. This `skinInfo` object holds the host theme info and font info and can be modified. In UXP, you can add theme awareness to your application using Spectrum CSS and media queries.
+CSInterface uses the theme manager interface and CSInterface to update the extension theme after the host application's theme changes. CSInterface does this by listening for the CSXS event `com.adobe.csxs.events.ThemeColorChanged`. CEP would access the latest host theme information using `var skinInfo = JSON.parse(window.__adobe_cep__.getHostEnvironment()).appSkinInfo;`. This `skinInfo` object holds the host theme info and font info and can be modified. In UXP, you can add theme awareness using Spectrum CSS and media queries; verify the target host's UI component and theme support.
 
 #### Use Case: Localization
 
-CEP uses host environment information provided in the manifest to load and update the extension. This guide details [CEP support](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_9.x/Documentation/CEP%209.0%20HTML%20Extension%20Cookbook.md#localization) for localization. In UXP, you can [retrieve locale info](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/localization-and-platforms/) for the host environment and use the returned string to alter your plugin's behavior. As a developer, you can also localize [plugin menu item labels and panel labels](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/localization-and-platforms/) in your manifest configuration.
+CEP uses host environment information provided in the manifest to load and update the extension. This guide details [CEP support](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_9.x/Documentation/CEP%209.0%20HTML%20Extension%20Cookbook.md#localization) for localization. UXP localization support varies by host. In Photoshop, you can [retrieve locale information](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/localization-and-platforms/) for the host environment and localize plugin menu and panel labels in the manifest. Consult your target host's documentation for its localization support.
 
 #### Use Case: Keyboard Events
 
-CEP allows you to register an interest in specific keyboard events to prevent them from being sent directly to the host application, allowing you to implement your own callback functions. UXP does not support registering keyboard events in the same manner. Your UXP plugin can set focus on a control inside a panel and listen for several types of keyboard presses, but there's no way to do this globally to override the global shortcuts. To request this feature, please mention it [in the UXP developer forums](https://forums.creativeclouddeveloper.com/t/how-to-set-a-keyboard-shortcut-for-a-photoshop-uxp-plugin/3236).
+CEP allows you to register an interest in specific keyboard events to prevent them from being sent directly to the host application, allowing you to implement your own callback functions. UXP handles keyboard events and shortcuts differently by host. In Photoshop, a plugin can set focus on a control inside a panel and listen for several types of keyboard presses, but it cannot globally override host shortcuts. See the [Photoshop forum discussion](https://forums.creativeclouddeveloper.com/t/how-to-set-a-keyboard-shortcut-for-a-photoshop-uxp-plugin/3236) for that host; consult your target host's documentation for its limitations.
 
 #### Use Case: Adjusting Plugin Size
 
@@ -279,6 +283,8 @@ For modal and modeless CEP extensions, using `window.__adobe_cep__.resizeContent
 UXP plugins are restricted to the sizes defined by the manifest. Plugins also cannot control the size of their panel programmatically. The expectation is that plugin developers will design their UI in a responsive manner, allowing the user to configure the panel to their liking. If your plugin consists of multiple accordions in the UI, you might want to consider shipping with multiple panels instead. Then the user can group all those panels together, resize them, reorder them, collapse them, etc., as defined in the manifest.
 
 ## Migrating ExtendScript/EvalScript to the Photoshop DOM API
+
+This section applies to Photoshop. `batchPlay` and the `executeAction` mapping described here are not available in Premiere, InDesign, or Media Encoder.
 
 JSX files define functions and objects to be executed in Photoshop's ExtendScript environment. These are executed in CEP either at plugin load time or using `evalScript`. You specify the path to JSX files in the `<ScriptPath>` node in manifest.xml.
 
