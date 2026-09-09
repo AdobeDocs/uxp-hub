@@ -16,7 +16,7 @@ contributors:
 
 # UXP in Photoshop vs Other Host Applications
 
-UXP is also available in Premiere, InDesign, and Media Encoder. If you've already built a UXP plugin for one of those and are bringing it to Photoshop, here are the main differences to expect.
+This page covers the differences to consider when adapting a UXP plugin built for Premiere, InDesign, or Media Encoder for Photoshop.
 
 ## Manifest JSON
 
@@ -26,4 +26,4 @@ Manifest versions and structure vary by host application and by how recent your 
 
 Every host application exposes a different DOM and API, since each one has a different set of use cases, objects, and properties. Photoshop in particular is a large, complex application with a correspondingly broad API surface.
 
-The [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external=true) grows with each release, but until the API surface covers every object you need, you can use [batchPlay](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true) to reach objects, properties, and actions not yet exposed directly through UXP.
+The [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external=true) grows with each release. When the Photoshop DOM API does not expose an operation you need, you can use [batchPlay](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true) to access Photoshop objects, properties, and actions. `batchPlay` is specific to Photoshop and is not a cross-host UXP fallback.

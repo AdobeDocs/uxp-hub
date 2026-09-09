@@ -18,17 +18,17 @@ contributors:
 
 If you're coming to UXP from ExtendScript and the ESTK (ExtendScript ToolKit) or its successor, the [ExtendScript Debugger](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug), here's what's new.
 
-ExtendScript wasn't unique to Photoshop, so most of what follows (modern JavaScript, development environment, UI, HTML support) applies no matter which host application you're moving from. The DOM access section below uses Photoshop as its example since that's the most common source of ExtendScript migrations; see the **Host Apps** menu at the top of this site for your host application's own DOM API reference if you're migrating from a different one.
+ExtendScript wasn't unique to Photoshop, so most of what follows (modern JavaScript, development environment, UI, HTML support) applies no matter which host application you're moving from. The DOM access section below uses Photoshop as its example since that's the most common source of ExtendScript migrations; see the **Host Apps** menu at the top of this site for your host application's own DOM API reference if you're migrating from a different one. The `batchPlay` API and migration helper shown below are Photoshop-specific.
 
 ### Different DOM access
 
-UXP provides different methods for accessing the host application's DOM. See the [Photoshop UXP API reference](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external=true) for details. The entire DOM isn't yet exposed through UXP for every host application, but coverage grows with each release.
+UXP provides different methods for accessing each host application's DOM. See your host's API reference for details. The entire DOM isn't yet exposed through UXP for every host application, but coverage grows with each release.
 
-As a workaround for anything not yet exposed directly, Photoshop provides a feature called [batchPlay](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true).
+In Photoshop, [batchPlay](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true) can access operations not exposed directly by the Photoshop DOM API. `batchPlay` is not available in Premiere, InDesign, or Media Encoder.
 
-### A migration helper for ExtendScript developers
+### A Photoshop migration helper for ExtendScript developers
 
-If you use `executeAction` and `executeActionGet` often in your code, the [ExtendScript batchPlay logger](https://github.com/adobe-uxp/ps-es-to-uxp) utility can help. Plug the `ps-es-to-uxp` jsx code into your ExtendScript project, and it prints out your `executeAction` and `executeActionGet` calls in a format suitable for the UXP equivalent, [batchPlay](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true).
+If you use `executeAction` and `executeActionGet` often in Photoshop ExtendScript code, the [ExtendScript batchPlay logger](https://github.com/adobe-uxp/ps-es-to-uxp) utility can help. Plug the `ps-es-to-uxp` JSX code into your ExtendScript project, and it prints out your `executeAction` and `executeActionGet` calls in a format suitable for [batchPlay](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true).
 
 ### Development environment
 
@@ -55,4 +55,4 @@ ExtendScript uses an old version of JavaScript (ES3). UXP uses the V8 JavaScript
 
 ### What's different in UXP's HTML support
 
-UXP provides an HTML interpreter similar to Chromium, but more limited than a full browser, so some common web CSS and HTML idioms don't work. See [Unsupported Elements and Attributes](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp-guide/unsupported/?aio_external=true) for the current list.
+UXP provides an HTML interpreter similar to Chromium, but more limited than a full browser, so some common web CSS and HTML idioms don't work. See your host's documentation for the current list of unsupported elements and attributes; for example, see [Photoshop's list](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp-guide/unsupported/?aio_external=true).

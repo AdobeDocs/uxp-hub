@@ -28,7 +28,7 @@ There's no single fixed recipe, since every CEP plugin is different, but here's 
 3. **Map each remaining item in your checklist to its UXP equivalent.** A few of the most common ones:
    - `window.cep.fs` → UXP's `storage` module, which requires user consent (a file picker) for most file access instead of CEP's unrestricted access.
    - `window.cep.process` → UXP has no comprehensive process API; the closest options are `shell.openPath()` and `shell.openExternal()` for launching files and URIs, gated by the `launchProcess` permission in the manifest.
-   - ExtendScript/`evalScript` → the host application's UXP DOM API directly (in Photoshop, [`batchPlay`](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external) covers anything the DOM API doesn't yet).
+  - ExtendScript/`evalScript` → the host application's UXP DOM API directly. In Photoshop, [`batchPlay`](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external) can cover operations that the Photoshop DOM API does not expose. `batchPlay` is Photoshop-specific; use your host's UXP API reference to assess DOM coverage in Premiere, InDesign, and Media Encoder.
    - `CSInterface` → direct calls to host UXP APIs, plus UXP's own lifecycle events (`uxpcreateplugin`, `uxpshowpanel`, and similar) for things CSInterface used events for.
    - Vulcan (cross-plugin messaging) → `invokeCommand` and `showPanel` (UXP 6.0.2+, manifest v5), currently limited to plugins within the same host application.
 
