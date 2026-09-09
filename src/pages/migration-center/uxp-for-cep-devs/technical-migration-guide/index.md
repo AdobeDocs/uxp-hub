@@ -61,7 +61,7 @@ Because UXP communicates directly with the host application, the issues associat
 
 ### Developer Tooling
 
-Here is the [CEP debugging guide](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_11.x/Documentation/Debugging%20Handbook.md). Here is the [UXP debugging guide](https://developer.adobe.com/photoshop/uxp/2022/guides/debugging/). The [UXP Developer Tool](https://developer.adobe.com/photoshop/uxp/2022/guides/devtool/) is a plugin loader and debugger that makes plugin management during development easier.
+Here is the [CEP debugging guide](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_11.x/Documentation/Debugging%20Handbook.md). Here is the [UXP debugging guide](../../../guides/how-to/debugging/index.md). The [UXP Developer Tool](../../../guides/how-to/developer-tools/index.md) is a plugin loader and debugger, common to every UXP host, that makes plugin management during development easier.
 
 ### Plugin Types
 
@@ -81,7 +81,7 @@ Meanwhile, UXP plugins are either commands or panels. Plugin metadata like the s
 | Panel | Dockable, resizable, fly-out menus, and theme-aware |
 | Command | Direct action command that executes a custom task, triggered from the host application's Plugins menu, with optional UI |
 
-Commands and panels are common UXP entry point types. Their loading behavior, modal support, and progress UI vary by host application. The Photoshop-specific behavior is described in the Photoshop documentation.
+Commands and panels are common UXP entry point types across every host. See [Panels and Commands](../../../guides/explanation/concepts/panels-and-commands/index.md) for the full picture, including modal dialogs and combining both in one plugin.
 
 ## UXP Plugin Development
 
@@ -132,7 +132,7 @@ UXP's encoding options depend on which file API you use. The [`storage`](../../.
 
 The `window.cep.util` object gives CEP developers access to `openURLInDefaultBrowser`, `registerExtensionUnloadCallback`, and `storeProxyCredentials`. In UXP, the "shell" module contains an equivalent for `openURLInDefaultBrowser` (opens a web link in the system browser): `openExternal`. The UXP shell module does not (and will not) have equivalent methods for `registerExtensionUnloadCallback` and `storeProxyCredentials` in CEP.
 
-In UXP, you can use `openPath` and `openExternal` to open external files and remote resources. With UXP 6.0.2+, [manifest v5](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/manifest-v5/#launch-process) asks that you define which URI schemes and file extensions your plugin is permitted to launch.
+In UXP, you can use `openPath` and `openExternal` to open external files and remote resources. With UXP 6.0.2+, [manifest v5](../../../guides/explanation/concepts/manifest/index.md#launchprocess) asks that you define which URI schemes and file extensions your plugin is permitted to launch. This permission is common to every UXP host.
 
 ### Process APIs
 
@@ -208,6 +208,8 @@ Photoshop 2021 supports only v1, while Photoshop 2022 supports both v1 and v2 of
 
 While plugins can still use v1, many new features are only available on Photoshop API v2 and support for v1 will be removed in a future major update to Photoshop. Only special use cases that rely on either the Photoshop menu state, or other non-modal user interactions while the plugin is running, may need to stick with v1.
 
+The following three calls are common UXP APIs available on every host, independent of the Photoshop-specific `apiLevel` discussion above:
+
 **Access host application version**: `require("uxp").host.version`
 
 **Access UXP API version**: `require("uxp").versions.uxp`
@@ -249,7 +251,7 @@ To support these events, we've added:
 
 #### Use Case: Network Access
 
-CEP used to leverage CSInterface.js to get network information. Network access in UXP requires you to define the domains the plugin will access in the manifest. You can do this by adding the network object to the `requiredPermissions` section of the manifest.
+Networking is a common UXP capability available on every host. CEP used to leverage CSInterface.js to get network information. Network access in UXP requires you to define the domains the plugin will access in the manifest. You can do this by adding the network object to the `requiredPermissions` section of the manifest.
 
 UXP supports XMLHttpRequest, WebSockets, and Fetch APIs to perform network requests.
 
@@ -280,7 +282,7 @@ CEP allows you to register an interest in specific keyboard events to prevent th
 
 For modal and modeless CEP extensions, using `window.__adobe_cep__.resizeContent()` takes two parameters (width and height) and resizes the extension's content to the specified dimensions. The width and height parameters are expected to be unsigned integers. Extension min/max size constraints as specified in the manifest file apply and take precedence. If the specified size is out of the min/max size range, the min or max bounds will be used.
 
-UXP plugins are restricted to the sizes defined by the manifest. Plugins also cannot control the size of their panel programmatically. The expectation is that plugin developers will design their UI in a responsive manner, allowing the user to configure the panel to their liking. If your plugin consists of multiple accordions in the UI, you might want to consider shipping with multiple panels instead. Then the user can group all those panels together, resize them, reorder them, collapse them, etc., as defined in the manifest.
+UXP plugins are restricted to the sizes defined by the manifest (`minimumSize`, `maximumSize`, `preferredDockedSize`, `preferredFloatingSize`) and cannot control the size of their panel programmatically — this manifest-based sizing model is common across UXP hosts and is the deliberate replacement for CEP's `window.__adobe_cep__.resizeContent()`. The manifest fields are identical everywhere, but each host renders and docks panels using its own UI shell, so exact visual behavior and minimum practical sizes can differ by host. The expectation is that plugin developers will design their UI in a responsive manner, allowing the user to configure the panel to their liking. If your plugin consists of multiple accordions in the UI, you might want to consider shipping with multiple panels instead. Then the user can group all those panels together, resize them, reorder them, collapse them, etc., as defined in the manifest.
 
 ## Migrating ExtendScript/EvalScript to the Photoshop DOM API
 
@@ -288,7 +290,7 @@ This section applies to Photoshop. `batchPlay` and the `executeAction` mapping d
 
 JSX files define functions and objects to be executed in Photoshop's ExtendScript environment. These are executed in CEP either at plugin load time or using `evalScript`. You specify the path to JSX files in the `<ScriptPath>` node in manifest.xml.
 
-All ExtendScript calls to Photoshop were synchronous and blocked the host application UI while executing. In UXP, method calls are asynchronous and do not block the UI thread. To assist a smoother transition between the ExtendScript DOM and the UXP API, UXP functions are asynchronous by design but can be used for synchronous execution and do not need to be awaited.
+All ExtendScript calls to Photoshop were synchronous and blocked the host application UI while executing. In UXP, method calls are asynchronous and do not block the UI thread — await them, or chain them with `.then()`, to get their result. Some UXP API members, like property getters and setters, are exposed synchronously and don't return Promises, so they don't need to be awaited.
 
 In UXP, you cannot load and execute JSX files directly. Instead, you can access the Photoshop DOM directly using the Photoshop DOM API. If the current implementation does not fulfill your needs, you can use [`batchPlay`](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true) to execute Photoshop actions.
 
