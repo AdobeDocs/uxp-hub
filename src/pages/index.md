@@ -87,7 +87,7 @@ Build tools for editorial work: projects, sequences, tracks, markers, and export
 
 Automate delivery work: presets, codecs, render queues, and batch exports.
 
-[Explore Media Encoder](https://developer-stage.adobe.com/media-encoder/uxp/)
+[Explore Media Encoder](https://developer.adobe.com/media-encoder/uxp/)
 
 ## How UXP Works
 

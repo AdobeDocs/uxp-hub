@@ -88,7 +88,7 @@ Video APIs for projects, sequences, tracks, source media, markers, and exports.
 
 Encoding APIs for presets, codecs, render queues, output settings, and exports.
 
-[Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external)
+[Media Encoder API](https://developer.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external)
 
 ## Known Issues
 

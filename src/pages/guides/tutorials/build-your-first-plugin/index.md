@@ -116,5 +116,5 @@ That same pattern covers real work, whichever host you target. Your plugin talks
 You've got the loop: scaffold, load, edit, reload. Everything else you build follows the same pattern.
 
 - Explore [Concepts](../../explanation/concepts/index.md) to understand manifests, entry points, panels, and commands in depth.
-- Browse the [Premiere API](https://developer.adobe.com/premiere-pro/uxp/) or [Media Encoder API](https://developer-stage.adobe.com/media-encoder/uxp/) reference, or your host's own API reference if you're building for Photoshop or InDesign.
+- Browse the [Premiere API](https://developer.adobe.com/premiere-pro/uxp/) or [Media Encoder API](https://developer.adobe.com/media-encoder/uxp/) reference, or your host's own API reference if you're building for Photoshop or InDesign.
 - Coming from CEP or ExtendScript? See [Migrate from CEP and ExtendScript](../../how-to/migration-guides/index.md) for what carries over.
