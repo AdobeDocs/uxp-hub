@@ -113,5 +113,5 @@ For the specific version compatibility details of your host, see its own referen
 
 Now that you understand the two types of APIs available, you're ready to:
 
-- Learn your host's own API in depth: [Photoshop](https://developer.adobe.com/photoshop/uxp/), [InDesign](https://developer.adobe.com/indesign/uxp/), [Premiere](https://developer.adobe.com/premiere-pro/uxp/), or [Media Encoder](https://developer-stage.adobe.com/media-encoder/uxp/)
+- Learn your host's own API in depth: [Photoshop](https://developer.adobe.com/photoshop/uxp/), [InDesign](https://developer.adobe.com/indesign/uxp/), [Premiere](https://developer.adobe.com/premiere-pro/uxp/), or [Media Encoder](https://developer.adobe.com/media-encoder/uxp/)
 - Browse the complete [UXP API reference](../../../../uxp-api/index.md)
