@@ -49,4 +49,4 @@ If you've built extensions before, this is roughly how the old vocabulary maps t
 | `CSInterface` / host bridge | the host APIs you `require` directly |
 | Manifest in `CSXS/manifest.xml` | `manifest.json` |
 
-The mapping is conceptual, not line for line. For the practical migration path, see [Migrate from CEP and ExtendScript](../../../how-to/migration-guides/index.md).
+The mapping is conceptual, not line for line. For the practical migration path, see [Migrate from CEP and ExtendScript](../../../../migration-center/index.md).
