@@ -1,24 +1,73 @@
 ---
-title: Guides - Analytics
-description: This is the guides overview page of  Analytics 
+title: Guides
+description: Tutorials, how-to guides, and explanations for building UXP plugins across Premiere, Media Encoder, and every other UXP-enabled host.
+keywords:
+  - UXP
+  - Guides
+  - Tutorials
+  - How-to guides
+  - Explanation
+contributors:
+  - https://github.com/karan0207
 ---
 
-# Get Started
+<Superhero slots="heading, text" variant="centered" textColor="white" background="linear-gradient(135deg, #30186E 0%, #6432C8 100%)"/>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada feugiat enim vel facilisis. Nunc eget enim eu lacus lobortis tincidunt a nec est. Nunc quis sapien quis orci rutrum sollicitudin. Nullam vehicula ultricies mauris, id aliquam justo aliquam vitae. Nam quis tincidunt ante. Curabitur sagittis aliquam elit, at auctor enim maximus et. Praesent in lectus facilisis, tempor magna eget, bibendum est. In quis ornare mi. Donec vestibulum viverra magna, non mollis leo vestibulum sit amet. Aenean euismod nulla augue, sit amet vehicula nibh faucibus vel. Fusce at est lacus. Nullam ante nulla, elementum nec ornare in, placerat luctus enim. Suspendisse vitae lacinia nibh. Pellentesque porta accumsan est at volutpat. Nulla aliquam dictum faucibus.
+# Guides
 
-## Authentication
+UXP is an extensibility platform that lets you build plugins for UXP-enabled Adobe apps like Photoshop, Premiere, and InDesign, with more hosts on the way, the same tools and workflow across every one.
 
-Mauris pellentesque ornare nulla. Proin fermentum elementum velit non consequat. Donec euismod nisl sed tellus sagittis, a consequat leo rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse neque justo, porttitor eget volutpat sed, suscipit nec mauris. Etiam nec egestas purus. Praesent suscipit in elit cursus consectetur. Duis blandit pulvinar odio, eget volutpat magna vestibulum interdum. Ut sed ultrices risus, vel gravida nisi. Sed vitae rutrum felis. Aliquam at eros molestie, sagittis augue sed, venenatis erat. Praesent at consectetur tellus, ut vehicula nunc. Pellentesque aliquet condimentum neque, fermentum consequat neque viverra vel. Aliquam accumsan dignissim turpis vitae consequat. Aenean id justo vel diam sollicitudin posuere. Sed eu mauris ac elit porta commodo et varius sem.
+## The development loop
 
-## OAuth
+Four pieces work together, whichever host application you're building for:
 
-Donec imperdiet tempus ligula, sit amet pellentesque justo pharetra quis. Duis sed lacus diam. Maecenas sollicitudin diam sit amet pharetra placerat. Aliquam egestas lectus et tellus sagittis, venenatis finibus nisi volutpat. Cras laoreet, nisl sed faucibus laoreet, nibh arcu pretium enim, eget elementum ligula tellus vitae lorem. Aenean consequat in lorem at venenatis. Phasellus consequat dolor in libero vulputate rutrum. Nulla sit amet augue fringilla, elementum libero eget, accumsan velit. Suspendisse et lorem ornare, congue justo vel, ultrices felis. Ut et aliquet eros. Nulla facilisi. Nulla vitae velit a enim egestas eleifend. Etiam malesuada orci non mollis vulputate. Praesent id augue eget sapien lobortis bibendum. Praesent placerat tellus dui, vel facilisis magna condimentum in.
+- **The host application** (Photoshop, Premiere, InDesign, and others) is where your plugin loads, its panel renders, and your code runs against the host's own APIs.
+- **The UXP Developer Tool (UDT)** is the bridge. It scaffolds your plugin, then loads, reloads, and debugs it inside the host.
+- **The UXP APIs** are the shared APIs available in every host, for the file system, network, storage, and UI. Together with each host's own APIs, they're what your plugin code calls.
+- **Your code editor** is where you write the HTML, CSS, and JavaScript.
 
-<InlineAlert variant="info" slots="text"/>
+The loop is short: write code, reload in UDT, see the change in the host application.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna tellus, fringilla sit amet lorem eget, dignissim pellentesque ligula. Donec nec dolor vitae leo laoreet aliquam vehicula at dui. Integer in tortor lacus. Aliquam convallis, lorem ac consectetur sodales, tellus.
+## Find what you need
 
-## JWT
+The sidebar follows the order you'll actually work in, not by product:
 
-Donec imperdiet tempus ligula, sit amet pellentesque justo pharetra quis. Duis sed lacus diam. Maecenas sollicitudin diam sit amet pharetra placerat. Aliquam egestas lectus et tellus sagittis, venenatis finibus nisi volutpat. Cras laoreet, nisl sed faucibus laoreet, nibh arcu pretium enim, eget elementum ligula tellus vitae lorem. Aenean consequat in lorem at venenatis. Phasellus consequat dolor in libero vulputate rutrum. Nulla sit amet augue fringilla, elementum libero eget, accumsan velit. Suspendisse et lorem ornare, congue justo vel, ultrices felis. Ut et aliquet eros. Nulla facilisi. Nulla vitae velit a enim egestas eleifend. Etiam malesuada orci non mollis vulputate. Praesent id augue eget sapien lobortis bibendum. Praesent placerat tellus dui, vel facilisis magna condimentum in.
+- **Start Here** - tech stack, terms, tools, and getting a first plugin running.
+- **Build Plugins** - concepts, task-by-task how-to guides, recipes, and hybrid plugins.
+- **Publish Plugins** - packaging and distribution.
+
+The three starting points below get you into that path quickly:
+
+<Cards slots="image, heading, text, links" repeat="3" width="100%" />
+
+![Build Your First Plugin](../assets/tutorials.svg)
+
+### Build Your First Plugin
+
+New to UXP? Set up your tools and get a working plugin running, one step at a time.
+
+[Start here](tutorials/build-your-first-plugin/index.md)
+
+![How-to Guides](../assets/recipes.svg)
+
+### How-to Guides
+
+Already building? Find the guide for your task, from adding commands to packaging.
+
+[Browse the how-to guides](how-to/index.md)
+
+![Plugin Concepts](../assets/concepts.svg)
+
+### Plugin Concepts
+
+See how UXP plugins fit together: manifests, entrypoints, panels, and commands.
+
+[Read the background](explanation/index.md)
+
+Ready to ship? [Package & Distribute](how-to/distribution/overview/index.md) covers packaging, Adobe Marketplace, and enterprise or independent distribution.
+
+Looking for class, method, and event documentation instead? That's under **API References** in the top navigation: [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external), [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external), [Media Encoder API](https://developer.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external), and the [UXP API](../uxp-api/index.md).
+
+## New to the terminology?
+
+Plugins, panels, commands, manifests: see [Common Plugin Terms](explanation/fundamentals/nomenclature/index.md) for the full glossary and how it maps to CEP/ExtendScript.

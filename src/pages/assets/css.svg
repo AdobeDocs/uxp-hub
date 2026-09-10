@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="css-title">
+  <title id="css-title">CSS</title>
+  <rect x="8" y="8" width="80" height="80" rx="20" fill="#DCEEF8"/>
+  <rect x="8.5" y="8.5" width="79" height="79" rx="19.5" fill="none" stroke="#B7DBEF" stroke-width="1"/>
+  <rect x="26" y="26" width="44" height="44" rx="6" fill="#1572B6"/>
+  <text x="48" y="53" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">CSS</text>
+</svg>

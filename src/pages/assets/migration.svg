@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="migration-title">
+  <title id="migration-title">CEP to UXP migration</title>
+  <rect x="8" y="8" width="80" height="80" rx="20" fill="#DDF3EA"/>
+  <rect x="8.5" y="8.5" width="79" height="79" rx="19.5" fill="none" stroke="#B7E3CB" stroke-width="1"/>
+  <rect x="24" y="38" width="20" height="20" rx="4" fill="#1E7D50"/>
+  <rect x="52" y="38" width="20" height="20" rx="4" fill="#1E7D50" opacity="0.55"/>
+  <path d="M46 48 H54 M50 44 L55 48 L50 52" fill="none" stroke="#1E7D50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
