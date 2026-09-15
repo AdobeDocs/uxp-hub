@@ -22,7 +22,7 @@ contributors:
 
 Everything you need to build UXP plugins, in one place.
 
-![The UXP Developer Tool with Photoshop, Premiere, and InDesign connected and a Create Plugin button](assets/uxp-hero.svg)
+![The UXP Developer Tool with Photoshop, Premiere, InDesign, and Media Encoder connected and a Create Plugin button](assets/uxp-hero.svg)
 
 <Resources slots="heading, links"/>
 
