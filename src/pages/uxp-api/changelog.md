@@ -170,21 +170,12 @@ Find out what's improved with the latest UXP version, including fixed bugs, new 
   - `Box-shadow` property now supports `transform rotate`.
 - New feature flag `CSSNextSupport` in the manifest.json to gate the new and future CSS capability.
 
-<Table variant="bordered" slots="setting, description" repeat="3" />
+  | Manifest setting | Description  |
+  | ---------------- | ------------ |
+  | `featureFlags: {"CSSNextSupport": true}` | Enables all the new CSS features. |
+  | `featureFlags: {"CSSNextSupport": ["boxShadow", "transformFunctions", "transformProperties" ]}` | Enables only the named properties in the list. |
 
-**Manifest setting**
-
-**Description**
-
-`featureFlags: {"CSSNextSupport": true}`
-
-Enables all the new CSS features.
-
-`featureFlags: {"CSSNextSupport": ["boxShadow", "transformFunctions", "transformProperties"]}`
-
-Enables only the named properties in the list.
-
-Note that `"enableSWCSupport": true` will enable `CSSNextSupport` by default.
+  Note that `"enableSWCSupport": true` will enable `CSSNextSupport` by default.
 - Video enhancements: Support added for [Seek Event](reference-js/global-members/html-elements/html-video-element.md)
 - Support for [Navigator.language](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language) API
 - Support for new HTMLElement APIs - [append](reference-js/global-members/html-elements/html-element.md#appendnodes), [prepend](reference-js/global-members/html-elements/html-element.md#prependnodes) and [replaceChildren](reference-js/global-members/html-elements/html-element.md#replacechildrennodes)
