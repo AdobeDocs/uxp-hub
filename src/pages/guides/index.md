@@ -40,7 +40,7 @@ The three starting points below get you into that path quickly:
 
 <Cards slots="image, heading, text, links" repeat="3" width="100%" />
 
-![Build Your First Plugin](../assets/tutorials.svg)
+![UXP Developer Tool](../assets/udt.svg)
 
 ### Build Your First Plugin
 
