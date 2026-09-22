@@ -17,7 +17,7 @@ contributors:
 
 This guide is geared towards CEP (Common Extensibility Platform) developers who would like more technical guidance on migrating their extensions to UXP (Unified Extensibility Platform). The migration process is no doubt challenging but will dramatically improve your development experience for future iterations of your plugins.
 
-Most of this guide, including the JavaScript library and ExtendScript/DOM sections, uses Photoshop as its example host application, since that's where CEP-to-UXP migrations are most common. If you're migrating a CEP extension for a different host application, the [Migrating Native CEP Functions](#migrating-native-cep-functions) section below covers the APIs common across host apps (file I/O, network, opening external resources); check your host's own UXP API reference for its host-specific DOM API. `batchPlay` is Photoshop-specific and is not available in Premiere, InDesign, or Media Encoder.
+Most of this guide, including the JavaScript library and ExtendScript/DOM sections, uses Photoshop as its example host application, since that's where CEP-to-UXP migrations are most common. If you're migrating a CEP extension for a different host application, the [Migrating Native CEP Functions](#migrating-native-cep-functions) section below covers the APIs common across host apps (file I/O, network, opening external resources); check your host's own UXP API reference for its host-specific DOM API. `batchPlay` is Photoshop-specific and is not available in Premiere, InDesign, Media Encoder, or After Effects.
 
 - [Why migrate to UXP?](#why-migrate-to-uxp)
   - [How CEP and UXP Differ](#how-cep-and-uxp-differ)
@@ -286,7 +286,7 @@ UXP plugins are restricted to the sizes defined by the manifest (`minimumSize`, 
 
 ## Migrating ExtendScript/EvalScript to the Photoshop DOM API
 
-This section applies to Photoshop. `batchPlay` and the `executeAction` mapping described here are not available in Premiere, InDesign, or Media Encoder.
+This section applies to Photoshop. `batchPlay` and the `executeAction` mapping described here are not available in Premiere, InDesign, Media Encoder, or After Effects.
 
 JSX files define functions and objects to be executed in Photoshop's ExtendScript environment. These are executed in CEP either at plugin load time or using `evalScript`. You specify the path to JSX files in the `<ScriptPath>` node in manifest.xml.
 

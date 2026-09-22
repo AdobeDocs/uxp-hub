@@ -20,7 +20,7 @@ Scaffold, load, and run a plugin inside your host application, reloading live as
 
 Before you start, make sure you have:
 
-- Your host application installed: Photoshop, Premiere, InDesign, or Media Encoder.
+- Your host application installed: Photoshop, Premiere, InDesign, Media Encoder, or After Effects.
 - The [UXP Developer Tool](../../how-to/developer-tools/index.md#uxp-developer-tool-udt) (UDT), with [Developer Mode enabled](../../how-to/developer-tools/index.md#enable-developer-mode).
 - A code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -81,7 +81,7 @@ In UDT, click **Load & Watch** in your plugin's row. This loads the plugin into 
 
 ![The scaffolded plugin panel loaded inside the host application](img/ps-panel.png)
 
-The panel appears in the host after UDT loads it. The process is the same for Photoshop, Premiere, InDesign, and Media Encoder: keep the app open, click **Load & Watch**, and the panel shows up in that app.
+The panel appears in the host after UDT loads it. The process is the same for Photoshop, Premiere, InDesign, Media Encoder, and After Effects: keep the app open, click **Load & Watch**, and the panel shows up in that app.
 
 <InlineAlert slots="text" />
 

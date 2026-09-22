@@ -56,7 +56,7 @@ Spectrum components for building interfaces that match the host application.
 
 Each host application layers its own DOM API for documents, layers, sequences, and other host-specific objects on top of the platform layer above.
 
-<Cards slots="image, heading, text, links" repeat="4" width="100%" />
+<Cards slots="image, heading, text, links" repeat="5" width="100%" />
 
 ![Photoshop](../assets/photoshop.svg)
 
@@ -89,6 +89,14 @@ Video APIs for projects, sequences, tracks, source media, markers, and exports.
 Encoding APIs for presets, codecs, render queues, output settings, and exports.
 
 [Media Encoder API](https://developer.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external)
+
+![After Effects](../assets/after-effects.svg)
+
+### After Effects
+
+Motion graphics APIs for compositions, layers, and rendering.
+
+[After Effects API](https://developer-stage.adobe.com/after-effects/uxp/after-effects-api/?aio_external)
 
 ## Known Issues
 

@@ -24,7 +24,7 @@ ExtendScript wasn't unique to Photoshop, so most of what follows (modern JavaScr
 
 UXP provides different methods for accessing each host application's DOM. See your host's API reference for details. The entire DOM isn't yet exposed through UXP for every host application, but coverage grows with each release.
 
-In Photoshop, [batchPlay](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true) can access operations not exposed directly by the Photoshop DOM API. `batchPlay` is not available in Premiere, InDesign, or Media Encoder.
+In Photoshop, [batchPlay](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true) can access operations not exposed directly by the Photoshop DOM API. `batchPlay` is not available in Premiere, InDesign, Media Encoder, or After Effects.
 
 ### A Photoshop migration helper for ExtendScript developers
 

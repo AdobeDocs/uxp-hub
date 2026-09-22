@@ -16,7 +16,7 @@ contributors:
 
 # UXP in Photoshop vs Other Host Applications
 
-This page covers the differences to consider when adapting a UXP plugin built for Premiere, InDesign, or Media Encoder for Photoshop.
+This page covers the differences to consider when adapting a UXP plugin built for Premiere, InDesign, Media Encoder, or After Effects for Photoshop.
 
 ## Manifest JSON
 

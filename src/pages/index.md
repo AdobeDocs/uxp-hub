@@ -1,6 +1,6 @@
 ---
 title: UXP Hub
-description: "The central destination for Adobe UXP developers: platform APIs, guides, and migration guidance for Photoshop, Premiere, InDesign, and Media Encoder."
+description: "The central destination for Adobe UXP developers: platform APIs, guides, and migration guidance across every UXP-enabled host application."
 keywords:
   - UXP
   - UXP Hub
@@ -9,6 +9,7 @@ keywords:
   - Premiere
   - InDesign
   - Media Encoder
+  - After Effects
   - CEP migration
   - UXP Developer Tool
 contributors:
@@ -36,7 +37,7 @@ Everything you need to build UXP plugins, in one place.
 
 ## What is UXP?
 
-UXP (Unified Extensibility Platform) is Adobe's modern framework for building plugins and scripts in HTML, CSS, and JavaScript. It's built into Photoshop, Premiere, InDesign, and Media Encoder.
+UXP (Unified Extensibility Platform) is Adobe's modern framework for building plugins and scripts in HTML, CSS, and JavaScript. It's built into Photoshop, Premiere, InDesign, Media Encoder, and After Effects.
 
 ## What You Can Build
 
@@ -45,7 +46,7 @@ Every UXP plugin is built from one or both of two component types:
 - **Commands** are actions: they run from a menu item, execute one task, and finish. There's no persistent UI beyond an optional dialog for input or confirmation.
 - **Panels** are workspaces: they stay docked alongside the host's own panels, persistent and interactive throughout your session.
 
-What you reach for depends on the host: layers and documents in Photoshop, pages and stories in InDesign, sequences and exports in Premiere, or render queues in Media Encoder. The plugin model is the same everywhere, and so is the panel/command choice. See Panels and Commands for the full picture, including modal dialogs and combining both in one plugin.
+What you reach for depends on the host: layers and documents in Photoshop, pages and stories in InDesign, sequences and exports in Premiere, render queues in Media Encoder, or compositions and layers in After Effects. The plugin model is the same everywhere, and so is the panel/command choice. See Panels and Commands for the full picture, including modal dialogs and combining both in one plugin.
 
 ## Start Building
 
@@ -55,7 +56,7 @@ Every UXP plugin follows the same path, regardless of host application: scaffold
 
 Pick the application you already spend your time in for its API reference and product-specific docs. UXP itself works the same way underneath each of them.
 
-<Cards slots="image, heading, text, links" repeat="4" width="100%" />
+<Cards slots="image, heading, text, links" repeat="5" width="100%" />
 
 ![Photoshop](assets/photoshop.svg)
 
@@ -88,6 +89,14 @@ Build tools for editorial work: projects, sequences, tracks, markers, and export
 Automate delivery work: presets, codecs, render queues, and batch exports.
 
 [Explore Media Encoder](https://developer.adobe.com/media-encoder/uxp/)
+
+![After Effects](assets/after-effects.svg)
+
+### After Effects
+
+Build tools for motion graphics and visual effects: compositions, layers, and rendering.
+
+[Explore After Effects](https://developer-stage.adobe.com/after-effects/uxp/)
 
 ## How UXP Works
 

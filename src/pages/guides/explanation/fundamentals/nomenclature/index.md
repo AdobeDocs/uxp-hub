@@ -26,7 +26,7 @@ These docs use a small, consistent vocabulary. This page defines the core terms 
 - **Panel**: an entry point that shows a persistent, dockable UI inside the host application.
 - **Command**: an entry point, shown as a menu item, that runs an action without a persistent panel.
 - **Script**: a single JavaScript file that automates the host through its APIs. A script has no manifest and no persistent panel. It is a separate artifact from a plugin.
-- **Host**: the Adobe application your plugin runs in, such as Photoshop, InDesign, Premiere, or Media Encoder.
+- **Host**: the Adobe application your plugin runs in, such as Photoshop, InDesign, Premiere, Media Encoder, or After Effects.
 
 <InlineAlert slots="text" />
 
