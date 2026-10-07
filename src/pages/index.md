@@ -112,3 +112,4 @@ Connect with other UXP developers, ask questions, and share what you've built.
 
 - Ask questions and share knowledge in the [Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/).
 - Subscribe to the [Creative Cloud Developer Newsletter](https://www.adobe.com/subscription/ccdevnewsletter.html).
+- Join our [Adobe Developers Live](https://developer.adobe.com/developers-live/) events.
