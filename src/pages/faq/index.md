@@ -7,6 +7,11 @@ keywords:
   - UXP
   - UXP Developer Tool
   - UXP Developer Tool FAQ
+  - CEP
+  - CEP to UXP
+  - Creative Cloud CEP to UXP plugin transition
+  - Creative Cloud plugins
+  - Plugin transition FAQ
 ---
 
 # Frequently Asked Questions

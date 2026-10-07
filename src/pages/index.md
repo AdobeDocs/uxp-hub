@@ -103,7 +103,7 @@ Once your plugin runs, the next questions are usually about testing, packaging, 
 
 - **Developer journey:** the full build-and-ship path, from setup to shipping, is covered in [Guides](guides/index.md).
 - **UXP API reference:** check the [UXP APIs](uxp-api/index.md) section for what's available on the shared platform.
-- **Share and distribute your plugin:** package it, publish through Adobe Marketplace, or distribute independently and within an enterprise.
+- **[Share and distribute your plugin](guides/how-to/distribution/overview/index.md):** package it, publish through Adobe Marketplace, or distribute independently and within an enterprise.
 - **[FAQ](faq/index.md):** quick answers to common setup, packaging, and compliance questions.
 
 ## Join the Community
