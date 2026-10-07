@@ -17,7 +17,7 @@ contributors:
 
 # CEP to UXP Migration Center
 
-Moving a CEP extension to UXP? Start here with guidance that applies across host applications, with host-specific differences in APIs, manifests, and packaging called out where needed.
+Moving a CEP extension to UXP? Start here with guidance that applies across host applications, including packaging changes and host-specific differences in APIs and manifests.
 
 ## How to approach it
 
