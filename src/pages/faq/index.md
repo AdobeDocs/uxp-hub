@@ -11,7 +11,13 @@ keywords:
 
 # Frequently Asked Questions
 
-This section contains frequently asked questions about UXP. For Hybrid Plugin specific questions, see the [Hybrid Plugins FAQ](../guides/how-to/hybrid-plugins/faq.md).
+## Creative Cloud CEP to UXP plugin transition
+
+For FAQs related to how the transition affects Creative Cloud plugins and their users, see [Creative Cloud CEP to UXP plugin transition](https://helpx.adobe.com/creative-cloud/apps/integration-with-other-apps/manage-plugins/cep-uxp-plugin-transition.html).
+
+## Hybrid Plugins
+
+For FAQs related to Hybrid Plugins, see [Hybrid Plugins FAQ](../guides/how-to/hybrid-plugins/faq.md).
 
 ## Questions
 

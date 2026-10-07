@@ -19,6 +19,10 @@ contributors:
 
 Planning to move a CEP extension to UXP? Start here for cross-host guidance on packaging, APIs, and manifests.
 
+## Creative Cloud CEP to UXP plugin transition
+
+For FAQs related to how the transition affects Creative Cloud plugins and their users, see [Creative Cloud CEP to UXP plugin transition](https://helpx.adobe.com/creative-cloud/apps/integration-with-other-apps/manage-plugins/cep-uxp-plugin-transition.html).
+
 ## How to approach it
 
 There's no single fixed recipe, since every CEP plugin is different, but here's a sample approach that works for most:
