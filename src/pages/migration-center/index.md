@@ -9,6 +9,9 @@ keywords:
   - UXP
   - ExtendScript
   - Hybrid Plugin
+  - Creative Cloud CEP to UXP plugin transition
+  - Creative Cloud plugins
+  - Plugin transition FAQ
 contributors:
   - https://github.com/kasivn
 ---
@@ -18,6 +21,10 @@ contributors:
 # CEP to UXP Migration Center
 
 Planning to move a CEP extension to UXP? Start here for cross-host guidance on packaging, APIs, and manifests.
+
+## Creative Cloud CEP to UXP plugin transition
+
+For FAQs related to how the transition affects Creative Cloud plugins and their users, see [Creative Cloud CEP to UXP plugin transition](https://helpx.adobe.com/creative-cloud/apps/integration-with-other-apps/manage-plugins/cep-uxp-plugin-transition.html).
 
 ## How to approach it
 
@@ -33,6 +40,7 @@ There's no single fixed recipe, since every CEP plugin is different, but here's 
    - Vulcan (cross-plugin messaging) → `invokeCommand` and `showPanel` (UXP 6.0.2+, manifest v5), currently limited to plugins within the same host application.
 
    See [Migrating Native CEP Functions](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-native-cep-functions) (common across host apps), [Migrating CEP JavaScript Libraries (Photoshop)](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-cep-javascript-libraries), and [Migrating ExtendScript/EvalScript to the Photoshop DOM API](uxp-for-cep-devs/technical-migration-guide/index.md#migrating-extendscriptevalscript-to-the-photoshop-dom-api) in the Technical Migration Guide for the full API-by-API breakdown, including limitations and permission requirements for each.
+
 4. **Rebuild feature by feature.** Start with `manifest.json` and your `entrypoints.setup()` handlers, then work through the UI and each mapped feature using the manifest, entry point, and packaging guidance in the guides below.
 5. **If a feature still isn't covered**, for example something that depends on native code, an external process, or a performance-intensive operation, look into building a Hybrid Plugin instead of waiting for a UXP API to catch up. A Hybrid Plugin combines a UXP plugin with C++ native libraries, so you can keep that logic and call it from UXP. See the [Hybrid Plugins guide](../guides/how-to/hybrid-plugins/index.md) for details.
 
@@ -66,8 +74,8 @@ The main differences to expect when moving a UXP plugin from one host applicatio
 
 ## What changes at a glance
 
-* **No embedded Chromium.** CEP ran each extension in its own full Chromium instance. UXP plugins run in a single shared, sandboxed JavaScript engine, with no Chromium Embedded Framework bridge and no `CSInterface`.
-* **One JavaScript engine, not two.** CEP split logic between a Chromium panel and ExtendScript host code, connected through `evalScript` calls. UXP plugins call host DOM APIs directly from the same JavaScript context.
-* **A new manifest.** `manifest.xml` becomes `manifest.json`. Panel entry points, permissions, and plugin IDs are declared differently; see each host's own UXP API reference for the exact manifest field mapping.
-* **Sandboxed by default.** UXP plugins declare the file system, network, and process permissions they need in the manifest, instead of relying on unrestricted Node.js access. If your CEP extension shelled out to Node.js, plan for a manifest permission review; see the Knowledge Base for a documented pattern for restructuring around this constraint.
-* **Native UI controls.** UXP plugins can use Spectrum UI components that match the host application's own interface, instead of hand-styling HTML to approximate it.
+- **No embedded Chromium.** CEP ran each extension in its own full Chromium instance. UXP plugins run in a single shared, sandboxed JavaScript engine, with no Chromium Embedded Framework bridge and no `CSInterface`.
+- **One JavaScript engine, not two.** CEP split logic between a Chromium panel and ExtendScript host code, connected through `evalScript` calls. UXP plugins call host DOM APIs directly from the same JavaScript context.
+- **A new manifest.** `manifest.xml` becomes `manifest.json`. Panel entry points, permissions, and plugin IDs are declared differently; see each host's own UXP API reference for the exact manifest field mapping.
+- **Sandboxed by default.** UXP plugins declare the file system, network, and process permissions they need in the manifest, instead of relying on unrestricted Node.js access. If your CEP extension shelled out to Node.js, plan for a manifest permission review; see the Knowledge Base for a documented pattern for restructuring around this constraint.
+- **Native UI controls.** UXP plugins can use Spectrum UI components that match the host application's own interface, instead of hand-styling HTML to approximate it.
