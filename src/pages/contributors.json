@@ -6,20 +6,20 @@
     {
       "page": "/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "10/7/2026"
+      "lastUpdated": "10/23/2026"
     },
     {
       "page": "/config",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "10/7/2026"
+      "lastUpdated": "10/23/2026"
     },
     {
       "page": "/faq/",
@@ -62,9 +62,10 @@
     {
       "page": "/guides/explanation/concepts/panels-and-commands/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/31/2026"
+      "lastUpdated": "9/22/2026"
     },
     {
       "page": "/guides/explanation/fundamentals/apis/",
@@ -72,14 +73,15 @@
         "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/10/2026"
+      "lastUpdated": "10/23/2026"
     },
     {
       "page": "/guides/explanation/fundamentals/nomenclature/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/11/2026"
+      "lastUpdated": "9/22/2026"
     },
     {
       "page": "/guides/explanation/fundamentals/user-interfaces/",
@@ -373,39 +375,39 @@
     {
       "page": "/guides/tutorials/build-your-first-plugin/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/10/2026"
+      "lastUpdated": "9/22/2026"
     },
     {
       "page": "/migration-center/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "10/7/2026"
+      "lastUpdated": "10/23/2026"
     },
     {
       "page": "/migration-center/cross-host-differences/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "9/9/2026"
+      "lastUpdated": "10/23/2026"
     },
     {
       "page": "/migration-center/uxp-for-cep-devs/technical-migration-guide/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "9/9/2026"
+      "lastUpdated": "10/23/2026"
     },
     {
       "page": "/migration-center/uxp-for-extendscript-devs/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "9/9/2026"
+      "lastUpdated": "10/23/2026"
     },
     {
       "page": "/uxp-api/",
@@ -413,14 +415,15 @@
         "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/10/2026"
+      "lastUpdated": "10/23/2026"
     },
     {
       "page": "/uxp-api/changelog",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/21/2026"
     },
     {
       "page": "/uxp-api/known-issues",

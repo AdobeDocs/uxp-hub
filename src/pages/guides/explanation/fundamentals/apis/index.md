@@ -71,6 +71,7 @@ Every UXP-enabled application adds its own host API on top of the shared UXP Cor
 - **InDesign** adds APIs for documents, pages, stories, and frames, retrieved with `require("indesign")`.
 - **Premiere** adds APIs for projects, sequences, tracks, clips, and markers, retrieved with `require("premierepro")`.
 - **Media Encoder** adds APIs for the encoding queue, jobs, and presets, retrieved with `require("mediaencoder")`.
+- **After Effects** adds APIs for application state, project items, layers, and properties, retrieved with `require("aftereffects")`.
 
 ```javascript
 // Example: Premiere's host API entry point
