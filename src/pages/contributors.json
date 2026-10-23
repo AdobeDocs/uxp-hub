@@ -6,27 +6,28 @@
     {
       "page": "/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4",
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "9/15/2026"
+      "lastUpdated": "10/7/2026"
     },
     {
       "page": "/config",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4",
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "9/10/2026"
+      "lastUpdated": "10/7/2026"
     },
     {
       "page": "/faq/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "9/7/2026"
+      "lastUpdated": "10/7/2026"
     },
     {
       "page": "/guides/",
@@ -380,6 +381,7 @@
     {
       "page": "/migration-center/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
       "lastUpdated": "10/7/2026"
