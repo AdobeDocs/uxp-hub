@@ -96,7 +96,7 @@ Automate delivery work: presets, codecs, render queues, and batch exports.
 
 Build tools for motion graphics and visual effects: compositions, layers, and rendering.
 
-[Explore After Effects](https://developer-stage.adobe.com/after-effects/uxp/)
+[Explore After Effects](https://developer.adobe.com/after-effects/uxp/)
 
 ## How UXP Works
 

@@ -96,7 +96,7 @@ Encoding APIs for presets, codecs, render queues, output settings, and exports.
 
 Motion graphics APIs for compositions, layers, and rendering.
 
-[After Effects API](https://developer-stage.adobe.com/after-effects/uxp/after-effects-api/?aio_external)
+[After Effects API](https://developer.adobe.com/after-effects/uxp/after-effects-api/?aio_external)
 
 ## Known Issues
 
