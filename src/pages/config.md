@@ -12,6 +12,10 @@
         - [Media Encoder](https://developer.adobe.com/media-encoder/uxp/?aio_external)
         - [After Effects](https://developer-stage.adobe.com/after-effects/uxp/?aio_external)
     - [Migration Center](migration-center/index.md)
+    - Community
+        - [Developer Forums](https://forums.creativeclouddeveloper.com/?aio_external)
+        - [Developer Newsletter](https://www.adobe.com/subscription/ccdevnewsletter.html?aio_external)
+        - [Adobe Developers Live](https://developer.adobe.com/developers-live/?aio_external)
 
 - subPages:
     - [Overview](index.md)
