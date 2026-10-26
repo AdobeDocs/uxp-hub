@@ -56,7 +56,7 @@ Every UXP plugin follows the same path, regardless of host application: scaffold
 
 Pick the application you already spend your time in for its API reference and product-specific docs. UXP itself works the same way underneath each of them.
 
-<Cards slots="image, heading, text, links" repeat="3" width="100%" />
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![Photoshop](assets/photoshop.svg)
 
@@ -66,6 +66,8 @@ Automate imaging work: documents, layers, selections, and actions.
 
 [Explore Photoshop](https://developer.adobe.com/photoshop/uxp/)
 
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
+
 ![InDesign](assets/indesign.svg)
 
 ### InDesign
@@ -73,6 +75,8 @@ Automate imaging work: documents, layers, selections, and actions.
 Build tools for layout and publishing: pages, stories, styles, and frames.
 
 [Explore InDesign](https://developer.adobe.com/indesign/uxp/)
+
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![Premiere](assets/premiere-pro.svg)
 
