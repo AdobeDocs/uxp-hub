@@ -56,7 +56,7 @@ Spectrum components for building interfaces that match the host application.
 
 Each host application layers its own DOM API for documents, layers, sequences, and other host-specific objects on top of the platform layer above.
 
-<Cards slots="image, heading, text, links" repeat="5" width="100%" />
+<Cards slots="image, heading, text, links" repeat="3" width="100%" />
 
 ![Photoshop](../assets/photoshop.svg)
 
@@ -81,6 +81,8 @@ Layout APIs for documents, pages, stories, styles, and frames.
 Video APIs for projects, sequences, tracks, source media, markers, and exports.
 
 [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external)
+
+<Cards slots="image, heading, text, links" repeat="2" width="100%" />
 
 ![Media Encoder](../assets/media-encoder.svg)
 

@@ -56,7 +56,7 @@ Every UXP plugin follows the same path, regardless of host application: scaffold
 
 Pick the application you already spend your time in for its API reference and product-specific docs. UXP itself works the same way underneath each of them.
 
-<Cards slots="image, heading, text, links" repeat="5" width="100%" />
+<Cards slots="image, heading, text, links" repeat="3" width="100%" />
 
 ![Photoshop](assets/photoshop.svg)
 
@@ -81,6 +81,8 @@ Build tools for layout and publishing: pages, stories, styles, and frames.
 Build tools for editorial work: projects, sequences, tracks, markers, and exports.
 
 [Explore Premiere](https://developer.adobe.com/premiere-pro/uxp/)
+
+<Cards slots="image, heading, text, links" repeat="2" width="100%" />
 
 ![Media Encoder](assets/media-encoder.svg)
 
