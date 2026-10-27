@@ -56,7 +56,7 @@ Spectrum components for building interfaces that match the host application.
 
 Each host application layers its own DOM API for documents, layers, sequences, and other host-specific objects on top of the platform layer above.
 
-<Cards slots="image, heading, text, links" repeat="4" width="100%" />
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![Photoshop](../assets/photoshop.svg)
 
@@ -66,6 +66,8 @@ Imaging APIs for documents, layers, selections, and Camera Raw.
 
 [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external)
 
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
+
 ![InDesign](../assets/indesign.svg)
 
 ### InDesign
@@ -73,6 +75,8 @@ Imaging APIs for documents, layers, selections, and Camera Raw.
 Layout APIs for documents, pages, stories, styles, and frames.
 
 [InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/?aio_external)
+
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![Premiere](../assets/premiere-pro.svg)
 
@@ -82,6 +86,8 @@ Video APIs for projects, sequences, tracks, source media, markers, and exports.
 
 [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external)
 
+<Cards slots="image, heading, text, links" repeat="1" width="50%" />
+
 ![Media Encoder](../assets/media-encoder.svg)
 
 ### Media Encoder
@@ -89,6 +95,16 @@ Video APIs for projects, sequences, tracks, source media, markers, and exports.
 Encoding APIs for presets, codecs, render queues, output settings, and exports.
 
 [Media Encoder API](https://developer.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external)
+
+<Cards slots="image, heading, text, links" repeat="1" width="50%" />
+
+![After Effects](../assets/after-effects.svg)
+
+### After Effects
+
+Motion graphics APIs for compositions, layers, and rendering.
+
+[After Effects API](https://developer.adobe.com/after-effects/uxp/after-effects-api/?aio_external)
 
 ## Known Issues
 

@@ -4,7 +4,7 @@ description: Version-by-version changelog for the UXP platform APIs (JavaScript,
 ---
 # UXP Changelog
 
-Find out what's improved with the latest UXP version, including fixed bugs, new features, and enhancements to existing features. Note that it takes a couple of weeks for new UXP versions to be implemented in future releases of our Creative Cloud apps.
+Find out what's improved with the latest UXP version, including fixed bugs, new features, and enhancements to existing features. Note that it takes a couple of weeks for new UXP versions to be implemented in future releases of our Creative Cloud apps.\<br/>\<br/>\<a href="https://raw.githubusercontent.com/AdobeDocs/uxp-hub/refs/heads/main/src/pages/feed.xml" style="display: inline-flex; align-items: center; gap: 6px;">\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">\<circle cx="6.18" cy="17.82" r="2.18" fill="#eb1000"/>\<path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z" fill="#eb1000"/>\</svg>\<span>Subscribe via RSS\</span>\</a>
 
 ## UXP v9.4
 

@@ -17,7 +17,7 @@ Learn the fundamental differences between the two types of UXP plugin components
 
 ## Overview
 
-A UXP plugin is a self-contained application hosted inside a UXP-enabled application, such as Photoshop, InDesign, Premiere, or Media Encoder. Every plugin is built using one or both of two component types: **Panels** and **Commands**. Understanding the differences between these components is essential for designing plugins that fit naturally into users' workflows.
+A UXP plugin is a self-contained application hosted inside a UXP-enabled application, such as Photoshop, InDesign, Premiere, Media Encoder, or After Effects. Every plugin is built using one or both of two component types: **Panels** and **Commands**. Understanding the differences between these components is essential for designing plugins that fit naturally into users' workflows.
 
 Think of it this way: **Commands are actions**, while **Panels are workspaces**.
 
