@@ -18,7 +18,7 @@ The UXP API is the platform layer shared across UXP-enabled host applications: J
 
 Learn the platform layer once, and it carries over everywhere. Each host application then adds its own DOM API on top - for documents, layers, sequences, and other host-specific objects - which is what you'll reach for once you're past the platform basics covered here.
 
-<Cards slots="image, heading, text, links" repeat="4" width="100%" />
+<Cards slots="image, heading, text, links" repeat="1" width="25%" />
 
 ![JavaScript](../assets/javascript.svg)
 
@@ -28,6 +28,8 @@ Core APIs for crypto, storage, networking, and file system access in plugins.
 
 [JavaScript reference](reference-js/index.md)
 
+<Cards slots="image, heading, text, links" repeat="1" width="25%" />
+
 ![CSS](../assets/css.svg)
 
 ### CSS
@@ -36,6 +38,8 @@ Selectors, pseudo-classes, media queries, and properties for panel layout.
 
 [CSS reference](reference-css/index.md)
 
+<Cards slots="image, heading, text, links" repeat="1" width="25%" />
+
 ![HTML](../assets/html.svg)
 
 ### HTML
@@ -43,6 +47,8 @@ Selectors, pseudo-classes, media queries, and properties for panel layout.
 Elements, attributes, and document structure for building consistent panel interfaces.
 
 [HTML reference](reference-html/index.md)
+
+<Cards slots="image, heading, text, links" repeat="1" width="25%" />
 
 ![Spectrum](../assets/spectrum.svg)
 
