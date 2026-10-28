@@ -46,7 +46,7 @@ There's no single fixed recipe, since every CEP plugin is different, but here's 
 
 ## Where to Start
 
-<Cards slots="image, heading, text, links" repeat="3" width="100%" />
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![CEP to UXP Technical Migration Guide](../assets/migration.svg)
 
@@ -56,6 +56,8 @@ What's different between CEP and UXP, and how to migrate each part of your exten
 
 [Read the technical migration guide](uxp-for-cep-devs/technical-migration-guide/index.md)
 
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
+
 ![UXP for ExtendScript Developers](../assets/extendscript.svg)
 
 ### UXP for ExtendScript Developers
@@ -63,6 +65,8 @@ What's different between CEP and UXP, and how to migrate each part of your exten
 What changes when you move from ExtendScript and the ExtendScript Toolkit to UXP.
 
 [Read the ExtendScript guide](uxp-for-extendscript-devs/index.md)
+
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![UXP in Photoshop vs Other Host Applications](../assets/cross-host.svg)
 
