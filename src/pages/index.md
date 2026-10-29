@@ -34,6 +34,7 @@ Everything you need to build UXP plugins, in one place.
 - [Hybrid Plugins](guides/how-to/hybrid-plugins/index.md)
 - [Share and Distribute](guides/how-to/distribution/overview/index.md)
 - [FAQ](faq/index.md)
+- [Migration Roadmap](migration-center/index.md#cep-to-uxp-migration-milestones)
 
 ## What is UXP?
 

@@ -26,6 +26,23 @@ Planning to move a CEP extension to UXP? Start here for cross-host guidance on p
 
 For FAQs related to how the transition affects Creative Cloud plugins and their users, see [Creative Cloud CEP to UXP plugin transition](https://helpx.adobe.com/creative-cloud/apps/integration-with-other-apps/manage-plugins/cep-uxp-plugin-transition.html).
 
+## CEP to UXP migration milestones
+
+This timeline combines UXP plugin availability with the planned Marketplace and end-user milestones for transitioning existing CEP panels in each application. Yellow marks milestones affecting third-party developers; pink marks changes affecting end users. **GA** means generally available.
+
+![CEP to UXP migration roadmap showing UXP availability and CEP panel milestones for Photoshop, InDesign, Premiere, After Effects, Illustrator, and Media Encoder from MAX 2026 through December 2029.](../image.png)
+
+### Milestones by application
+
+- **Photoshop:** By MAX 2026, plugins, scripts, and Hybrid Plugins reach GA. The Marketplace stops accepting new panels in Q2 2027. In Q3 2027, users and developers are to be notified that panels will be disabled by default in December; default disabling is scheduled for December 2027.
+- **InDesign:** Plugins and scripts reach GA by MAX 2026, followed by Hybrid Plugins in Q3 2027. The Marketplace stops accepting new panels in January 2028. Users are to be notified, and panels disabled by default, in December 2028.
+- **Premiere:** Plugins and Hybrid Plugins reach GA by MAX 2026. The Marketplace stops accepting new panels in December 2027. Users are to be notified, and panels disabled by default, in December 2028.
+- **After Effects:** Plugins enter Public Beta by MAX 2026 and reach GA, with Hybrid, in Q2 2027. The Marketplace cutoff, user notification, and default disabling are scheduled for December 2028.
+- **Illustrator:** Plugins enter Private Beta by MAX 2026 and Public Beta in Q2 2027. Plugins and Hybrid are scheduled to reach GA in Q4 2027. The Marketplace cutoff, user notification, and default disabling are scheduled for December 2028.
+- **Media Encoder:** Plugins enter Public Beta by MAX 2026 and reach GA, with Hybrid, in Q1 2027. The Marketplace cutoff, user notification, and default disabling are scheduled for December 2028.
+
+Across products, CEP removal is scheduled for December 2029; the roadmap notes it remains available in N-1 and N-2. Assuming **N** means the product release in which removal occurs, **N-1** is the immediately preceding release and **N-2** is the release before that. The roadmap does not map these labels to calendar dates or specific host-app versions. Treat the dates as high-level targets.
+
 ## How to approach it
 
 There's no single fixed recipe, since every CEP plugin is different, but here's a sample approach that works for most:
