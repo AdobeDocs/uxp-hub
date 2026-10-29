@@ -34,14 +34,14 @@ This timeline combines UXP plugin availability with the planned Marketplace and 
 
 ### Milestones by application
 
-- **Photoshop:** By MAX 2026, plugins, scripts, and Hybrid Plugins reach GA. The Marketplace stops accepting new panels in Q2 2027. In Q3 2027, users and developers are to be notified that panels will be disabled by default in December; default disabling is scheduled for December 2027.
-- **InDesign:** Plugins and scripts reach GA by MAX 2026, followed by Hybrid Plugins in Q3 2027. The Marketplace stops accepting new panels in January 2028. Users are to be notified, and panels disabled by default, in December 2028.
-- **Premiere:** Plugins and Hybrid Plugins reach GA by MAX 2026. The Marketplace stops accepting new panels in December 2027. Users are to be notified, and panels disabled by default, in December 2028.
-- **After Effects:** Plugins enter Public Beta by MAX 2026 and reach GA, with Hybrid, in Q2 2027. The Marketplace cutoff, user notification, and default disabling are scheduled for December 2028.
-- **Illustrator:** Plugins enter Private Beta by MAX 2026 and Public Beta in Q2 2027. Plugins and Hybrid are scheduled to reach GA in Q4 2027. The Marketplace cutoff, user notification, and default disabling are scheduled for December 2028.
-- **Media Encoder:** Plugins enter Public Beta by MAX 2026 and reach GA, with Hybrid, in Q1 2027. The Marketplace cutoff, user notification, and default disabling are scheduled for December 2028.
+- **Photoshop:** By MAX 2026, UXP Plugins, UXP Scripts, and UXP Hybrid Plugins reach GA. The Marketplace stops accepting new CEP Panels in Q2 2027. In Q3 2027, users and developers are to be notified that CEP Panels will be disabled by default in December; CEP Panels are scheduled to be disabled by default in December 2027.
+- **InDesign:** UXP Plugins and UXP Scripts reach GA by MAX 2026, followed by UXP Hybrid Plugins in Q3 2027. The Marketplace stops accepting new CEP Panels in January 2028. Users are to be notified, and CEP Panels disabled by default, in December 2028.
+- **Premiere:** UXP Plugins and UXP Hybrid Plugins reach GA by MAX 2026. The Marketplace stops accepting new CEP Panels in December 2027. Users are to be notified, and CEP Panels disabled by default, in December 2028.
+- **After Effects:** UXP Plugins enter Public Beta by MAX 2026 and reach GA, with UXP Hybrid Plugins, in Q2 2027. The Marketplace cutoff for CEP Panels, user notification, and default disabling of CEP Panels are scheduled for December 2028.
+- **Illustrator:** UXP Plugins enter Private Beta by MAX 2026 and Public Beta in Q2 2027. UXP Plugins and UXP Hybrid Plugins are scheduled to reach GA in Q4 2027. The Marketplace cutoff for CEP Panels, user notification, and default disabling of CEP Panels are scheduled for December 2028.
+- **Media Encoder:** UXP Plugins enter Public Beta by MAX 2026 and reach GA, with UXP Hybrid Plugins, in Q1 2027. The Marketplace cutoff for CEP Panels, user notification, and default disabling of CEP Panels are scheduled for December 2028.
 
-Across products, CEP removal is scheduled for December 2029; the roadmap notes it remains available in N-1 and N-2. Assuming **N** means the product release in which removal occurs, **N-1** is the immediately preceding release and **N-2** is the release before that. The roadmap does not map these labels to calendar dates or specific host-app versions. Treat the dates as high-level targets.
+Across products, CEP Panels are scheduled for removal in December 2029; the roadmap notes they remain available in N-1 and N-2. Assuming **N** means the product release in which removal occurs, **N-1** is the immediately preceding release and **N-2** is the release before that. The roadmap does not map these labels to calendar dates or specific host-app versions. Treat the dates as high-level targets.
 
 ## How to approach it
 
