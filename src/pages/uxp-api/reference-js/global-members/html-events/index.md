@@ -14,3 +14,4 @@ description: Overview of HTML Events
 * [MessageEvent](message-event.md)
 * [PointerEvent](pointer-event.md)
 * [ProgressEvent](progress-event.md)
+* [System sleep and awake events](system-events.md)

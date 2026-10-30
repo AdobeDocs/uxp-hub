@@ -22,6 +22,8 @@ it will result in loss of data without the secure storage being removed. SecureS
 should be regarded as a cache rather than a persistent storage. Data in SecureStorage
 should be able to be regenerated from plugins after the time of loss.
 
+**Note:** Since UXP v9.0, SecureStorage methods follow the Web Storage API specification for error handling. The return and error behavior documented below reflects this change; older runtimes may behave differently.
+
 
 
 ## length : `number`
@@ -33,10 +35,12 @@ Number of items stored in the secure storage.
 ## setItem(key, value)
 Stores a key and value pair after the value is encrypted in a secure storage.
 
-**Returns**: `Promise<void>` Promise that resolves when the value is stored, rejected when the value is empty or not stored.  
+**Returns**: `Promise<void>` - Promise that resolves when the value is stored
+
 **Throws**:
 
-- `TypeError` If either key or value doesn't have one of acceptable types.
+- `TypeError` If either key or value doesn't have one of acceptable types
+- `DOMException` If the value cannot be stored (e.g., QuotaExceededError)
 
 
 | Param | Type | Description |
@@ -49,10 +53,11 @@ Stores a key and value pair after the value is encrypted in a secure storage.
 ## getItem(key)
 Retrieves a value associated with a provided key after the value is being decrypted from a secure storage.
 
-**Returns**: `Promise<Uint8Array>` Promise that resolves with an Uint8Array  
+**Returns**: `Promise<Uint8Array|null>` Promise that resolves with a Uint8Array, or null if the key doesn't exist
+
 **Throws**:
 
-- `TypeError` If a key doesn't have an acceptable type.
+- `TypeError` If key is not a string
 
 
 | Param | Type | Description |
@@ -63,11 +68,13 @@ Retrieves a value associated with a provided key after the value is being decryp
 
 ## removeItem(key)
 Removes a value associated with a provided key.
+If the key doesn't exist or operation fails, the method silently completes.
 
-**Returns**: `Promise<void>` Promise that resolves when the value associated with the key is removed, rejected when the value is neither removed nor found.  
+**Returns**: `Promise<void>` - Promise that resolves when the operation completes
+
 **Throws**:
 
-- `TypeError` If a key doesn't have an acceptable type.
+- `TypeError` If key is not a string
 
 
 | Param | Type | Description |
@@ -89,7 +96,8 @@ Returns a key which is stored at the given index.
 
 ## clear()
 Clear all values in a secure storage.
+If the storage is empty or clear operation fails, the method silently completes.
 
-**Returns**: `Promise<void>` Promise that resolves when all the items are cleared. rejected when there is no item to clear or clear failed.  
+**Returns**: `Promise<void>` - Promise that resolves when the operation completes
 
   
