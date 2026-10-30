@@ -26,16 +26,17 @@ Webview takes attributes such as `id` , `height` , and `src` to specify its prop
 ```
 
 #### Manifest Settings
-To configure the Webview, you will first require the `webview` permission for your plugin. And configure the `domains`, `allow`, `allowLocalRendering` and `enableMessageBridge` attributes in manifest. The role of each of these attributes are described below.
+To configure the Webview, declare the `webview` permission under `requiredPermissions` in your plugin manifest. Configure the optional `domains`, `allowLocalRendering` and `enableMessageBridge` attributes as needed. The role of each of these attributes is described below.
 
 **Note** that WebViews require manifest version v5 or above \<br\>\</br\>
 
+**Version compatibility:** Since UXP v9.2, `requiredPermissions.webview.allow` is no longer required or read; declaring the `webview` permission is sufficient. For older runtimes, include `"allow": "yes"`. Since UXP v9.0, `requiredPermissions.webview.domains` is optional; older runtimes require it. The examples below target UXP v9.2 and later.
+
 | Key | Value | Description | Mandatory/Optional |
 | --- | --- | --- | --- |
-| .allow | "yes" | Enables WebView access to the plugin | Mandatory |
 | .allowLocalRendering | "yes" | Enables WebView to load local contents (supported from UXP v8.0.0❗) | Optional |
-| .domains | string[] | Allows access to the specified domains. Wildcards (except top-level) are supported. e.g "[https://*.adobe.com](https://*.adobe.com)". \<br\>\</br\> Recommended | Mandatory |
-| .domains | "all" | Allows access to all domains.\<br\>\</br\>Not recommended, may affect performance, security and privacy. Plugin may be blocked by enterprises. | Mandatory |
+| .domains | string[] | Allows access to the specified domains. Wildcards (except top-level) are supported. e.g "[https://*.adobe.com](https://*.adobe.com)". \<br\>\</br\> Recommended | Optional (since UXP v9.0) |
+| .domains | "all" | Allows access to all domains.\<br\>\</br\>Not recommended, may affect performance, security and privacy. Plugin may be blocked by enterprises. | Optional (since UXP v9.0) |
 | .enableMessageBridge | "localAndRemote" | Allows Plugin & the content loaded on WebView to communicate regardless of where the content is loaded from **locally or remotely.** | Optional |
 | .enableMessageBridge | "localOnly" | Allows Plugin & the content loaded on WebView to communicate if the content is loaded from **locally.** (supported from UXP v8.0.0❗) | Optional |
 | .enableMessageBridge | "no" | Does not allow Plugin & the content loaded on WebView to communicate | Optional |
@@ -47,7 +48,6 @@ To configure the Webview, you will first require the `webview` permission for yo
 "manifestVersion": 5,
 "requiredPermissions": {
     "webview": {
-       "allow": "yes",
         // domains --> string[] | "all"
         "domains": [ "https://*.adobe.com", "https://*.google.com"],
         // enableMessageBridge can use either of these data "localAndRemote" | "localOnly" | "no"
@@ -63,6 +63,10 @@ You can setup a communication channel between the Webview and your plugin using 
 #### Sample Plugin
 Checkout the template available in `UXP Developer Tool` for a quick starter plugin for WebView in UXP.
 
+#### Version-specific behavior
+- **Since UXP v9.1:** Drag and drop is supported between UXP panels and WebView-based panels. WebView can accept drops of various data types from anywhere, bypassing UXP.
+- **Since UXP v9.2:** Swipe navigation, zoom control, and pinch zoom gestures are disabled on Windows WebView2, matching macOS WKWebView behavior.
+
 #### Limitations
 1. UXP v7.4.3 and below allows only remote content. This means you will not be able to load local HTML files from plugin folders in UXP WebView unless you have UXP v8.0 or higher.
 2. Any links in a UXP WebView will not open in a new window.
@@ -73,8 +77,7 @@ e.g., Domain lists below are NOT supported
 ```json
 "requiredPermissions": {
  "webview": {
-     "domains": ["https://www.*", "https://www.adobe.*"],
-     "allow": "yes"
+  "domains": ["https://www.*", "https://www.adobe.*"]
   }
 }
 ```
@@ -104,7 +107,6 @@ To enable local content,
 ```json
 "requiredPermissions": {
  "webview": {
-     "allow": "yes",
      "domains": [],
      "allowLocalRendering": "yes",
      "enableMessageBridge": "localOnly"
@@ -253,6 +255,8 @@ webview.addEventListener("loadstop", (e) => {
 
 ### loaderror
 Event fired when loading has failed.
+
+**Note:** Since UXP v9.2, `WebViewEvent.message` provides more detailed information about the cause of load errors for better debugging.
 
 **Properties**
 

@@ -46,7 +46,7 @@ Find out what's improved with the latest UXP version, including fixed bugs, new 
 
 ### New
 
-- System Sleep/Awake Events: introduced system sleep and wakeup events in the plugin JS layer for better control over features like video playback.
+- [System Sleep/Awake Events](reference-js/global-members/html-events/system-events.md): introduced system sleep and wakeup events in the plugin JS layer for better control over features like video playback.
 
   ```js
   window.addEventListener("sleep", () => { console.log("System is sleeping"); });
@@ -57,13 +57,13 @@ Find out what's improved with the latest UXP version, including fixed bugs, new 
 
 ### New
 
-- Video `timeUpdate` Event: the UXP video element now emits a `timeUpdate` event like the HTML5 video element.
-- Video Element Audio Support: the UXP video element can now play audio files.
-- `URLSearchParams` Module Support: added the `URLSearchParams` module to UXP.
-- `WebView` Drag & Drop Support: added drag and drop between UXP panels and `WebView`-based panels; `WebView` can accept drops of various data types from anywhere, bypassing UXP.
+- Video `timeUpdate` Event: the [UXP video element](reference-js/global-members/html-elements/html-video-element.md) now emits a `timeUpdate` event like the HTML5 video element.
+- Video Element Audio Support: the [UXP video element](reference-js/global-members/html-elements/html-video-element.md) can now play audio files.
+- `URLSearchParams` Module Support: added the [URLSearchParams](reference-js/global-members/data-transfers/url-search-params.md) module to UXP.
+- `WebView` Drag & Drop Support: added drag and drop between UXP panels and [WebView](reference-js/global-members/html-elements/html-web-view-element.md)-based panels; `WebView` can accept drops of various data types from anywhere, bypassing UXP.
 - Improved Image Loading: multiple views can load the same URL without triggering false error states or visible flicker.
-- Enriched `WebView` load error messages: `WebViewEvent.message` now provides more detailed cause info for better debugging.
-- `WebView` improvements:
+- Enriched `WebView` load error messages: [WebViewEvent.message](reference-js/global-members/html-elements/html-web-view-element.md#loaderror) now provides more detailed cause info for better debugging.
+- [WebView](reference-js/global-members/html-elements/html-web-view-element.md) improvements:
   - Disabled swipe navigation on WebView2 for consistency with macOS WKWebView; all WebView2 gestures (swipe, zoom control, pinch zoom) are now disabled.
   - Removed the `allow` field from `permissions.webview` config; `permissions.webview.allow` in the manifest is no longer used.
 
@@ -71,19 +71,19 @@ Find out what's improved with the latest UXP version, including fixed bugs, new 
 
 ### Fixed
 
-- Ensured that scripts in `WebView`s are universally injected across all frames, including any nested `iframe`. This addresses an issue with no-op context menus showing up for `iframe` in `WebView`s.
+- Ensured that scripts in [WebViews](reference-js/global-members/html-elements/html-web-view-element.md) are universally injected across all frames, including any nested `iframe`. This addresses an issue with no-op context menus showing up for `iframe` in `WebView`s.
 - Fixed an issue with UXP Developer Tools (UDT) being unable to establish a connection with the host applications in Debug builds, which impacted developer workflows.
-- Ensured that the `WebView` visibility-change script always runs on the plugin's JavaScript thread, fixing a crash across all DVA codebases.
+- Ensured that the [WebView](reference-js/global-members/html-elements/html-web-view-element.md) visibility-change script always runs on the plugin's JavaScript thread, fixing a crash across all DVA codebases.
 
 ## UXP v9.0
 
 ### Updated
 
-- WebView enhancements:
+- [WebView](reference-js/global-members/html-elements/html-web-view-element.md) enhancements:
   - WebView2 now uses Fluent overlay scrollbars for a modern UI experience.
   - `requiredPermissions.webview.domains` is now optional, simplifying manifest configuration.
-- `SecureStorage` methods now follow the Web Storage API spec for error handling.
-- `XMLHttpRequest.readyState` is exposed on `XMLHttpRequest` now for correctness.
+- [SecureStorage](reference-js/modules/uxp/key-value-storage/secure-storage.md) methods now follow the Web Storage API spec for error handling.
+- [XMLHttpRequest.readyState](reference-js/global-members/data-transfers/xml-http-request.md#readystate--number) is exposed on `XMLHttpRequest` now for correctness.
 
 ## UXP v8.4.0
 

@@ -375,8 +375,8 @@ Multiple files can be returned if the `allowMultiple` option` is `true`.
 
 **Example**  
 ```js
-const folder = await fs.getFolder({initialDomain = domains.userDocuments});
-const file = await fs.getFileForOpening({initialLocation = folder});
+const folder = await fs.getFolder({initialDomain: domains.userDocuments});
+const file = await fs.getFileForOpening({initialLocation: folder});
 if (!file) {
     // no file selected
     return;
@@ -435,7 +435,15 @@ If the user dismisses the picker, `null` is returned instead.
 **Example**  
 ```js
 const folder = await fs.getFolder();
-const myNovel = (await fs.getEntries()).filter(entry => entry.name.indexOf('novel') > 0);
+if (!folder) {
+    // folder picker was cancelled
+    return;
+}
+const myNovel = (await folder.getEntries()).find(entry => entry.isFile && entry.name.includes('novel'));
+if (!myNovel) {
+    // no matching file found
+    return;
+}
 const text = await myNovel.read();
 ```
 
@@ -463,6 +471,64 @@ Returns an plugin's folder – this folder and everything within it are read onl
 This contains all the Plugin related packaged assets.
 
 **Returns**: `Promise<Folder>`  
+
+
+## createEntryWithUrl(url, options)
+Creates an entry for the given url and returns the appropriate instance.
+
+**Returns**: `Promise<File|Folder>` the File or Folder object which is created for the given url
+**Throws**:
+
+- `Error` if invalid file url format or value is passed.
+if the parent folder of the file/folder to be created does not exist.
+if a folder already exists at the url.
+if a file already exists at the url and it is requested to create a folder.
+if a file already exists at the url and the overwrite option is not set to true to create a file.
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| url | `string` |  | the url to create an Entry object. Note that file: scheme has limited support in UWP due to the strict [File access permissions](https://learn.microsoft.com/en-us/windows/uwp/files/file-access-permissions) |
+| options | `*` |  |  |
+| [options.type] | `Symbol` | `types.file` | indicates which kind of entry to create. Pass types.folder to create a new folder. Note that if the type is file then this method just create"s" a file entry object and not the actual file on the disk. File on the storage is created when data is written into the file. eg: call write method on the file entry object. |
+| [options.overwrite] | `Boolean` | `false` | if true, the create attempt can overwrite an existing file |
+
+**Example**
+```js
+const newImgFolder = await fs.createEntryWithUrl("plugin-temp:/img", { type: types.folder });
+const newTmpFolder = await fs.createEntryWithUrl("file:/Users/user/Documents/tmp", { type: types.folder });
+```
+**Example**
+```js
+const newDatFile = await fs.createEntryWithUrl("plugin-temp:/tmp/test.dat", { overwrite: true });
+const newTxtFile = await fs.createEntryWithUrl("file:/Users/user/Documents/test.txt", { overwrite: true });
+```
+
+
+## getEntryWithUrl(url)
+Gets an entry of the given url and returns the appropriate instance.
+
+**Returns**: `Promise<File|Folder>` the File or Folder object for the given url
+**Throws**:
+
+- `Error` if invalid file url format or value is passed.
+if the file/folder does not exist at the url.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | `string` | the url to get an Entry object Note that file: scheme has limited support in UWP due to the strict [File access permissions](https://learn.microsoft.com/en-us/windows/uwp/files/file-access-permissions) |
+
+**Example**
+```js
+const tmpFolder = await fs.getEntryWithUrl("plugin-temp:/tmp");
+const docFolder = await fs.getEntryWithUrl("file:/Users/user/Documents");
+```
+**Example**
+```js
+const tmpFile = await fs.getEntryWithUrl("plugin-temp:/tmp/test.dat");
+const docFile = await fs.getEntryWithUrl("file:/Users/user/Documents/test.txt");
+```
 
 
 ## getFsUrl(entry)
