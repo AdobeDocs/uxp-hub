@@ -2,16 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>UXP Changelog</title>
-    <link>https://developer.adobe.com/uxp/uxp-api/changelog</link>
-    <atom:link href="https://developer.adobe.com/uxp/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://developer.adobe.com/uxp/uxp-api/changelog/</link>
+    <atom:link href="https://raw.githubusercontent.com/AdobeDocs/uxp-hub/staging-branch/src/pages/feed.xml" rel="self" type="application/rss+xml" />
     <description>Version-by-version changelog for the UXP platform APIs (JavaScript, CSS, HTML, and Spectrum references).</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 11:38:57 GMT</lastBuildDate>
     <item>
       <title>UXP v9.4</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v94</link>
-      <guid isPermaLink="false">uxp-v94</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v94</link>
+      <guid isPermaLink="false">UXP v9.4</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li>Added <code>queueMicrotask</code> support, enabling newer JavaScript tooling and modern asynchronous patterns in plugins.</li>
@@ -19,12 +18,14 @@
 <li>Expanded CSS <code>text-decoration</code> support for greater compatibility with web standards.</li>
 <li>Unhandled JavaScript exceptions in third-party plugins are now captured and reported to improve runtime diagnostics. This is opt-in for now to allow some transition time, via a feature flag in <code>manifest.json</code>:</li>
 </ul>
-<pre><code>  {
-    &quot;featureFlags&quot;: {
-      &quot;uncaughtException&quot;: true,
-      &quot;unhandledRejection&quot;: true
-    }
-  }</code></pre>
+<p>```json</p>
+<p>{</p>
+<p>&quot;featureFlags&quot;: {</p>
+<p>&quot;uncaughtException&quot;: true,</p>
+<p>&quot;unhandledRejection&quot;: true</p>
+<p>}</p>
+<p>}</p>
+<p>```</p>
 <h3>Fixed</h3>
 <ul>
 <li>Fixed UNC path handling for <code>WebView</code> <code>src</code>, video <code>src</code>, and video <code>poster</code> attributes on Windows.</li>
@@ -33,9 +34,8 @@
     </item>
     <item>
       <title>UXP v9.3</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v93</link>
-      <guid isPermaLink="false">uxp-v93</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v93</link>
+      <guid isPermaLink="false">UXP v9.3</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li>Added support for the video <code>poster</code> attribute (macOS only). Plugins can display a custom image before playback begins or while video content is loading.</li>
@@ -50,65 +50,62 @@
     </item>
     <item>
       <title>UXP v9.2</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v92</link>
-      <guid isPermaLink="false">uxp-v92</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v92</link>
+      <guid isPermaLink="false">UXP v9.2</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
-<li>System Sleep/Awake Events: introduced system sleep and wakeup events in the plugin JS layer for better control over features like video playback.</li>
+<li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-events/system-events/">System Sleep/Awake Events</a>: introduced system sleep and wakeup events in the plugin JS layer for better control over features like video playback.</li>
 </ul>
-<pre><code>  window.addEventListener(&quot;sleep&quot;, () =&gt; { console.log(&quot;System is sleeping&quot;); });
-  window.addEventListener(&quot;awake&quot;, () =&gt; { console.log(&quot;System is awake&quot;); });</code></pre>]]></description>
+<p>```js</p>
+<p>window.addEventListener(&quot;sleep&quot;, () =&gt; { console.log(&quot;System is sleeping&quot;); });</p>
+<p>window.addEventListener(&quot;awake&quot;, () =&gt; { console.log(&quot;System is awake&quot;); });</p>
+<p>```</p>]]></description>
     </item>
     <item>
       <title>UXP v9.1</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v91</link>
-      <guid isPermaLink="false">uxp-v91</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v91</link>
+      <guid isPermaLink="false">UXP v9.1</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
-<li>Video <code>timeUpdate</code> Event: the UXP video element now emits a <code>timeUpdate</code> event like the HTML5 video element.</li>
-<li>Video Element Audio Support: the UXP video element can now play audio files.</li>
-<li><code>URLSearchParams</code> Module Support: added the <code>URLSearchParams</code> module to UXP.</li>
-<li><code>WebView</code> Drag &amp; Drop Support: added drag and drop between UXP panels and <code>WebView</code>-based panels; <code>WebView</code> can accept drops of various data types from anywhere, bypassing UXP.</li>
+<li>Video <code>timeUpdate</code> Event: the <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-video-element/">UXP video element</a> now emits a <code>timeUpdate</code> event like the HTML5 video element.</li>
+<li>Video Element Audio Support: the <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-video-element/">UXP video element</a> can now play audio files.</li>
+<li><code>URLSearchParams</code> Module Support: added the <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/data-transfers/url-search-params/">URLSearchParams</a> module to UXP.</li>
+<li><code>WebView</code> Drag &amp; Drop Support: added drag and drop between UXP panels and <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a>-based panels; <code>WebView</code> can accept drops of various data types from anywhere, bypassing UXP.</li>
 <li>Improved Image Loading: multiple views can load the same URL without triggering false error states or visible flicker.</li>
-<li>Enriched <code>WebView</code> load error messages: <code>WebViewEvent.message</code> now provides more detailed cause info for better debugging.</li>
-<li><code>WebView</code> improvements:</li>
+<li>Enriched <code>WebView</code> load error messages: <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/#loaderror">WebViewEvent.message</a> now provides more detailed cause info for better debugging.</li>
+<li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> improvements:</li>
 <li>Disabled swipe navigation on WebView2 for consistency with macOS WKWebView; all WebView2 gestures (swipe, zoom control, pinch zoom) are now disabled.</li>
 <li>Removed the <code>allow</code> field from <code>permissions.webview</code> config; <code>permissions.webview.allow</code> in the manifest is no longer used.</li>
 </ul>]]></description>
     </item>
     <item>
       <title>UXP v9.0.2</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v902</link>
-      <guid isPermaLink="false">uxp-v902</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v902</link>
+      <guid isPermaLink="false">UXP v9.0.2</guid>
       <description><![CDATA[<h3>Fixed</h3>
 <ul>
-<li>Ensured that scripts in <code>WebView</code>s are universally injected across all frames, including any nested <code>iframe</code>. This addresses an issue with no-op context menus showing up for <code>iframe</code> in <code>WebView</code>s.</li>
+<li>Ensured that scripts in <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebViews</a> are universally injected across all frames, including any nested <code>iframe</code>. This addresses an issue with no-op context menus showing up for <code>iframe</code> in <code>WebView</code>s.</li>
 <li>Fixed an issue with UXP Developer Tools (UDT) being unable to establish a connection with the host applications in Debug builds, which impacted developer workflows.</li>
-<li>Ensured that the <code>WebView</code> visibility-change script always runs on the plugin's JavaScript thread, fixing a crash across all DVA codebases.</li>
+<li>Ensured that the <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> visibility-change script always runs on the plugin's JavaScript thread, fixing a crash across all DVA codebases.</li>
 </ul>]]></description>
     </item>
     <item>
       <title>UXP v9.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v90</link>
-      <guid isPermaLink="false">uxp-v90</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v90</link>
+      <guid isPermaLink="false">UXP v9.0</guid>
       <description><![CDATA[<h3>Updated</h3>
 <ul>
-<li>WebView enhancements:</li>
+<li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> enhancements:</li>
 <li>WebView2 now uses Fluent overlay scrollbars for a modern UI experience.</li>
 <li><code>requiredPermissions.webview.domains</code> is now optional, simplifying manifest configuration.</li>
-<li><code>SecureStorage</code> methods now follow the Web Storage API spec for error handling.</li>
-<li><code>XMLHttpRequest.readyState</code> is exposed on <code>XMLHttpRequest</code> now for correctness.</li>
+<li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/modules/uxp/key-value-storage/secure-storage/">SecureStorage</a> methods now follow the Web Storage API spec for error handling.</li>
+<li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/data-transfers/xml-http-request/#readystate--number">XMLHttpRequest.readyState</a> is exposed on <code>XMLHttpRequest</code> now for correctness.</li>
 </ul>]]></description>
     </item>
     <item>
       <title>UXP v8.4.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v840</link>
-      <guid isPermaLink="false">uxp-v840</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v840</link>
+      <guid isPermaLink="false">UXP v8.4.0</guid>
       <description><![CDATA[<h3>Fixed</h3>
 <ul>
 <li>Security fix: removed the <code>Authorization</code> header if an HTTP request is redirected to a different origin.</li>
@@ -117,9 +114,8 @@
     </item>
     <item>
       <title>UXP v8.3.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v830</link>
-      <guid isPermaLink="false">uxp-v830</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v830</link>
+      <guid isPermaLink="false">UXP v8.3.0</guid>
       <description><![CDATA[<h3>Fixed</h3>
 <ul>
 <li>Stability fixes for video on Windows.</li>
@@ -127,9 +123,8 @@
     </item>
     <item>
       <title>UXP v8.2.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v820</link>
-      <guid isPermaLink="false">uxp-v820</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v820</link>
+      <guid isPermaLink="false">UXP v8.2.0</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li>File System Stream Support: added <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/modules/fs/"><code>fs.createReadStream</code></a> support, enabling large file upload streaming without loading the entire file into memory.</li>
@@ -138,18 +133,19 @@
 <ul>
 <li><code>XMLHttpRequest</code> enhancement: added support for standard <code>XMLHttpRequest</code> state variables (<code>UNSENT</code>, <code>OPENED</code>, <code>HEADERS_RECEIVED</code>, <code>LOADING</code>, <code>DONE</code>).</li>
 </ul>
-<pre><code>  XMLHttpRequest.HEADERS_RECEIVED; // 2 (not undefined)
-  XMLHttpRequest.prototype.OPENED; // 1
-  new XMLHttpRequest().LOADING; // 3</code></pre>
+<p>```js</p>
+<p>XMLHttpRequest.HEADERS_RECEIVED; // 2 (not undefined)</p>
+<p>XMLHttpRequest.prototype.OPENED; // 1</p>
+<p>new XMLHttpRequest().LOADING; // 3</p>
+<p>```</p>
 <ul>
 <li>File system improvements: extended the UXP file system to support all valid characters, including special characters like <code>#</code>, improving compatibility with various file-naming conventions.</li>
 </ul>]]></description>
     </item>
     <item>
       <title>UXP v8.1.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v810</link>
-      <guid isPermaLink="false">uxp-v810</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v810</link>
+      <guid isPermaLink="false">UXP v8.1.0</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li>Support for <a href="https://developer.adobe.com/premiere-pro/uxp/">UXP Plugins in Premiere v25.1 (Beta)</a></li>
@@ -166,18 +162,16 @@
     </item>
     <item>
       <title>UDT v2.1.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#udt-v210</link>
-      <guid isPermaLink="false">udt-v210</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#udt-v210</link>
+      <guid isPermaLink="false">UDT v2.1.0</guid>
       <description><![CDATA[<ul>
 <li>Supports UXP Plugins for Premiere v25.1 (Beta)</li>
 </ul>]]></description>
     </item>
     <item>
       <title>UXP v8.0.1</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v801</link>
-      <guid isPermaLink="false">uxp-v801</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v801</link>
+      <guid isPermaLink="false">UXP v8.0.1</guid>
       <description><![CDATA[<h3>Breaking Changes</h3>
 <ul>
 <li><code>enableFillAsCustomAttribute</code> feature flag, introduced in UXPv7.1.0, will be turned on by default.</li>
@@ -214,11 +208,10 @@
 <li><code>Box-shadow</code> property now supports <code>transform rotate</code>.</li>
 <li>New feature flag <code>CSSNextSupport</code> in the manifest.json to gate the new and future CSS capability.</li>
 </ul>
-<table>
-<tr><th>Manifest setting</th><th>Description</th></tr>
-<tr><td><code>featureFlags: {&quot;CSSNextSupport&quot;: true}</code></td><td>Enables all the new CSS features.</td></tr>
-<tr><td><code>featureFlags: {&quot;CSSNextSupport&quot;: [&quot;boxShadow&quot;, &quot;transformFunctions&quot;, &quot;transformProperties&quot; ]}</code></td><td>Enables only the named properties in the list.</td></tr>
-</table>
+<p>| Manifest setting | Description  |</p>
+<p>| ---------------- | ------------ |</p>
+<p>| <code>featureFlags: {&quot;CSSNextSupport&quot;: true}</code> | Enables all the new CSS features. |</p>
+<p>| <code>featureFlags: {&quot;CSSNextSupport&quot;: [&quot;boxShadow&quot;, &quot;transformFunctions&quot;, &quot;transformProperties&quot; ]}</code> | Enables only the named properties in the list. |</p>
 <p>Note that <code>&quot;enableSWCSupport&quot;: true</code> will enable <code>CSSNextSupport</code> by default.</p>
 <ul>
 <li>Video enhancements: Support added for <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-video-element/">Seek Event</a></li>
@@ -234,9 +227,8 @@
     </item>
     <item>
       <title>UXP v7.4.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v740</link>
-      <guid isPermaLink="false">uxp-v740</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v740</link>
+      <guid isPermaLink="false">UXP v7.4.0</guid>
       <description><![CDATA[<h3>Updated</h3>
 <ul>
 <li>UXP Alerts (<a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-dom/alert/">alert</a>, <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-dom/prompt/">prompt</a>, <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-dom/confirm/">confirm</a>) have been moved back to beta due to a few inherent instabilities in this feature. While we work on addressing these issues, the feature can be accessed using the feature flag <code>enableAlerts</code> in the manifest.json file. Also, note that UXP alerts will be <code>available only in Plugins</code> and <code>not in scripts</code>.</li>
@@ -254,9 +246,8 @@
     </item>
     <item>
       <title>UXP v7.3.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v730</link>
-      <guid isPermaLink="false">uxp-v730</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v730</link>
+      <guid isPermaLink="false">UXP v7.3.0</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/modules/uxp/user-information/user-info/">GUID</a> for uniquely identifying a Creative Cloud User (Currently Supported only in <code>Photoshop</code>).</li>
@@ -288,9 +279,8 @@
     </item>
     <item>
       <title>UDT v2.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#udt-v20</link>
-      <guid isPermaLink="false">udt-v20</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#udt-v20</link>
+      <guid isPermaLink="false">UDT v2.0</guid>
       <description><![CDATA[<h3>New</h3>
 <p>UXP Playground to experiment with APIs. Click on the 'Playground' tab next to 'Developer Workspace' to select an app and get started.</p>
 <h3>Updated</h3>
@@ -298,9 +288,8 @@
     </item>
     <item>
       <title>UXP v7.2.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v720</link>
-      <guid isPermaLink="false">uxp-v720</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v720</link>
+      <guid isPermaLink="false">UXP v7.2.0</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li>Adobe <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/modules/uxp/xmp/getting-started/xmp/">Extensibility Metadata Platform (XMP)</a> support</li>
@@ -317,9 +306,8 @@
     </item>
     <item>
       <title>UXP v7.1.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v710</link>
-      <guid isPermaLink="false">uxp-v710</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v710</link>
+      <guid isPermaLink="false">UXP v7.1.0</guid>
       <description><![CDATA[<h3>New</h3>
 <p>HTMLElement now supports</p>
 <ul>
@@ -336,21 +324,21 @@
 <ul>
 <li><code>SVGElement</code>: The color of the <code>fill</code> attribute using a CSS variable will resolve as per the variable value. For now, please test this fix by enabling the feature flag in your plugin manifest <code>&quot;featureFlags&quot; : { &quot;enableFillAsCustomAttribute&quot; : true }</code>. This flag will be turned on by default in the next UXP release.</li>
 </ul>
-<pre><code>// CSS variable
-html {
-  --iconColor: yellow;
-}
-
-&lt;svg height=&quot;100&quot; width=&quot;100&quot;&gt;
-  &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;40&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; fill=&quot;var(--iconColor, red)&quot; /&gt;
-&lt;/svg&gt;
-// shows a yellow circle</code></pre>]]></description>
+<p>```</p>
+<p>// CSS variable</p>
+<p>html {</p>
+<p>--iconColor: yellow;</p>
+<p>}</p>
+<p>&lt;svg height=&quot;100&quot; width=&quot;100&quot;&gt;</p>
+<p>&lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;40&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; fill=&quot;var(--iconColor, red)&quot; /&gt;</p>
+<p>&lt;/svg&gt;</p>
+<p>// shows a yellow circle</p>
+<p>```</p>]]></description>
     </item>
     <item>
       <title>UXP v7.0.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v700</link>
-      <guid isPermaLink="false">uxp-v700</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v700</link>
+      <guid isPermaLink="false">UXP v7.0.0</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li>Support for Web Components in UXP Plugins. Various HTML elements and methods have been added to support this feature.</li>
@@ -398,9 +386,8 @@ html {
     </item>
     <item>
       <title>UXP v6.5.0</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v650</link>
-      <guid isPermaLink="false">uxp-v650</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v650</link>
+      <guid isPermaLink="false">UXP v6.5.0</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li><a href="https://developer.adobe.com/premiere-pro/uxp/plugins/hybrid-plugins/?aio_external=true">UXP Hybrid plugins</a></li>
@@ -410,9 +397,8 @@ html {
     </item>
     <item>
       <title>UXP v6.4</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v64</link>
-      <guid isPermaLink="false">uxp-v64</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v64</link>
+      <guid isPermaLink="false">UXP v6.4</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> for anels</li>
@@ -438,9 +424,8 @@ html {
     </item>
     <item>
       <title>UXP v6.3</title>
-      <link>https://developer.adobe.com/uxp/uxp-api/changelog#uxp-v63</link>
-      <guid isPermaLink="false">uxp-v63</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v63</link>
+      <guid isPermaLink="false">UXP v6.3</guid>
       <description><![CDATA[<h3>New</h3>
 <ul>
 <li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/data-transfers/blob/">Blob</a> APIs.</li>
