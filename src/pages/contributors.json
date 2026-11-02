@@ -1,7 +1,7 @@
 {
-  "total": 375,
+  "total": 379,
   "offset": 0,
-  "limit": 375,
+  "limit": 379,
   "data": [
     {
       "page": "/",
@@ -19,7 +19,7 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "10/23/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/faq/",
@@ -420,10 +420,10 @@
     {
       "page": "/uxp-api/changelog",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "10/21/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/known-issues",
@@ -1417,7 +1417,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/global-members/data-transfers/blob",
@@ -1469,6 +1469,20 @@
       "lastUpdated": "8/27/2026"
     },
     {
+      "page": "/uxp-api/reference-js/global-members/data-transfers/url",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4"
+      ],
+      "lastUpdated": "10/30/2026"
+    },
+    {
+      "page": "/uxp-api/reference-js/global-members/data-transfers/url-search-params",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4"
+      ],
+      "lastUpdated": "10/30/2026"
+    },
+    {
       "page": "/uxp-api/reference-js/global-members/data-transfers/web-socket",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
@@ -1487,7 +1501,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/global-members/html-dom/abort-controller",
@@ -1628,6 +1642,13 @@
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
       "lastUpdated": "8/27/2026"
+    },
+    {
+      "page": "/uxp-api/reference-js/global-members/html-dom/navigator",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4"
+      ],
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/global-members/html-dom/node",
@@ -1865,28 +1886,28 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/global-members/html-elements/html-video-element",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/global-members/html-elements/html-web-view-element",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/global-members/html-events/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/global-members/html-events/base-ui-event",
@@ -1964,6 +1985,13 @@
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
       "lastUpdated": "8/27/2026"
+    },
+    {
+      "page": "/uxp-api/reference-js/global-members/html-events/system-events",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4"
+      ],
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/global-members/image-blob/",
@@ -2082,7 +2110,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/modules/os/",
@@ -2187,7 +2215,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/modules/uxp/persistent-file-storage/",
@@ -2278,7 +2306,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/modules/uxp/persistent-file-storage/types",
@@ -2376,7 +2404,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "8/27/2026"
+      "lastUpdated": "10/30/2026"
     },
     {
       "page": "/uxp-api/reference-js/modules/uxp/xmp/xmp-classes/",
