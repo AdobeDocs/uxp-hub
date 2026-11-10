@@ -15,6 +15,8 @@ contributors:
 
 # CEP to UXP Technical Migration Guide
 
+Documentation reviewed: November 4, 2026. Examples use manifest v5 unless stated otherwise. Match your plugin's minimum host version to the required [UXP runtime and API capabilities](../../../uxp-api/versions.md), and test in each target host on macOS and Windows.
+
 This guide is geared towards CEP (Common Extensibility Platform) developers who would like more technical guidance on migrating their extensions to UXP (Unified Extensibility Platform). The migration process is no doubt challenging but will dramatically improve your development experience for future iterations of your plugins.
 
 Most of this guide, including the JavaScript library and ExtendScript/DOM sections, uses Photoshop as its example host application, since that's where CEP-to-UXP migrations are most common. If you're migrating a CEP extension for a different host application, the [Migrating Native CEP Functions](#migrating-native-cep-functions) section below covers the APIs common across host apps (file I/O, network, opening external resources); check your host's own UXP API reference for its host-specific DOM API. `batchPlay` is Photoshop-specific and is not available in Premiere, InDesign, Media Encoder, and After Effects.
@@ -57,7 +59,7 @@ UXP provides a comprehensive extensibility solution, turning JavaScript and HTML
 * CEP plugins can't use native host controls, so CEP dialogs and panels don't match host ones without a lot of CSS work. UXP plugins can use Spectrum UI components that look and feel like the host application.
 * The ExtendScript side of CEP uses an old JavaScript version that lacks many modern features, so a developer has to juggle two different JavaScript environments. UXP uses a single, modern JavaScript engine throughout.
 
-Because UXP communicates directly with the host application, the issues associated with the CEP and ExtendScript interface go away. In general, plugin development is simpler with UXP, and UXP plugins can use [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) components for theme-aware, cross-platform user interfaces that look consistent across Creative Cloud applications.
+Because UXP communicates directly with the host application, plugins no longer need the CEP-to-ExtendScript bridge. For theme-aware interfaces, choose from [built-in Spectrum UXP widgets and Spectrum Web Components](../../../uxp-api/reference-spectrum/index.md). These are different implementations with different setup requirements; do not assume that the general Spectrum CSS library or browser components work unchanged in UXP.
 
 ### Developer Tooling
 
@@ -81,23 +83,23 @@ Meanwhile, UXP plugins are either commands or panels. Plugin metadata like the s
 | Panel | Dockable, resizable, fly-out menus, and theme-aware |
 | Command | Direct action command that executes a custom task, triggered from the host application's Plugins menu, with optional UI |
 
-Commands and panels are common UXP entry point types across every host. See [Panels and Commands](../../../guides/explanation/concepts/panels-and-commands/index.md) for the full picture, including modal dialogs and combining both in one plugin.
+Commands and panels are common UXP entry point types, but host and release support can differ, especially in beta releases. See [Panels and Commands](../../../guides/explanation/concepts/panels-and-commands/index.md) and your target host's documentation for modal dialogs and combining entrypoints in one plugin.
 
 ## UXP Plugin Development
 
 ### Entrypoint Setup
 
-Using the `entrypoints.setup()` API, handlers and menu items for the entry points are defined in the manifest. The `entrypoints` object consists of 3 objects:
+Declare entrypoint IDs and types in the manifest, then register their handlers and panel flyout menus with `require("uxp").entrypoints.setup()`. Call `setup()` once, during plugin initialization. The configuration consists of three handler maps:
 
 1. **plugin**: This can be an object or a function. If this is a function, it is assumed as the `create` handler (described below).
    * `create()`: This is called after the plugin is loaded.
    * `destroy()`: This is called before the plugin is unloaded.
-2. **panels**: This contains a list of key-value pairs where each key is a panel id (string) and the value is the data for the panel, whose type can be object/function. If the value is a function, it is assumed to be the `show` method (described below). If an object, it can contain any of the following properties but must define either `create` or `show`. Each of the following functions returns a promise if successful and should throw an exception or return a rejected promise to signal failure.
-   * `create()`: This is called when a panel is created.
-   * `show()`: This is called when a panel is shown.
-   * `hide()`: This is called when a panel is hidden.
-   * `destroy()`: This is called when a panel is going to be destroyed.
-   * `invokeMenu()`: This is called when a panel menu item is invoked. The menu id is passed as the first argument to this function.
+2. **panels**: Each key is a manifest panel ID and each value is an object or function. A function is treated as the `show` handler. An object must define either `create` or `show`. Supported asynchronous handlers may return a Promise; throw an exception or reject the Promise to signal failure. In manifest v5, panel handlers have these signatures:
+  * `create(rootNode)`: Called when a panel is created.
+  * `show(rootNode, data)`: Called to show a panel.
+  * `hide(rootNode, data)`: Called to hide a panel.
+  * `destroy(rootNode)`: Called when a panel is going to be destroyed.
+  * `invokeMenu(menuId)`: Called when a panel flyout menu item is invoked.
    * `menuItems`: An array of menu items. Each item can be a string or an object with the properties defined below, in the same order as specified in this array. For specifying a separator, a value of "-" or a menu item with label "-" can be used at the required place in the array.
      * `{string}` id - identifier of the menu item.
      * `{string}` label - display text for the menu item. Should be localized. If label is not specified, id is used as label.
@@ -105,12 +107,19 @@ Using the `entrypoints.setup()` API, handlers and menu items for the entry point
      * `{boolean}` checked - checked state for the menu item. Default - false.
      * `{Array}` submenu - submenu for this menu item, again as an array of `menuItems`. The `id` of submenus should still be unique across the panel.
 3. **commands**: This object contains a list of key-value pairs where each key is the command ID and each value is the command's data, whose type can be an object or function. If the command's data is a function, it is assumed to be the `run()` method.
-   * `run()`: This is called when the command is invoked via a menu entry.
-   * `cancel()`: This is called when the command is cancelled/aborted before completion.
+  * `run(executionContext, ...arguments)`: In manifest v5, called when a command is invoked, including through supported inter-plugin communication.
+  * `cancel()`: Reserved for future use in the common API reference. Do not rely on it for cancellation. Use the cancellation mechanism documented by your host API, such as Photoshop's modal execution context.
+
+Manifest v4 panel handlers instead receive one `event` argument. Promise support and timeouts are method-specific; see the [entrypoints reference](../../../uxp-api/reference-js/modules/uxp/entry-points/entry-points.md). Verify panel show/hide behavior in the target host before using it to manage resources or assume visibility changes are always reported.
 
 ### User Interface
 
-UXP plugins can use platform-native HTML and CSS components such as buttons and input fields. A plugin can also use [Spectrum UXP](../../../uxp-api/reference-spectrum/spectrum-uxp-widgets/index.md) components.
+UXP plugins support a subset of HTML and CSS, along with [Spectrum UI options](../../../uxp-api/reference-spectrum/index.md). Review your CEP UI and dependencies before porting them:
+
+- **Built-in Spectrum UXP widgets** need no npm installation. **Spectrum Web Components (SWC)** require installed and bundled UXP wrappers, manifest v5, and `featureFlags.enableSWCSupport`. SWC support starts in UXP 7.0; check the [SWC setup and supported versions](../../../uxp-api/reference-spectrum/swc/index.md), including the documented 0.37.0 component-version requirement for UXP 8.0.
+- **Browser and Node.js dependencies** are not automatically compatible. UXP is neither a complete browser nor a full Node.js runtime. Check DOM assumptions, native addons, subprocess use, supported modules, and bundler output. The presence of `require("fs")` does not mean all Node.js APIs are available.
+- **WebView** can host web content that cannot run in the native UXP UI, but adds browser-process overhead. Communicate with the plugin through the message bridge rather than accessing host APIs directly from the page. Local HTML rendering requires UXP 8.0 or later and the appropriate permissions. See the [WebView reference](../../../uxp-api/reference-js/global-members/html-elements/html-web-view-element.md).
+- **Framework versions and accessibility** need testing on your minimum and current host versions. Verify keyboard navigation, dialogs, password inputs, and the chosen widget/SWC variants on both platforms. Do not infer current framework support from compatibility notes for an older UXP runtime.
 
 ## Migrating Native CEP Functions
 
@@ -120,7 +129,13 @@ There is a common set of APIs that plugins need access to, regardless of the hos
 
 In CEP extensions, developers use the `window.cep.fs` object to perform directory and file I/O operations. CEP developers have arbitrary access to disk and machine resources, and arbitrary ability to launch processes (including bash scripts). Users do not have to consent to extensions accessing their file system. Because developers have full access, all file access is technically persistent. Secure storage, on the other hand, does not exist for CEP.
 
-UXP's `storage` module can read and write files and folders in the user's file system, but with different API signatures. Because of the sandboxing requirements of recent OS releases, UXP does not allow arbitrary access to any file on the host system. Therefore, these files are accessed by making a request to the user (by showing a file-picker dialog) and obtaining a token. File accesses outside of the plugin's root folder, the plugin's data folder, and a plugin temporary folder require the user's permission. Persistent file storage and secure storage are available in UXP as well. Refer to these notes: [file access](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/file-access/), [persistent file storage](../../../uxp-api/reference-js/modules/uxp/persistent-file-storage/storage.md), and UXP-specific [(secure) storage](../../../uxp-api/reference-js/modules/uxp/key-value-storage/secure-storage.md). If you need constant access to a location to write and read files, for now, use the UXP-sanctioned location for your plugin data or [persistent file access tokens](../../../uxp-api/reference-js/modules/uxp/persistent-file-storage/file-system-provider.md#createpersistenttoken).
+UXP offers two file APIs: entry-based `require("uxp").storage.localFileSystem` and path-based `require("fs")`. With manifest v5, choose the narrowest `requiredPermissions.localFileSystem` value that supports your workflow:
+
+- `"plugin"` (default): access the plugin installation folder (read-only), data folder, and temporary folder.
+- `"request"`: let the user select files or folders through pickers. Use returned entries for file operations and tokens where the receiving API requires them.
+- `"fullAccess"`: access arbitrary paths within the current user's filesystem access rights, without a picker for each path. This is a broader declared permission, not a bypass for OS permissions or user consent requirements.
+
+Use the [filesystem operations guide](../../../guides/how-to/recipes/filesystem-operations/index.md) to choose between these APIs and permissions. For reusable access to a picked location, see [persistent file access tokens](../../../uxp-api/reference-js/modules/uxp/persistent-file-storage/file-system-provider.md#createpersistenttokenentry); handle failures if the file moves, disappears, or is no longer accessible. Plugin data and temporary storage are not substitutes for irreplaceable user files. Use [secure storage](../../../uxp-api/reference-js/modules/uxp/key-value-storage/secure-storage.md) for suitable sensitive key/value data, not as the only copy of data that cannot be regenerated.
 
 ### Encoding API
 
@@ -130,16 +145,16 @@ UXP's encoding options depend on which file API you use. The [`storage`](../../.
 
 ### Opening Remote Resources
 
-The `window.cep.util` object gives CEP developers access to `openURLInDefaultBrowser`, `registerExtensionUnloadCallback`, and `storeProxyCredentials`. In UXP, the "shell" module contains an equivalent for `openURLInDefaultBrowser` (opens a web link in the system browser): `openExternal`. The UXP shell module does not (and will not) have equivalent methods for `registerExtensionUnloadCallback` and `storeProxyCredentials` in CEP.
+The `window.cep.util` object gives CEP developers access to `openURLInDefaultBrowser`, `registerExtensionUnloadCallback`, and `storeProxyCredentials`. In UXP, `require("uxp").shell.openExternal()` opens a web link in the system browser. The shell module does not provide direct equivalents for CEP's `registerExtensionUnloadCallback` and `storeProxyCredentials`; review lifecycle and authentication requirements separately.
 
-In UXP, you can use `openPath` and `openExternal` to open external files and remote resources. With UXP 6.0.2+, [manifest v5](../../../guides/explanation/concepts/manifest/index.md#launchprocess) asks that you define which URI schemes and file extensions your plugin is permitted to launch. This permission is common to every UXP host.
+Use `shell.openPath()` for local files and folders and `shell.openExternal()` for remote URLs or supported URI schemes. Declare the allowed schemes and file extensions in [manifest v5's launchProcess permission](../../../guides/explanation/concepts/manifest/index.md#launchprocess). Check your minimum host's shell support rather than treating a manifest version as proof that every host release implements the API.
 
 ### Process APIs
 
 CEP developers can use the `window.cep.process` object to create (and maintain) processes. Here is the code to create a process and check if it is running:
 
 ```js
-var result = window.cep.process.createProcess("usr/X11/bin/xterm");
+var result = window.cep.process.createProcess("/usr/X11/bin/xterm");
 
 if (result.err === 0) {
   var pid = result.data;
@@ -150,22 +165,35 @@ if (result.err === 0) {
 }
 ```
 
-UXP does not yet have its own comprehensive set of process APIs. In UXP, you can use `openPath` and `openExternal` to open external files and remote resources. With UXP 6.0.2+, manifest v5 asks that you define which URI schemes and file extensions your plugin is permitted to launch.
+UXP does not provide a comprehensive CEP-style process-management API. `shell.openPath()` and `shell.openExternal()` launch files and URIs through system applications; they are not replacements for subprocess arguments, standard input/output, PID tracking, or process termination. The following manifest fragment declares permitted launches:
 
 ```json
-"requiredPermissions": {
+{
+  "requiredPermissions": {
     "launchProcess": {
-        // allows launching files with specified URI schemes
-        "schemes":
-            [ "https", "slack", "adobe" ],
-        // allows opening files with the specified file extensions
-        "extensions":
-            [ ".pdf", ".xd", ".psd" ]
+      "schemes": ["https", "slack", "adobe"],
+      "extensions": [".pdf", ".xd", ".psd"]
     }
+  }
 }
 ```
 
-Both `openPath` and `openExternal` rely on this permission set, and upon either function call, the user will get a runtime consent dialog. Only after they agree will the API call be executed.
+Both APIs are subject to runtime user consent. Await the result: the shell API resolves with an empty string on success or an error-message string on failure. Also handle rejected calls:
+
+```js
+async function openDocumentation() {
+  const { shell } = require("uxp");
+  try {
+    const errorMessage = await shell.openExternal("https://developer.adobe.com/");
+    if (errorMessage) {
+      throw new Error(errorMessage);
+    }
+  } catch (error) {
+    console.error("Could not open the documentation:", error);
+    throw error;
+  }
+}
+```
 
 ## Migrating CEP JavaScript Libraries
 
@@ -173,14 +201,26 @@ CEP JavaScript Libraries are counterparts of the Flex CSXS Library. They provide
 
 ### Vulcan Interface: Communicating across plugins within Photoshop
 
-Vulcan is an (older) Adobe library that serves as an inter-plugin communication mechanism across Adobe host applications. These APIs are not accessible from within UXP, but inter-plugin communication APIs have been added in UXP 6.0.2.
+Vulcan is an Adobe library for communication across CEP extensions and host applications. It is not available in UXP. Where supported by the host, UXP's Plugin Manager can invoke another installed plugin's commands or show its panels within the same host application.
 
-In UXP 6.0.2 (manifest v5), you can specify the appropriate flags in the manifest and use `invokeCommand` to execute both commands and `showPanel` to expose panels from other plugins.
+The requesting plugin must declare this manifest v5 permission:
+
+```json
+{
+  "requiredPermissions": {
+    "ipc": { "enablePluginCommunication": true }
+  }
+}
+```
+
+Find the responder by plugin ID, check that it is installed and enabled, then use `invokeCommand()` or `showPanel()` with an exposed entrypoint ID. Handle failures: the host may disallow a request. See [Communicate between plugins](../../../guides/how-to/inter-plugin-comm/index.md) for a complete example and verify support in your minimum host version.
 
 | Type | CEP | UXP |
 | :--- | :--- | :---|
-| Plugin communication across host applications | Yes | Not yet |
-| Plugin communication within the same host application | Yes | Yes, UXP 6.0.2+ |
+| Plugin communication across host applications | Yes | Not provided by these APIs |
+| Plugin communication within the same host application | Yes | Host-dependent; requires the IPC permission |
+
+This is not a drop-in replacement for Vulcan's cross-application messaging. Inventory any cross-host workflow separately before committing to a migration architecture.
 
 ### CS APIs: Communicating with your plugin and with Photoshop
 
@@ -198,17 +238,30 @@ The v1 implementation (Photoshop 2021) does not allow plugins to run in isolatio
 
 What changes were made for v2?
 
-* Suspend/resume history states. See [executeAsModal](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/executeasmodal) for details.
+* State-changing operations require a modal scope through [executeAsModal](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/executeasmodal), which also exposes history suspension and cancellation controls. See the [migration example below](#migrating-extendscriptevalscript-to-the-photoshop-dom-api).
 * Updated Photoshop DOM access. See the [changelog](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/changelog/#updated-dom-api).
 
-Photoshop 2021 supports only v1, while Photoshop 2022 supports both v1 and v2 of the API. Developers can specify which version to target in the manifest. The manifest has a `host` value that takes a `data` object with an `apiLevel` field. This `apiLevel` field is optional and by default:
+Photoshop 2021 supports only API v1; Photoshop 2022 introduced API v2 alongside v1. The manifest field is `host.data.apiVersion`. If omitted, its default depends on the plugin's **minimum targeted Photoshop version** (`host.minVersion`), not the version currently running:
 
-* A plugin on a PS version less than 23.0.0 will target Photoshop API v1
-* A plugin on a PS version of 23.0.0 or greater will target Photoshop API v2
+* A plugin whose `host.minVersion` is less than `23.0.0` defaults to Photoshop API v1.
+* A plugin whose `host.minVersion` is `23.0.0` or greater defaults to Photoshop API v2.
 
-While plugins can still use v1, many new features are only available on Photoshop API v2 and support for v1 will be removed in a future major update to Photoshop. Only special use cases that rely on either the Photoshop menu state, or other non-modal user interactions while the plugin is running, may need to stick with v1.
+Use API v2 for new migrations; API v1 is deprecated. Set the value explicitly rather than relying on a default. For example, this Photoshop host configuration targets manifest v5-capable Photoshop versions:
 
-The following three calls are common UXP APIs available on every host, independent of the Photoshop-specific `apiLevel` discussion above:
+```json
+{
+  "manifestVersion": 5,
+  "host": {
+    "app": "PS",
+    "minVersion": "23.3.0",
+    "data": { "apiVersion": 2 }
+  }
+}
+```
+
+This is a manifest fragment, not a complete plugin manifest. See the [Photoshop-specific manifest reference](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp-guide/uxp-misc/manifest-v4/photoshop-manifest/#apiversion). Manifest version, Photoshop API version, and UXP runtime version are separate compatibility settings.
+
+The following version accessors are common UXP APIs, independent of Photoshop's `apiVersion`:
 
 **Access host application version**: `require("uxp").host.version`
 
@@ -222,7 +275,7 @@ CSXS/CEP events are used to send events among extensions in an application, and 
 
 **Host DOM events**: Each host application exposes its own DOM events and notification APIs. Consult your target host's UXP API reference for the events it supports.
 
-**UXP lifecycle events**: UXP lifecycle events help manage a plugin's lifecycle. Host implementations can have limitations, so verify lifecycle behavior in your target host's documentation.
+**UXP lifecycle events**: UXP lifecycle events help manage a plugin's lifecycle. Register handlers using `entrypoints.setup()`. Host implementations can have limitations: for example, historical Photoshop issues affect recurring panel show/hide notifications. Verify behavior in your minimum and current target versions before using these callbacks to infer panel visibility. See [Known Issues](../../../uxp-api/known-issues.md#events).
 
 The following are plugin lifecycle events your plugin can listen for:
 
@@ -233,21 +286,17 @@ The following are panel lifecycle events your plugin can listen for:
 
 * `uxpcreatepanel`: Indicates that a panel is about to be created. This is called when a panel is first displayed, and each time after it is destroyed.
 * `uxpdestroypanel`: Indicates that a panel is about to be destroyed.
-* `uxpshowpanel`: Indicates that a panel is about to be shown and should render its UI into the attached node. This is called every time a panel is shown.
+* `uxpshowpanel`: Intended to indicate that a panel is about to be shown and should render into the attached node. Recurring notifications depend on host implementation.
 * `uxphidepanel`: Indicates that a panel is hidden.
 * `uxpinvokepanelmenu`: Indicates that a panel menu item has been invoked.
 
-The following are command lifecycle events your plugin can listen for:
+For commands, register a `run` handler. Do not assume a `cancel` callback or a command-cancel event provides a portable cancellation mechanism; use your host API's documented controls.
 
-* `uxpcommand`: Indicates that the user (or Photoshop) has requested the plugin execute a command.
-* `uxpcommandrun`: Indicates that the plugin will execute a command.
-* `uxpcommandcancel`: Indicates that the user has cancelled the command.
+When moving from manifest v4 to v5:
 
-To support these events, we've added:
-
-1. Async support on entrypoints.
-2. Entrypoints parameter changes with the latest manifest update: v4 takes `{event name, node, PanelID, PanelInfo}`; v5 takes node and data (if applicable).
-3. Entrypoints now have a default timeout of 300 milliseconds.
+1. Supported entrypoint methods can return Promises; this does not mean every handler must be async.
+2. V4 panel handlers receive one `event` argument. In v5, panel `create`/`destroy` receive `rootNode`, and `show`/`hide` receive `rootNode, data`. Command `run` instead receives `executionContext, ...arguments`.
+3. The common API reference documents a default 300 millisecond timeout for panel `create`, `show`, and `hide` from manifest v5 onward. This is not a limit on all async plugin work. Check the [entrypoints reference](../../../uxp-api/reference-js/modules/uxp/entry-points/entry-points.md) and host documentation for each method's contract.
 
 #### Use Case: Network Access
 
@@ -264,11 +313,11 @@ Limitations:
 
 CSInterface has two APIs that can be used for customizing flyout menus. Refer to [these notes](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_11.x/Documentation/CEP%2011.1%20HTML%20Extension%20Cookbook.md#fly-out-menu) for an example of how to configure content for flyouts, and how to use them in tandem with event listeners.
 
-UXP support and limitations for menus vary by host. Where supported, flyout menus are defined by a JSON structure passed to the `entrypoints.setup` method. When a user invokes a menu item, UXP passes its menu ID to the plugin handler. Define labels for the menu items users select in the `manifest.json` file (`EntryPointDefinition.label`). See the [Photoshop flyout-menu example](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp_guide/uxp-misc/flyout-menus/#flyout-menus) for that host's implementation.
+UXP support and limitations for menus vary by host. Where supported, define panel flyout menus in `entrypoints.setup()` under `panels.<panelId>.menuItems`. Each item's `label` is its displayed text; selections call `invokeMenu(menuId)`. Separately, `entrypoints[].label` in the manifest labels the command or panel in the host's Plugins menu. See the [Photoshop flyout-menu example](https://developer.adobe.com/photoshop/uxp/2022/guides/uxp-guide/uxp-misc/flyout-menus/#flyout-menus).
 
 #### Use Case: Theme Support
 
-CSInterface uses the theme manager interface and CSInterface to update the extension theme after the host application's theme changes. CSInterface does this by listening for the CSXS event `com.adobe.csxs.events.ThemeColorChanged`. CEP would access the latest host theme information using `var skinInfo = JSON.parse(window.__adobe_cep__.getHostEnvironment()).appSkinInfo;`. This `skinInfo` object holds the host theme info and font info and can be modified. In UXP, you can add theme awareness using Spectrum CSS and media queries; verify the target host's UI component and theme support.
+CSInterface uses the theme manager interface and CSInterface to update the extension theme after the host application's theme changes. CSInterface does this by listening for the CSXS event `com.adobe.csxs.events.ThemeColorChanged`. CEP would access the latest host theme information using `var skinInfo = JSON.parse(window.__adobe_cep__.getHostEnvironment()).appSkinInfo;`. In UXP, use the chosen Spectrum widgets or SWC theme support and supported CSS media queries; verify theme changes in each target host rather than porting CEP's theme listener unchanged.
 
 #### Use Case: Localization
 
@@ -290,8 +339,26 @@ This section applies to Photoshop. `batchPlay` and the `executeAction` mapping d
 
 JSX files define functions and objects to be executed in Photoshop's ExtendScript environment. These are executed in CEP either at plugin load time or using `evalScript`. You specify the path to JSX files in the `<ScriptPath>` node in manifest.xml.
 
-All ExtendScript calls to Photoshop were synchronous and blocked the host application UI while executing. In UXP, method calls are asynchronous and do not block the UI thread — await them, or chain them with `.then()`, to get their result. Some UXP API members, like property getters and setters, are exposed synchronously and don't return Promises, so they don't need to be awaited.
+ExtendScript calls to Photoshop were synchronous. Many Photoshop UXP methods return Promises: await them, or chain them with `.then()`, before using their results. Other methods and properties are synchronous. Follow each API member's documented signature rather than assuming every UXP call is asynchronous or cannot block execution.
 
 In UXP, you cannot load and execute JSX files directly. Instead, you can access the Photoshop DOM directly using the Photoshop DOM API. If the current implementation does not fulfill your needs, you can use [`batchPlay`](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/batchplay?aio_external=true) to execute Photoshop actions.
+
+With Photoshop API v2, operations that modify Photoshop state must run inside `core.executeAsModal()`. This includes state-changing `batchPlay` operations; using `batchPlay` is not a way around modal execution. For example:
+
+```js
+async function createMigratedDocument() {
+  const { app, core } = require("photoshop");
+  try {
+    await core.executeAsModal(async () => {
+      await app.createDocument({ width: 512, height: 512 });
+    }, { commandName: "Create migrated document" });
+  } catch (error) {
+    console.error("Could not create the document:", error);
+    throw error;
+  }
+}
+```
+
+Await both the modal call and asynchronous work inside it so the scope does not end early. For long-running work, use the modal execution context's cancellation controls. History suspension and rollback require their documented handling; modal scope alone is not an automatic transaction or rollback guarantee. See [Modal Execution](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/executeasmodal) for cancellation, history, and version-specific timeout behavior.
 
 `batchPlay` is the evolution of `executeAction` from ExtendScript. Where `executeAction` could only play one descriptor at a time, `batchPlay` accepts an array of action descriptors. In ExtendScript, we provided a class around constructing descriptors, references, and putting values in. With `batchPlay`, we have replaced these related classes with `actionJSON`. If you have used `executeAction` in ExtendScript, you may recall 4-character codes (OSTypes) and helper methods around them. In `actionJSON`, we instead use extended string identifiers such as `colorSampler`. You can still use an OSType by pre-pending it with a `$` sign and passing that as a string, like `$app`.
