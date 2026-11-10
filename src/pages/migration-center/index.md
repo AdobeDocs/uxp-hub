@@ -22,7 +22,7 @@ contributors:
 
 Planning to move a CEP extension to UXP? Start here for cross-host guidance on packaging, APIs, and manifests.
 
-Technical guidance reviewed: November 4, 2026. Check your minimum host version before choosing APIs.
+This guide is for developers migrating an existing CEP plugin to UXP. Start with the latest release of your target host application, and test any earlier releases you choose to support. Use the [product matrix](../uxp-api/versions.md#applications-integrated-with-uxp) to check which UXP runtime is integrated into each listed host release; the latest UXP release is not necessarily bundled with every host.
 
 ## Creative Cloud CEP to UXP plugin transition
 
@@ -62,7 +62,7 @@ There's no single fixed recipe, since every CEP plugin is different, but here's 
 
 4. **Rebuild feature by feature.** Start with `manifest.json` and your `entrypoints.setup()` handlers, then work through the UI and each mapped feature. Include the [UI and dependency preflight](uxp-for-cep-devs/technical-migration-guide/index.md#user-interface) and review the [cross-host differences](cross-host-differences/index.md) before reusing CEP libraries or host code.
 5. **If a feature still isn't covered**, consider a Hybrid Plugin only where the host supports it. A Hybrid Plugin combines UXP with compiled C++ addons; it is not a drop-in replacement for Node.js native modules or unrestricted subprocess access. Current documented support is **Photoshop 24.2.0+** and **Premiere 26.2+**; InDesign and Media Encoder do not currently support Hybrid Plugins. See the [Hybrid Plugins guide](../guides/how-to/hybrid-plugins/index.md) for platform, architecture, and distribution requirements. Keep future roadmap support separate from capabilities available today.
-6. **Test your minimum and current host versions.** Verify permissions, lifecycle callbacks, host mutation/transaction rules, file-token recovery, UI and keyboard behavior, and network or IPC failures on macOS and Windows. Record which host, UXP runtime, UI library, and build-tool versions you actually tested.
+6. **Test the host releases you plan to support.** Start with the latest host release and include earlier releases, such as the preceding one or two versions, if they are part of your plugin's target range. Verify permissions, lifecycle callbacks, host mutation/transaction rules, file-token recovery, UI and keyboard behavior, and network or IPC failures on macOS and Windows. Record which host, UXP runtime, UI library, and build-tool versions you actually tested.
 
 ## Where to Start
 

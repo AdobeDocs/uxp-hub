@@ -15,7 +15,7 @@ contributors:
 
 # CEP to UXP Technical Migration Guide
 
-Documentation reviewed: November 4, 2026. Examples use manifest v5 unless stated otherwise. Match your plugin's minimum host version to the required [UXP runtime and API capabilities](../../../uxp-api/versions.md), and test in each target host on macOS and Windows.
+Examples use manifest v5 unless stated otherwise. Start your migration with the latest release of your target host application, then test any earlier host releases you choose to support. This guide does not prescribe one minimum host or UXP version for every migration. Use the [product matrix](../../../uxp-api/versions.md#applications-integrated-with-uxp) to identify the UXP runtime integrated into each listed host release, and check the API documentation for the capabilities your plugin needs.
 
 This guide is geared towards CEP (Common Extensibility Platform) developers who would like more technical guidance on migrating their extensions to UXP (Unified Extensibility Platform). The migration process is no doubt challenging but will dramatically improve your development experience for future iterations of your plugins.
 
@@ -110,7 +110,7 @@ Declare entrypoint IDs and types in the manifest, then register their handlers a
   * `run(executionContext, ...arguments)`: In manifest v5, called when a command is invoked, including through supported inter-plugin communication.
   * `cancel()`: Reserved for future use in the common API reference. Do not rely on it for cancellation. Use the cancellation mechanism documented by your host API, such as Photoshop's modal execution context.
 
-Manifest v4 panel handlers instead receive one `event` argument. Promise support and timeouts are method-specific; see the [entrypoints reference](../../../uxp-api/reference-js/modules/uxp/entry-points/entry-points.md). Verify panel show/hide behavior in the target host before using it to manage resources or assume visibility changes are always reported.
+Manifest v4 panel handlers instead receive one `event` argument. Promise support and timeouts are method-specific; see the [entrypoints reference](../../../uxp-api/reference-js/modules/uxp/entry-points/entry-points.md).
 
 ### User Interface
 
@@ -119,7 +119,7 @@ UXP plugins support a subset of HTML and CSS, along with [Spectrum UI options](.
 - **Built-in Spectrum UXP widgets** need no npm installation. **Spectrum Web Components (SWC)** require installed and bundled UXP wrappers, manifest v5, and `featureFlags.enableSWCSupport`. SWC support starts in UXP 7.0; check the [SWC setup and supported versions](../../../uxp-api/reference-spectrum/swc/index.md), including the documented 0.37.0 component-version requirement for UXP 8.0.
 - **Browser and Node.js dependencies** are not automatically compatible. UXP is neither a complete browser nor a full Node.js runtime. Check DOM assumptions, native addons, subprocess use, supported modules, and bundler output. The presence of `require("fs")` does not mean all Node.js APIs are available.
 - **WebView** can host web content that cannot run in the native UXP UI, but adds browser-process overhead. Communicate with the plugin through the message bridge rather than accessing host APIs directly from the page. Local HTML rendering requires UXP 8.0 or later and the appropriate permissions. See the [WebView reference](../../../uxp-api/reference-js/global-members/html-elements/html-web-view-element.md).
-- **Framework versions and accessibility** need testing on your minimum and current host versions. Verify keyboard navigation, dialogs, password inputs, and the chosen widget/SWC variants on both platforms. Do not infer current framework support from compatibility notes for an older UXP runtime.
+- **Framework compatibility and accessibility** need testing on the host releases you support. This guide does not recommend a specific framework or toolchain version. Verify keyboard navigation, dialogs, password inputs, and the chosen widget/SWC variants on both platforms.
 
 ## Migrating Native CEP Functions
 
@@ -147,7 +147,7 @@ UXP's encoding options depend on which file API you use. The [`storage`](../../.
 
 The `window.cep.util` object gives CEP developers access to `openURLInDefaultBrowser`, `registerExtensionUnloadCallback`, and `storeProxyCredentials`. In UXP, `require("uxp").shell.openExternal()` opens a web link in the system browser. The shell module does not provide direct equivalents for CEP's `registerExtensionUnloadCallback` and `storeProxyCredentials`; review lifecycle and authentication requirements separately.
 
-Use `shell.openPath()` for local files and folders and `shell.openExternal()` for remote URLs or supported URI schemes. Declare the allowed schemes and file extensions in [manifest v5's launchProcess permission](../../../guides/explanation/concepts/manifest/index.md#launchprocess). Check your minimum host's shell support rather than treating a manifest version as proof that every host release implements the API.
+Use `shell.openPath()` for local files and folders and `shell.openExternal()` for remote URLs or supported URI schemes. Declare the allowed schemes and file extensions in [manifest v5's launchProcess permission](../../../guides/explanation/concepts/manifest/index.md#launchprocess).
 
 ### Process APIs
 
@@ -275,7 +275,7 @@ CSXS/CEP events are used to send events among extensions in an application, and 
 
 **Host DOM events**: Each host application exposes its own DOM events and notification APIs. Consult your target host's UXP API reference for the events it supports.
 
-**UXP lifecycle events**: UXP lifecycle events help manage a plugin's lifecycle. Register handlers using `entrypoints.setup()`. Host implementations can have limitations: for example, historical Photoshop issues affect recurring panel show/hide notifications. Verify behavior in your minimum and current target versions before using these callbacks to infer panel visibility. See [Known Issues](../../../uxp-api/known-issues.md#events).
+**UXP lifecycle events**: UXP lifecycle events help manage a plugin's lifecycle. Register handlers using `entrypoints.setup()` to initialize the plugin, respond to panel visibility changes, and clean up resources.
 
 The following are plugin lifecycle events your plugin can listen for:
 
@@ -286,7 +286,7 @@ The following are panel lifecycle events your plugin can listen for:
 
 * `uxpcreatepanel`: Indicates that a panel is about to be created. This is called when a panel is first displayed, and each time after it is destroyed.
 * `uxpdestroypanel`: Indicates that a panel is about to be destroyed.
-* `uxpshowpanel`: Intended to indicate that a panel is about to be shown and should render into the attached node. Recurring notifications depend on host implementation.
+* `uxpshowpanel`: Indicates that a panel is about to be shown and should render its UI into the attached node.
 * `uxphidepanel`: Indicates that a panel is hidden.
 * `uxpinvokepanelmenu`: Indicates that a panel menu item has been invoked.
 
