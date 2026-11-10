@@ -6,7 +6,7 @@
     <atom:link href="https://raw.githubusercontent.com/AdobeDocs/uxp-hub/staging-branch/src/pages/feed.xml" rel="self" type="application/rss+xml" />
     <description>Version-by-version changelog for the UXP platform APIs (JavaScript, CSS, HTML, and Spectrum references).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Nov 2026 11:38:57 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 11:21:46 GMT</lastBuildDate>
     <item>
       <title>UXP v9.4</title>
       <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v94</link>
