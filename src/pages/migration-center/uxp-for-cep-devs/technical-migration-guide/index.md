@@ -15,8 +15,6 @@ contributors:
 
 # CEP to UXP Technical Migration Guide
 
-Examples use manifest v5 unless stated otherwise. Start your migration with the latest release of your target host application, then test any earlier host releases you choose to support. This guide does not prescribe one minimum host or UXP version for every migration. Use the [product matrix](../../../uxp-api/versions.md#applications-integrated-with-uxp) to identify the UXP runtime integrated into each listed host release, and check the API documentation for the capabilities your plugin needs.
-
 This guide is geared towards CEP (Common Extensibility Platform) developers who would like more technical guidance on migrating their extensions to UXP (Unified Extensibility Platform). The migration process is no doubt challenging but will dramatically improve your development experience for future iterations of your plugins.
 
 Most of this guide, including the JavaScript library and ExtendScript/DOM sections, uses Photoshop as its example host application, since that's where CEP-to-UXP migrations are most common. If you're migrating a CEP extension for a different host application, the [Migrating Native CEP Functions](#migrating-native-cep-functions) section below covers the APIs common across host apps (file I/O, network, opening external resources); check your host's own UXP API reference for its host-specific DOM API. `batchPlay` is Photoshop-specific and is not available in Premiere, InDesign, Media Encoder, and After Effects.
@@ -83,7 +81,7 @@ Meanwhile, UXP plugins are either commands or panels. Plugin metadata like the s
 | Panel | Dockable, resizable, fly-out menus, and theme-aware |
 | Command | Direct action command that executes a custom task, triggered from the host application's Plugins menu, with optional UI |
 
-Commands and panels are common UXP entry point types, but host and release support can differ, especially in beta releases. See [Panels and Commands](../../../guides/explanation/concepts/panels-and-commands/index.md) and your target host's documentation for modal dialogs and combining entrypoints in one plugin.
+Commands and panels are common UXP entry point types, but host and release support can differ. See [Panels and Commands](../../../guides/explanation/concepts/panels-and-commands/index.md) and your target host's documentation for modal dialogs and combining entrypoints in one plugin.
 
 ## UXP Plugin Development
 
@@ -94,7 +92,7 @@ Declare entrypoint IDs and types in the manifest, then register their handlers a
 1. **plugin**: This can be an object or a function. If this is a function, it is assumed as the `create` handler (described below).
    * `create()`: This is called after the plugin is loaded.
    * `destroy()`: This is called before the plugin is unloaded.
-2. **panels**: Each key is a manifest panel ID and each value is an object or function. A function is treated as the `show` handler. An object must define either `create` or `show`. Supported asynchronous handlers may return a Promise; throw an exception or reject the Promise to signal failure. In manifest v5, panel handlers have these signatures:
+2. **panels**: Each key is a manifest panel ID and each value is an object or function. A function is treated as the `show` handler. An object must define either `create` or `show`. Supported asynchronous handlers may return a Promise; throw an exception or reject the Promise to signal failure. In manifest v5, panel handlers have the following signatures, documented in the [entrypoints API reference](../../../uxp-api/reference-js/modules/uxp/entry-points/entry-points.md#setupentrypoints):
   * `create(rootNode)`: Called when a panel is created.
   * `show(rootNode, data)`: Called to show a panel.
   * `hide(rootNode, data)`: Called to hide a panel.
@@ -167,11 +165,13 @@ if (result.err === 0) {
 
 UXP does not provide a comprehensive CEP-style process-management API. `shell.openPath()` and `shell.openExternal()` launch files and URIs through system applications; they are not replacements for subprocess arguments, standard input/output, PID tracking, or process termination. The following manifest fragment declares permitted launches:
 
-```json
+```js
 {
   "requiredPermissions": {
     "launchProcess": {
+      // allows launching files with specified URI schemes
       "schemes": ["https", "slack", "adobe"],
+      // allows opening files with the specified file extensions
       "extensions": [".pdf", ".xd", ".psd"]
     }
   }
