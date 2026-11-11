@@ -16,8 +16,6 @@ contributors:
 
 # UXP for ExtendScript Developers
 
-Distinguish plugin examples from standalone UXP scripts. Start with the latest release of your target host application, and test any earlier releases you choose to support. The [product matrix](../../uxp-api/versions.md#applications-integrated-with-uxp) lists UXP runtimes integrated into host releases; use it alongside the relevant API documentation.
-
 If you're coming to UXP from ExtendScript and the ESTK (ExtendScript ToolKit) or its successor, the [ExtendScript Debugger](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug), here's what's new.
 
 ExtendScript wasn't unique to Photoshop, so most of what follows (modern JavaScript, development environment, UI, HTML support) applies no matter which host application you're moving from. The DOM access section below uses Photoshop as its example since that's the most common source of ExtendScript migrations; see the **Host Apps** menu at the top of this site for your host application's own DOM API reference if you're migrating from a different one. The `batchPlay` API and migration helper shown below are Photoshop-specific.
