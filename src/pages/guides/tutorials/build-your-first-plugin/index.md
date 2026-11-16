@@ -32,17 +32,17 @@ UDT can scaffold a ready-to-run plugin from a starter template instead of you st
 
 Clicking **Create Plugin** opens a dialog where you fill in the plugin's details. Find the column for the host you're building for and use the sample values below; they're safe to enter as-is for this first plugin. The values are nearly identical across hosts: only the **Host Application** and **Template** rows differ.
 
-| Field | Premiere | Media Encoder | Photoshop | InDesign |
-| --- | --- | --- | --- | --- |
-| **Name** | My first UXP Plugin | My first UXP Plugin | My first UXP Plugin | My first UXP Plugin |
-| **Plugin ID** | Leave it as is | Leave it as is | Leave it as is | Leave it as is |
-| **Host Application** | Adobe Premiere Pro | Adobe Media Encoder | Adobe Photoshop | Adobe InDesign |
-| **Host Application Version** | Leave as detected (keep the app open) | Leave as detected (keep the app open) | Leave as detected (keep the app open) | Leave as detected (keep the app open) |
-| **Template** | `pr-quick-starter` | `ame-quick-starter` | `quick-layers-starter` | `quick-starter` |
+| Field | Premiere | Media Encoder | Photoshop | InDesign | After Effects |
+| --- | --- | --- | --- | --- | --- |
+| **Name** | My first UXP Plugin | My first UXP Plugin | My first UXP Plugin | My first UXP Plugin | My first UXP Plugin |
+| **Plugin ID** | Leave it as is | Leave it as is | Leave it as is | Leave it as is | Leave it as is |
+| **Host Application** | Adobe Premiere Pro | Adobe Media Encoder | Adobe Photoshop | Adobe InDesign | Adobe After Effects |
+| **Host Application Version** | Leave as detected (keep the app open) | Leave as detected (keep the app open) | Leave as detected (keep the app open) | Leave as detected (keep the app open) | Leave as detected (keep the app open) |
+| **Template** | `pr-quick-starter` | `ame-quick-starter` | `quick-layers-starter` | `quick-starter` | `ae-quick-starter` |
 
 Select a host to see how its values appear in the UXP Developer Tool.
 
-<Tab orientation="horizontal" slots="heading, content" repeat="4"/>
+<Tab orientation="horizontal" slots="heading, content" repeat="5"/>
 
 ### Premiere
 
@@ -59,6 +59,10 @@ Select a host to see how its values appear in the UXP Developer Tool.
 ### InDesign
 
 ![The Create Plugin dialog configured for InDesign with the quick starter template selected](img/quickstarter-indesign.png)
+
+### After Effects
+
+![The Create Plugin dialog configured for After Effects with the starter template dropdown open](img/quickstarter-after-effects.png)
 
 The table uses a host-specific starter, but the **Template** dropdown also lists general-purpose ones that work with any host. Pick whichever matches what you want to build:
 
