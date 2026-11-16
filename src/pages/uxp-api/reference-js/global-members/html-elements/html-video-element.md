@@ -4,6 +4,12 @@ description: Properties
 ---
 
 # window.HTMLVideoElement
+**Emits**: `event:timeupdate` - Fired when the current playback position of the video has changed. This event is fired frequently during playback (since UXP v9.1).
+
+**See**: [HTMLMediaElement - timeupdate event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/timeupdate_event)
+
+**Note:** Since UXP v9.1, the video element can also play audio files.
+
 **Properties**
 
 | Name | Type | Default | Description |

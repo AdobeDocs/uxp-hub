@@ -265,6 +265,10 @@ Returns the open shadow root that is hosted by the element, or null if no open s
 **Read only**
 
 
+## setSelectionRange()
+**See**: [setSelectionRange](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/setSelectionRange)
+
+
 ## append(...nodes)
 Inserts a set of Node objects or string objects after the last child of the Element.
 

@@ -18,7 +18,7 @@ The UXP API is the platform layer shared across UXP-enabled host applications: J
 
 Learn the platform layer once, and it carries over everywhere. Each host application then adds its own DOM API on top - for documents, layers, sequences, and other host-specific objects - which is what you'll reach for once you're past the platform basics covered here.
 
-<Cards slots="image, heading, text, links" repeat="4" width="100%" />
+<Cards slots="image, heading, text, links" repeat="1" width="25%" />
 
 ![JavaScript](../assets/javascript.svg)
 
@@ -28,6 +28,8 @@ Core APIs for crypto, storage, networking, and file system access in plugins.
 
 [JavaScript reference](reference-js/index.md)
 
+<Cards slots="image, heading, text, links" repeat="1" width="25%" />
+
 ![CSS](../assets/css.svg)
 
 ### CSS
@@ -36,6 +38,8 @@ Selectors, pseudo-classes, media queries, and properties for panel layout.
 
 [CSS reference](reference-css/index.md)
 
+<Cards slots="image, heading, text, links" repeat="1" width="25%" />
+
 ![HTML](../assets/html.svg)
 
 ### HTML
@@ -43,6 +47,8 @@ Selectors, pseudo-classes, media queries, and properties for panel layout.
 Elements, attributes, and document structure for building consistent panel interfaces.
 
 [HTML reference](reference-html/index.md)
+
+<Cards slots="image, heading, text, links" repeat="1" width="25%" />
 
 ![Spectrum](../assets/spectrum.svg)
 
@@ -56,7 +62,7 @@ Spectrum components for building interfaces that match the host application.
 
 Each host application layers its own DOM API for documents, layers, sequences, and other host-specific objects on top of the platform layer above.
 
-<Cards slots="image, heading, text, links" repeat="4" width="100%" />
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![Photoshop](../assets/photoshop.svg)
 
@@ -66,6 +72,8 @@ Imaging APIs for documents, layers, selections, and Camera Raw.
 
 [Photoshop API](https://developer.adobe.com/photoshop/uxp/2022/ps-reference/?aio_external)
 
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
+
 ![InDesign](../assets/indesign.svg)
 
 ### InDesign
@@ -73,6 +81,8 @@ Imaging APIs for documents, layers, selections, and Camera Raw.
 Layout APIs for documents, pages, stories, styles, and frames.
 
 [InDesign API](https://developer.adobe.com/indesign/uxp/dom/api/?aio_external)
+
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![Premiere](../assets/premiere-pro.svg)
 
@@ -82,6 +92,8 @@ Video APIs for projects, sequences, tracks, source media, markers, and exports.
 
 [Premiere API](https://developer.adobe.com/premiere-pro/uxp/ppro-reference/?aio_external)
 
+<Cards slots="image, heading, text, links" repeat="1" width="50%" />
+
 ![Media Encoder](../assets/media-encoder.svg)
 
 ### Media Encoder
@@ -89,6 +101,16 @@ Video APIs for projects, sequences, tracks, source media, markers, and exports.
 Encoding APIs for presets, codecs, render queues, output settings, and exports.
 
 [Media Encoder API](https://developer.adobe.com/media-encoder/uxp/media-encoder-api/?aio_external)
+
+<Cards slots="image, heading, text, links" repeat="1" width="50%" />
+
+![After Effects](../assets/after-effects.svg)
+
+### After Effects
+
+Motion graphics APIs for compositions, layers, and rendering.
+
+[After Effects API](https://developer.adobe.com/after-effects/uxp/after-effects-api/?aio_external)
 
 ## Known Issues
 

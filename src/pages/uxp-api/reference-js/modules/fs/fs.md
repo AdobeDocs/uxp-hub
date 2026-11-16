@@ -9,15 +9,15 @@ Unlike [Entry](../uxp/persistent-file-storage/entry.md) based [File](../uxp/pers
 these methods can directly access a local file or folder with path or file descriptor.
 The starting point of a path in the native filesystem depends on the scheme.
 UXP supports plugin-specific storage schemes, such as "plugin:", "plugin-data:",
-and "plugin-temp:", as well as a native "file:" scheme for the path parameter.\<br\>\</br\>
-Note:\<br\>\</br\>
-1. If there are no schemes defined for the path parameter of FSAPI methods, it considers to have "file:" scheme for the path.\<br\>\</br\>
+and "plugin-temp:", as well as a native "file:" scheme for the path parameter.
+
+**Note:**
+
+1. If there are no schemes defined for the path parameter of FSAPI methods, it considers to have "file:" scheme for the path.
 2. [UWP](https://learn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide)(Universal Windows Platform)
 has the strict [File access permissions](https://learn.microsoft.com/en-us/windows/uwp/files/file-access-permissions),
-and UXP FSAPI may have access issues with anonymous filepaths. So, XD does not support this feature for compatibility across platforms.\<br\>\</br\>
-3. The native layer of UXP FSAPI is based on [libUV](https://libuv.org/) except UWP powered features, such as FilePicker and Drag&Drop on Win10 XD.\<br\>\</br\>
-
-
+and UXP FSAPI may have access issues with anonymous filepaths. So, XD does not support this feature for compatibility across platforms.
+3. The native layer of UXP FSAPI is based on [libUV](https://libuv.org/) except UWP powered features, such as FilePicker and Drag&Drop on Win10 XD.
 
 ## readFile(path, options, callback)
 Reads data from the path asynchronously.
@@ -368,5 +368,29 @@ Reads a directory to list the containing files and directories synchronously
 ```js
 const paths = fs.readdirSync("plugin-data:/dirToRead");
 ```
+
+
+## createReadStream(path, [options])
+Creates a ReadStream to read a file's contents.
+
+**Returns**: `ReadStream` - A readable stream for the file
+
+**Since**: v8.2
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| path | `string` |  | Path to the file to read |
+| [options] | `Object` \| `string` |  | Optional configuration object. If a string is provided, it is treated as the encoding option. |
+| [options.flags] | `string` | `r` | Flags to use |
+| [options.encoding] | `string` \| `null` |  | The encoding to use. If not provided, an ArrayBuffer is returned |
+| [options.fd] | `number` \| `filehandle` |  | A file descriptor to use |
+| [options.mode] | `number` | `0o666` | The mode to use when creating the file |
+| [options.autoClose] | `boolean` | `true` | Automatically close the stream when done |
+| [options.emitClose] | `boolean` | `true` | Whether to emit the close event |
+| [options.start] | `number` | `0` | Start byte of the read |
+| [options.end] | `number` | `Infinity` | End byte of the read |
+| [options.highWaterMark] | `number` | `64*1024` | Size of chunks to read |
+| [options.maxConcurrentChunks] | `number` | `3` | Maximum number of chunks to read concurrently |
+| [options.signal] | `AbortSignal` \| `null` |  | A signal to abort the stream |
 
   

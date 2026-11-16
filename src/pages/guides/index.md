@@ -38,7 +38,7 @@ The sidebar follows the order you'll actually work in, not by product:
 
 The three starting points below get you into that path quickly:
 
-<Cards slots="image, heading, text, links" repeat="3" width="100%" />
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![UXP Developer Tool](../assets/udt.svg)
 
@@ -48,6 +48,8 @@ New to UXP? Set up your tools and get a working plugin running, one step at a ti
 
 [Start here](tutorials/build-your-first-plugin/index.md)
 
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
+
 ![How-to Guides](../assets/recipes.svg)
 
 ### How-to Guides
@@ -55,6 +57,8 @@ New to UXP? Set up your tools and get a working plugin running, one step at a ti
 Already building? Find the guide for your task, from adding commands to packaging.
 
 [Browse the how-to guides](how-to/index.md)
+
+<Cards slots="image, heading, text, links" repeat="1" width="calc(100% / 3)" />
 
 ![Plugin Concepts](../assets/concepts.svg)
 
