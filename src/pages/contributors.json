@@ -10,7 +10,7 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "10/29/2026"
+      "lastUpdated": "11/17/2026"
     },
     {
       "page": "/config",
@@ -375,10 +375,10 @@
     {
       "page": "/guides/tutorials/build-your-first-plugin/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4",
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
+        "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "9/22/2026"
+      "lastUpdated": "11/16/2026"
     },
     {
       "page": "/migration-center/",
@@ -423,7 +423,7 @@
         "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "10/30/2026"
+      "lastUpdated": "11/17/2026"
     },
     {
       "page": "/uxp-api/known-issues",
@@ -2670,7 +2670,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "11/2/2026"
+      "lastUpdated": "11/17/2026"
     }
   ],
   ":type": "sheet"
