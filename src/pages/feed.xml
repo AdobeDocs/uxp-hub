@@ -6,7 +6,7 @@
     <atom:link href="https://raw.githubusercontent.com/AdobeDocs/uxp-hub/staging-branch/src/pages/feed.xml" rel="self" type="application/rss+xml" />
     <description>Version-by-version changelog for the UXP platform APIs (JavaScript, CSS, HTML, and Spectrum references).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Nov 2026 09:35:33 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 09:39:24 GMT</lastBuildDate>
     <item>
       <title>UDT v2.4.0</title>
       <link>https://developer.adobe.com/uxp/uxp-api/changelog/#udt-v240</link>
