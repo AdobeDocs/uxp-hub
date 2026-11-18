@@ -6,6 +6,49 @@ description: Version-by-version changelog for the UXP platform APIs (JavaScript,
 
 Find out what's improved with the latest UXP version, including fixed bugs, new features, and enhancements to existing features. Note that it takes a couple of weeks for new UXP versions to be implemented in future releases of our Creative Cloud apps.\<br/>\<br/>\<a href="https://raw.githubusercontent.com/AdobeDocs/uxp-hub/refs/heads/main/src/pages/feed.xml" style="display: inline-flex; align-items: center; gap: 6px;">\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">\<circle cx="6.18" cy="17.82" r="2.18" fill="#eb1000"/>\<path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z" fill="#eb1000"/>\</svg>\<span>Subscribe via RSS\</span>\</a>
 
+## UXP v9.5.0
+
+### New
+
+- [WebView](reference-js/global-members/html-elements/html-web-view-element.md) links no longer disappear silently: the `opennewwindow` event lets plugins handle `target="_blank"` and `window.open()` requests and implement browser-launch handling. New WebView windows remain blocked.
+- [Video](reference-js/global-members/html-elements/html-video-element.md) background colors are now preserved before playback starts on Windows, preventing underlying content from showing through.
+- Expanded DOM support for modern [Spectrum Web Components](reference-spectrum/swc/index.md) and Lit: `toggleAttribute` now supports newer components, `getElementById` is now available on [DocumentFragment](reference-js/global-members/html-dom/document-fragment.md) and [ShadowRoot](reference-js/global-members/html-dom/shadow-root.md), enabling contextual-help popovers, and [HTMLAnchorElement](reference-js/global-members/html-elements/html-anchor-element.md) is now available globally, supporting SWC conversational-AI patterns.
+- Added [WebView](reference-js/global-members/html-elements/html-web-view-element.md) APIs `window.uxpHost.getLastDropFilePaths` and `window.uxpHost.getClipboardFilePaths` to retrieve native paths for files dropped or pasted from Finder or Explorer, subject to filesystem permissions.
+- Unblocked [WebView](reference-js/global-members/html-elements/html-web-view-element.md) creation in Feature Restricted License deployments with an empty `userId`, addressing the no-user-identity licensing workflow in DVA and Premiere.
+- Added `userInfo.identity()` to the [userInfo module](reference-js/modules/uxp/user-information/user-info.md) to expose hashed `userId` and `legacyIds`, with `userinfochanged` notifications, helping plugins migrate licensing and per-user data during enterprise identity consolidation. Availability of legacy IDs depends on host integration.
+
+### Fixed
+
+- Improved reopening responsiveness for Photoshop plugin dialogs containing [WebViews](reference-js/global-members/html-elements/html-web-view-element.md) on Windows by sharing WebView2 system resources while keeping profiles separate.
+- Reduced [flex-layout](reference-css/styles/flex-grow.md) work to improve Premiere caption auto-scrolling performance during playback and scrubbing.
+- Fixed a Windows cold-start issue that prevented [WebSocket](reference-js/global-members/data-transfers/web-socket.md) status reporting when a plugin was loaded without UXP Developer Tool (UDT).
+- Fixed macOS [WebView](reference-js/global-members/html-elements/html-web-view-element.md) file pickers ignoring `<input type="file" accept="...">`, so unsupported file types are no longer offered.
+- Fixed text scrolling out of view when an input [type](reference-js/global-members/html-elements/html-input-element.md#type--string) switches from `password` to `text`, restoring readable password previews in InDesign Publish Online.
+- Fixed a Photoshop Beta crash caused by concurrent [WebSocket](reference-js/global-members/data-transfers/web-socket.md) connection failures and pending timeout callbacks.
+- Restored smooth scrolling and clickable video playback in Photoshop's Windows Discover Panel tutorials and Theater Mode.
+- Fixed a Photoshop process abort on Windows when DirectWrite text measurement fails. `TextLayoutWin::getContentMinMax` now falls back safely instead of letting an exception terminate the application.
+- Improved Windows [WebView](reference-js/global-members/html-elements/html-web-view-element.md) keyboard routing for Illustrator and Photoshop: host shortcuts now coexist with `WebView` text editing, `Ctrl+Arrow` and `Ctrl+Shift+Arrow` navigation and selection work, and Escape routing is adjusted. Behavior depends on host integration, so revalidate in your plugin.
+- Reduced retained memory in component-heavy plugin interfaces by releasing [shadow trees](reference-js/global-members/html-dom/shadow-root.md) when custom-component DOM nodes are removed.
+- Corrected [flex-grow](reference-css/styles/flex-grow.md) sizing when sibling elements have competing [min-width](reference-css/styles/min-width.md) and [max-width](reference-css/styles/max-width.md) constraints.
+- Improved macOS InDesign plugin-load stability: failures to look up the working directory through `process.cwd()` now raise JavaScript exceptions instead of crashing the host.
+- Fixed macOS [WebView](reference-js/global-members/html-elements/html-web-view-element.md) focus changes not being announced to VoiceOver users.
+- Fixed Windows layout crashes when returning to Firefly Workspace from Home Screen tabs such as Your Files or Learn, affecting Photoshop, Illustrator, InDesign, and Premiere.
+- Reduced [WebView](reference-js/global-members/html-elements/html-web-view-element.md) flickering when resizing its container panel in InDesign on Windows.
+- Improved Windows Illustrator stability during Properties-panel selection and property updates by fixing a reference-counting race condition that could free an asynchronous task twice.
+- Fixed a Photoshop Windows crash caused by queued [video](reference-js/global-members/html-elements/html-video-element.md) frames rendering into a view that had already been destroyed.
+- Prevented buffer-allocation failures on LibUV-managed filesystem threads from terminating the host, protecting the crash path in `HeapStorageBuffer` construction.
+- Enforced the [WebView](reference-js/global-members/html-elements/html-web-view-element.md) local-file boundary by rejecting explicit `file:` URL inputs and reporting [`loaderror`](reference-js/global-members/html-elements/html-web-view-element.md#loaderror); integrations should use supported [plugin-relative resources](reference-js/global-members/html-elements/html-web-view-element.md#load-local-content-onto-webview).
+- Corrected Windows [WebView](reference-js/global-members/html-elements/html-web-view-element.md) sizing after host repaints, addressing stale content, black areas, and leftover UI in Illustrator and InDesign docking workflows.
+- Fixed plugin-path normalization so valid [plugin URLs](reference-js/global-members/html-elements/html-web-view-element.md#load-local-content-onto-webview) are not incorrectly blocked as `file:` URLs, restoring affected Photoshop Windows navigation workflows.
+
+## UDT v2.4.0
+
+- Supports After Effects Beta v27.1+.
+
+## UDT v2.3.0
+
+- Supports Media Encoder Beta v27.0+.
+
 ## UXP v9.4
 
 ### New
@@ -66,6 +109,10 @@ Find out what's improved with the latest UXP version, including fixed bugs, new 
 - [WebView](reference-js/global-members/html-elements/html-web-view-element.md) improvements:
   - Disabled swipe navigation on WebView2 for consistency with macOS WKWebView; all WebView2 gestures (swipe, zoom control, pinch zoom) are now disabled.
   - Removed the `allow` field from `permissions.webview` config; `permissions.webview.allow` in the manifest is no longer used.
+
+## UDT v2.2.0
+
+- Supports UXP Plugins for Premiere Pro v25.6+.
 
 ## UXP v9.0.2
 

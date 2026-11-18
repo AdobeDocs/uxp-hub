@@ -34,7 +34,7 @@ Everything you need to build UXP plugins, in one place.
 - [Hybrid Plugins](guides/how-to/hybrid-plugins/index.md)
 - [Share and Distribute](guides/how-to/distribution/overview/index.md)
 - [FAQ](faq/index.md)
-- [Migration Roadmap](migration-center/index.md#cep-to-uxp-migration-milestones)
+- [CEP to UXP Milestones](migration-center/index.md#cep-to-uxp-migration-milestones)
 
 ## What is UXP?
 
@@ -119,6 +119,7 @@ Once your plugin runs, the next questions are usually about testing, packaging, 
 
 - **Developer journey:** the full build-and-ship path, from setup to shipping, is covered in [Guides](guides/index.md).
 - **UXP API reference:** check the [UXP APIs](uxp-api/index.md) section for what's available on the shared platform.
+- **[CEP to UXP Milestones](migration-center/index.md#cep-to-uxp-migration-milestones):** plan your migration with application-specific milestones for UXP availability, Marketplace changes, and CEP support transitions.
 - **[Share and distribute your plugin](guides/how-to/distribution/overview/index.md):** package it, publish through Adobe Marketplace, or distribute independently and within an enterprise.
 - **[FAQ](faq/index.md):** quick answers to common setup, packaging, and compliance questions.
 
