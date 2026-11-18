@@ -3,10 +3,48 @@
   <channel>
     <title>UXP Changelog</title>
     <link>https://developer.adobe.com/uxp/uxp-api/changelog/</link>
-    <atom:link href="https://raw.githubusercontent.com/AdobeDocs/uxp-hub/staging-branch/src/pages/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://raw.githubusercontent.com/AdobeDocs/uxp-hub/main/src/pages/feed.xml" rel="self" type="application/rss+xml" />
     <description>Version-by-version changelog for the UXP platform APIs (JavaScript, CSS, HTML, and Spectrum references).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Nov 2026 09:39:24 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 15:31:16 GMT</lastBuildDate>
+    <item>
+      <title>UXP v9.5.0</title>
+      <link>https://developer.adobe.com/uxp/uxp-api/changelog/#uxp-v950</link>
+      <guid isPermaLink="false">UXP v9.5.0</guid>
+      <description><![CDATA[<h3>New</h3>
+<ul>
+<li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> links no longer disappear silently: the <code>opennewwindow</code> event lets plugins handle <code>target=&quot;_blank&quot;</code> and <code>window.open()</code> requests and implement browser-launch handling. New WebView windows remain blocked.</li>
+<li><a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-video-element/">Video</a> background colors are now preserved before playback starts on Windows, preventing underlying content from showing through.</li>
+<li>Expanded DOM support for modern <a href="https://developer.adobe.com/uxp/uxp-api/reference-spectrum/swc/">Spectrum Web Components</a> and Lit: <code>toggleAttribute</code> now supports newer components, <code>getElementById</code> is now available on <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-dom/document-fragment/">DocumentFragment</a> and <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-dom/shadow-root/">ShadowRoot</a>, enabling contextual-help popovers, and <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-anchor-element/">HTMLAnchorElement</a> is now available globally, supporting SWC conversational-AI patterns.</li>
+<li>Added <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> APIs <code>window.uxpHost.getLastDropFilePaths</code> and <code>window.uxpHost.getClipboardFilePaths</code> to retrieve native paths for files dropped or pasted from Finder or Explorer, subject to filesystem permissions.</li>
+<li>Unblocked <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> creation in Feature Restricted License deployments with an empty <code>userId</code>, addressing the no-user-identity licensing workflow in DVA and Premiere.</li>
+<li>Added <code>userInfo.identity()</code> to the <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/modules/uxp/user-information/user-info/">userInfo module</a> to expose hashed <code>userId</code> and <code>legacyIds</code>, with <code>userinfochanged</code> notifications, helping plugins migrate licensing and per-user data during enterprise identity consolidation. Availability of legacy IDs depends on host integration.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Improved reopening responsiveness for Photoshop plugin dialogs containing <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebViews</a> on Windows by sharing WebView2 system resources while keeping profiles separate.</li>
+<li>Reduced <a href="https://developer.adobe.com/uxp/uxp-api/reference-css/styles/flex-grow/">flex-layout</a> work to improve Premiere caption auto-scrolling performance during playback and scrubbing.</li>
+<li>Fixed a Windows cold-start issue that prevented <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/data-transfers/web-socket/">WebSocket</a> status reporting when a plugin was loaded without UXP Developer Tool (UDT).</li>
+<li>Fixed macOS <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> file pickers ignoring <code>&lt;input type=&quot;file&quot; accept=&quot;...&quot;&gt;</code>, so unsupported file types are no longer offered.</li>
+<li>Fixed text scrolling out of view when an input <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-input-element/#type--string">type</a> switches from <code>password</code> to <code>text</code>, restoring readable password previews in InDesign Publish Online.</li>
+<li>Fixed a Photoshop Beta crash caused by concurrent <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/data-transfers/web-socket/">WebSocket</a> connection failures and pending timeout callbacks.</li>
+<li>Restored smooth scrolling and clickable video playback in Photoshop's Windows Discover Panel tutorials and Theater Mode.</li>
+<li>Fixed a Photoshop process abort on Windows when DirectWrite text measurement fails. <code>TextLayoutWin::getContentMinMax</code> now falls back safely instead of letting an exception terminate the application.</li>
+<li>Improved Windows <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> keyboard routing for Illustrator and Photoshop: host shortcuts now coexist with <code>WebView</code> text editing, <code>Ctrl+Arrow</code> and <code>Ctrl+Shift+Arrow</code> navigation and selection work, and Escape routing is adjusted. Behavior depends on host integration, so revalidate in your plugin.</li>
+<li>Reduced retained memory in component-heavy plugin interfaces by releasing <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-dom/shadow-root/">shadow trees</a> when custom-component DOM nodes are removed.</li>
+<li>Corrected <a href="https://developer.adobe.com/uxp/uxp-api/reference-css/styles/flex-grow/">flex-grow</a> sizing when sibling elements have competing <a href="https://developer.adobe.com/uxp/uxp-api/reference-css/styles/min-width/">min-width</a> and <a href="https://developer.adobe.com/uxp/uxp-api/reference-css/styles/max-width/">max-width</a> constraints.</li>
+<li>Improved macOS InDesign plugin-load stability: failures to look up the working directory through <code>process.cwd()</code> now raise JavaScript exceptions instead of crashing the host.</li>
+<li>Fixed macOS <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> focus changes not being announced to VoiceOver users.</li>
+<li>Fixed Windows layout crashes when returning to Firefly Workspace from Home Screen tabs such as Your Files or Learn, affecting Photoshop, Illustrator, InDesign, and Premiere.</li>
+<li>Reduced <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> flickering when resizing its container panel in InDesign on Windows.</li>
+<li>Improved Windows Illustrator stability during Properties-panel selection and property updates by fixing a reference-counting race condition that could free an asynchronous task twice.</li>
+<li>Fixed a Photoshop Windows crash caused by queued <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-video-element/">video</a> frames rendering into a view that had already been destroyed.</li>
+<li>Prevented buffer-allocation failures on LibUV-managed filesystem threads from terminating the host, protecting the crash path in <code>HeapStorageBuffer</code> construction.</li>
+<li>Enforced the <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> local-file boundary by rejecting explicit <code>file:</code> URL inputs and reporting <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/#loaderror"><code>loaderror</code></a>; integrations should use supported <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/#load-local-content-onto-webview">plugin-relative resources</a>.</li>
+<li>Corrected Windows <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/">WebView</a> sizing after host repaints, addressing stale content, black areas, and leftover UI in Illustrator and InDesign docking workflows.</li>
+<li>Fixed plugin-path normalization so valid <a href="https://developer.adobe.com/uxp/uxp-api/reference-js/global-members/html-elements/html-web-view-element/#load-local-content-onto-webview">plugin URLs</a> are not incorrectly blocked as <code>file:</code> URLs, restoring affected Photoshop Windows navigation workflows.</li>
+</ul>]]></description>
+    </item>
     <item>
       <title>UDT v2.4.0</title>
       <link>https://developer.adobe.com/uxp/uxp-api/changelog/#udt-v240</link>
