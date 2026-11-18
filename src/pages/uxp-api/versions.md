@@ -14,7 +14,7 @@ The table below lists the exact UXP runtime version bundled with each host appli
 | UXP Version | Photoshop | Premiere | InDesign | Media Encoder (Beta) | After Effects (Beta) |
 | ----------- | --------- | -------- | -------- | -------------------- | -------------------- |
 | UXP 9.4.1 | 27.11 | - | - | - | - |
-| UXP 9.4.0 | - | 27.0.0 | 22.0.0 | 27.1.0 | 27.1.0 |
+| UXP 9.4.0 | - | 27.0.0 | 22.0.0 | 27.0.0 | 27.1.0 |
 | UXP 9.3.0 | 27.7 | 26.3 | 21.4 | - | - |
 | UXP 9.2.1 | - | 26.2 | 21.3 | - | - |
 | UXP 9.2.0 | 27.4 | - | - | - | - |
